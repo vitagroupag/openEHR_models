@@ -25,7 +25,7 @@
       "sem_ver" : "1.0.0",
       "build_uid" : "",
       "MD5-CAM-1.0.1" : "0ed7e01194cb182d390c3addfc5c0fc9",
-      "PARENT:MD5-CAM-1.0.1" : "005501C1FA493A4838F5F1121F2870EC"
+      "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
       "de" : {
@@ -781,7 +781,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "203F097307CFAB8871029D0E03720068"
+        "PARENT:MD5-CAM-1.0.1" : "93D7ADBBD994326C03BC2D9063553DFC"
       },
       "details" : { }
     },
@@ -1286,6 +1286,14 @@
               "excludes" : [ ],
               "closed" : false
             }, {
+              "@type" : "ARCHETYPE_SLOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..*",
+              "nodeId" : "at0062",
+              "includes" : [ ],
+              "excludes" : [ ],
+              "closed" : false
+            }, {
               "@type" : "C_ARCHETYPE_ROOT",
               "rmTypeName" : "CLUSTER",
               "occurrences" : "0..1",
@@ -1294,14 +1302,6 @@
               "attributeTuples" : [ ],
               "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-device-001.v1",
               "referenceType" : "archetypeOverlay"
-            }, {
-              "@type" : "ARCHETYPE_SLOT",
-              "rmTypeName" : "CLUSTER",
-              "occurrences" : "0..*",
-              "nodeId" : "at0062",
-              "includes" : [ ],
-              "excludes" : [ ],
-              "closed" : false
             } ]
           } ],
           "attributeTuples" : [ ]
