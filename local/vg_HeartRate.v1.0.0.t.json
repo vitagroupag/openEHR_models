@@ -25,7 +25,7 @@
       "sem_ver" : "1.0.0",
       "build_uid" : "",
       "MD5-CAM-1.0.1" : "313efca36ba8d3924c70702449d2420c",
-      "PARENT:MD5-CAM-1.0.1" : "005501C1FA493A4838F5F1121F2870EC"
+      "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
       "de" : {
@@ -1784,15 +1784,6 @@
               } ],
               "closed" : false
             }, {
-              "@type" : "C_ARCHETYPE_ROOT",
-              "rmTypeName" : "CLUSTER",
-              "occurrences" : "0..1",
-              "nodeId" : "at1013.1",
-              "attributes" : [ ],
-              "attributeTuples" : [ ],
-              "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-device-001.v1",
-              "referenceType" : "archetypeOverlay"
-            }, {
               "@type" : "ARCHETYPE_SLOT",
               "rmTypeName" : "CLUSTER",
               "occurrences" : "0..*",
@@ -1827,6 +1818,15 @@
               } ],
               "excludes" : [ ],
               "closed" : false
+            }, {
+              "@type" : "C_ARCHETYPE_ROOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..1",
+              "nodeId" : "at1013.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ],
+              "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-device-001.v1",
+              "referenceType" : "archetypeOverlay"
             } ]
           } ],
           "attributeTuples" : [ ]
