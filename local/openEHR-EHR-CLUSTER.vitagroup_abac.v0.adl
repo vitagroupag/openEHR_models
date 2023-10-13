@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"2c39385080105384f85fc976007b60e5">
+		["MD5-CAM-1.0.1"] = <"75accbc064a08da9942bd5bb1fcb91e8">
 		["build_uid"] = <"6c520877-3759-38e7-8f1d-ef2810fea142">
 	>
 
@@ -40,6 +40,11 @@ definition
 							at0004]    -- low
 						}
 					}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Test
+				value matches {
+					DV_CODED_TEXT matches {*}
 				}
 			}
 		}
@@ -68,6 +73,10 @@ ontology
 				["at0004"] = <
 					text = <"low">
 					description = <"low">
+				>
+				["at0005"] = <
+					text = <"Test">
+					description = <"">
 				>
 			>
 		>
