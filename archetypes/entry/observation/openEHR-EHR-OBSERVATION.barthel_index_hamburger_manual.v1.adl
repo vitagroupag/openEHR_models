@@ -1,0 +1,382 @@
+﻿archetype (adl_version=1.4; uid=94101e89-8561-4677-b7a8-4cecc9b9efb1)
+	openEHR-EHR-OBSERVATION.barthel_index_hamburger_manual.v1
+
+concept
+	[at0000]	-- Barthel Index nach dem Hamburger Manual
+language
+	original_language = <[ISO_639-1::de]>
+description
+	original_author = <
+		["name"] = <"Bianca Frenzel">
+		["organisation"] = <"Medizinische Hochschule Hannover">
+		["email"] = <"Frenzel.Bianca@mh-hannover.de">
+		["date"] = <"2020-10-12">
+	>
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Barthel-Index nach dem Hamburger Manual zur Erfassung grundlegender Alltagsaktivitäten.
+
+Das Hamburger Einstufungsmanual ist ein verbindlicher Einstufungsstandard für den Barthel-Index gemäß den Ziffern U50.- der ICD-10-GM ab Version 2005 und gemäß der Begutachtungs-Richtlinie Vorsorge und Rehabilitation des MDS und des GKV-Spitzenverbandes (zuletzt geändert 2016). Andere Versionen - insbesondere die in der Praxis immer wieder zu findenden verkürzten Itemabstufungen „selbständig“, „mit Hilfe“ oder „nicht möglich“ - genügen diesen Anforderungen nicht und schränken die Aussagekraft des Instrumentes erheblich ein.">
+			use = <"Der Archetyp wird verwendet, um grundlegende Alltagsaktivitäten eines Individuums systematisch zu erfassen. Hierfür wird zur Darstellung der standardisierte Fragebogen des Barthel-Index nach dem Hamburger Manual verwendet.">
+			keywords = <"Score", "Index", "Barthel Index", "Aktivitäten", "Alltag", "Abhängigkeit", "Barthel">
+			misuse = <"Wird nicht verwendet, um die Bewertung gemäß des modifizierten Barthel Indexes zu erfassen. 
+Hierfür wird folgender Archetyp verwendet: 
+OBSERVATION.modified_barthel_index.">
+			copyright = <"© HiGHmed">
+		>
+	>
+	lifecycle_state = <"published">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"HiGHmed">
+		["references"] = <"Lübke N, Meinck M, von Renteln-Kruse W. Der Barthel-Index in der Geriatrie. Eine Kontextanalyse zum Hamburger Einstufungsmanual. Z Gerontol Geriatr 2004;37:316-326">
+		["original_namespace"] = <"org.highmed">
+		["original_publisher"] = <"HiGHmed">
+		["custodian_namespace"] = <"org.highmed">
+		["MD5-CAM-1.0.1"] = <"F5D377EF4280F0F6B688CF4570B6FFE2">
+		["build_uid"] = <"1955c882-f8bf-40e0-8fdb-607faa9c2f55">
+		["revision"] = <"1.0.3">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Barthel Index nach dem Hamburger Manual
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {    -- Jedes Ereignis
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Baum
+								items cardinality matches {11..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Essen
+										value matches {
+											0|[local::at0007],
+											5|[local::at0006],
+											10|[local::at0005]
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Aufsetzen & Umsetzen
+										value matches {
+											0|[local::at0012],
+											5|[local::at0011],
+											10|[local::at0010],
+											15|[local::at0009]
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Sich Waschen
+										value matches {
+											0|[local::at0015],
+											5|[local::at0014]
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Toilettenbenutzung
+										value matches {
+											0|[local::at0019],
+											5|[local::at0018],
+											10|[local::at0017]
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {    -- Baden/Duschen
+										value matches {
+											0|[local::at0025],
+											5|[local::at0024]
+										}
+									}
+									ELEMENT[at0026] occurrences matches {0..1} matches {    -- Aufstehen & Gehen
+										value matches {
+											0|[local::at0030],
+											5|[local::at0029],
+											10|[local::at0028],
+											15|[local::at0027]
+										}
+									}
+									ELEMENT[at0031] occurrences matches {0..1} matches {    -- Treppensteigen
+										value matches {
+											0|[local::at0034],
+											5|[local::at0033],
+											10|[local::at0032]
+										}
+									}
+									ELEMENT[at0035] occurrences matches {0..1} matches {    -- An- und Auskleiden
+										value matches {
+											0|[local::at0038],
+											5|[local::at0037],
+											10|[local::at0036]
+										}
+									}
+									ELEMENT[at0039] occurrences matches {0..1} matches {    -- Stuhlinkontinenz
+										value matches {
+											0|[local::at0042],
+											5|[local::at0041],
+											10|[local::at0040]
+										}
+									}
+									ELEMENT[at0043] occurrences matches {0..1} matches {    -- Harninkontinenz
+										value matches {
+											0|[local::at0046],
+											5|[local::at0045],
+											10|[local::at0044]
+										}
+									}
+									ELEMENT[at0047] occurrences matches {0..1} matches {    -- Gesamtpunktzahl
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..100|}
+											}
+										}
+									}
+									ELEMENT[at0053] occurrences matches {0..1} matches {    -- Auswertung
+										value matches {
+											DV_CODED_TEXT matches {*}
+											DV_TEXT matches {*}
+											DV_ORDINAL matches {*}
+										}
+									}
+									ELEMENT[at0052] occurrences matches {0..1} matches {    -- Bemerkungen
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0050] matches {    -- Baum
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0051] occurrences matches {0..1} matches {    -- Einflussfaktoren
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0048] matches {    -- Baum
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0049] occurrences matches {0..*} matches {    -- Erweiterungen
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Barthel Index nach dem Hamburger Manual">
+					description = <"Barthel-Index nach dem Hamburger Manual zur Erfassung grundlegender Alltagsaktivitäten.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Jedes Ereignis">
+					description = <"Standardwert, ein undefinierter/s Zeitpunkt oder Intervallereignis, das explizit im Template oder zur Laufzeit der Anwendung definiert werden kann.">
+				>
+				["at0003"] = <
+					text = <"Baum">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Essen">
+					description = <"Fähigkeit zu essen.">
+				>
+				["at0005"] = <
+					text = <"Komplett selbstständig ODER selbstständige PEG-Beschickung/-Versorgung">
+					description = <"Selbstständiges Essen.">
+				>
+				["at0006"] = <
+					text = <"Hilfe bei mundgerechter Vorbereitung, aber selbstständiges Einnehmen ODER Hilfe bei PEG-Beschickung/-Versorgung">
+					description = <"Benötigt Hilfe.">
+				>
+				["at0007"] = <
+					text = <"Kein selbstständiges Einnehmen UND keine MS (Magensonde)/PEG-Ernährung (künstliche Ernährung)">
+					description = <"Unfähig, allein zu essen.">
+				>
+				["at0008"] = <
+					text = <"Aufsetzen & Umsetzen">
+					description = <"Fähigkeit der Bewegung aus dem Bett zum Stuhl und umgekehrt.">
+				>
+				["at0009"] = <
+					text = <"Komplett selbstständig aus liegender Position in (Roll-)Stuhl und zurück">
+					description = <"Selbstständiges Aufsetzen und Umsetzen.">
+				>
+				["at0010"] = <
+					text = <"Aufsicht oder geringe Hilfe (ungeschulte Laienhilfe)">
+					description = <"Mit kleiner Hilfe.">
+				>
+				["at0011"] = <
+					text = <"Erhebliche Hilfe (geschulte Laienhilfe oder professionelle Hilfe)">
+					description = <"Mit großer Hilfe.">
+				>
+				["at0012"] = <
+					text = <"Wird faktisch nicht aus dem Bett transferiert">
+					description = <"Unfähigkeit, sich aufzusetzen.">
+				>
+				["at0013"] = <
+					text = <"Sich Waschen">
+					description = <"Fähigkeit, sich um die persönliche Hygiene wie Zähneputzen, Rasieren und Frisieren zu kümmern.">
+				>
+				["at0014"] = <
+					text = <"Vor Ort komplett selbstständig inkl. Zähneputzen, Rasieren und Frisieren">
+					description = <"Selbstständiges Waschen.">
+				>
+				["at0015"] = <
+					text = <"Erfüllt \"5\" nicht">
+					description = <"Benötigt Hilfe.">
+				>
+				["at0016"] = <
+					text = <"Toilettenbenutzung">
+					description = <"Fähigkeit, die Toilette zu benutzen.">
+				>
+				["at0017"] = <
+					text = <"Vor Ort komplett selbstständige Nutzung von Toilette oder Toilettenstuhl inkl. Spülung/Reinigung">
+					description = <"Selbstständiges hinsetzen, aufstehen, abwischen und anziehen möglich.">
+				>
+				["at0018"] = <
+					text = <"Vor Ort Hilfe oder Aufsicht bei Toiletten- oder Toilettenstuhlbenutzung oder deren Spülung/ Reinigung erforderlich">
+					description = <"Benötigt Hilfe, kann aber einige Aufgaben alleine erledigen.">
+				>
+				["at0019"] = <
+					text = <"Benutzt faktisch weder Toilette noch Toilettenstuhl">
+					description = <"Nichtbenutzung der Toilette.">
+				>
+				["at0023"] = <
+					text = <"Baden/Duschen">
+					description = <"Selbstständigkeit bei der Körperhygiene.">
+				>
+				["at0024"] = <
+					text = <"Selbstständiges Baden oder Duschen inkl. Ein-/Ausstieg, sich reinigen und abtrocknen">
+					description = <"Selbstständig.">
+				>
+				["at0025"] = <
+					text = <"Erfüllt \"5\" nicht">
+					description = <"Benötigt Hilfe.">
+				>
+				["at0026"] = <
+					text = <"Aufstehen & Gehen">
+					description = <"Fähigkeit des selbständigen Aufstehens und Gehens.">
+				>
+				["at0027"] = <
+					text = <"Ohne Aufsicht oder personelle Hilfe vom Sitz in den Stand kommen und mindestens 50m ohne Gehwagen (aber ggf. mit Stöcken/Gehstützen) gehen">
+					description = <"Selbstständiges Gehen ggfs. mit Hilfsmittel.">
+				>
+				["at0028"] = <
+					text = <"Ohne Aufsicht oder personelle Hilfe vom Sitz in den Stand kommen und mindestens 50m mit Hilfe eines Gehstockes gehen">
+					description = <"Unterstütztes Gehen.">
+				>
+				["at0029"] = <
+					text = <"Mit Laienhilfe oder Gehwagen vom Sitz in den Stand kommen und Strecken im Wohnbereich bewältigen alternativ: im Wohnbereich komplett selbstständig im Rollstuhl">
+					description = <"Mit Laienhilfe oder Rollstuhl.">
+				>
+				["at0030"] = <
+					text = <"Erfüllt \"5\" nicht">
+					description = <"Immobil.">
+				>
+				["at0031"] = <
+					text = <"Treppensteigen">
+					description = <"Fähigkeit, Treppen zu steigen.">
+				>
+				["at0032"] = <
+					text = <"Ohne Aufsicht oder personelle Hilfe (ggf. inkl. Stöcken/Gehstützen) mindestens ein Stockwerk hinauf- und hinuntersteigen">
+					description = <"Kann alleine oder mit Hilfsmittel Treppen steigen.">
+				>
+				["at0033"] = <
+					text = <"Mit Aufsicht oder Laienhilfe mind. ein Stockwerk hinauf und hinunter">
+					description = <"Benötigt mündliche, körperliche oder sonstige Unterstützung.">
+				>
+				["at0034"] = <
+					text = <"Erfüllt \"5\" nicht">
+					description = <"Unfähig, Treppen zu steigen.">
+				>
+				["at0035"] = <
+					text = <"An- und Auskleiden">
+					description = <"Fähigkeit, Kleidung auszuwählen, anzuziehen und zu befestigen.">
+				>
+				["at0036"] = <
+					text = <"Zieht sich in angemessener Zeit selbstständig Tageskleidung, Schuhe (und ggf. benötigte Hilfsmittel z.B. Antithrombose-Strümpfe, Prothesen) an und aus">
+					description = <"Selbständiges Anziehen von Kleidung.">
+				>
+				["at0037"] = <
+					text = <"Kleidet mindestens den Oberkörper in angemessener Zeit selbstständig an und aus, sofern die Utensilien in greifbarer Nähe sind">
+					description = <"Benötigt ggfs. Hilfe, teilweise selbstständiges Ankleiden möglich.">
+				>
+				["at0038"] = <
+					text = <"Erfüllt \"5\" nicht">
+					description = <"Unfähig, sich anzukleiden.">
+				>
+				["at0039"] = <
+					text = <"Stuhlinkontinenz">
+					description = <"Kontrollverluste in Bezug auf Stuhlinkontinenz.">
+				>
+				["at0040"] = <
+					text = <"Ist stuhlkontinent, ggf. selbstständig bei rektalen Abführmaßnahmen oder AP-Versorgung">
+					description = <"Stuhlkontinent.">
+				>
+				["at0041"] = <
+					text = <"Ist durchschnittlich nicht mehr als 1x/Woche stuhlinkontinent oder benötigt Hilfe bei rektalen Abführmaßnahmen / AP-Versorgung">
+					description = <"Seltene Stuhlinkontinenz.">
+				>
+				["at0042"] = <
+					text = <"Ist durchschnittlich mehr als 1x/Woche stuhlinkontinent">
+					description = <"Regelmäßige Stuhlinkontinenz.">
+				>
+				["at0043"] = <
+					text = <"Harninkontinenz">
+					description = <"Kontrollverluste in Bezug auf Harninkontinenz.">
+				>
+				["at0044"] = <
+					text = <"Ist harnkontinent oder kompensiert seine Harninkontinenz / versorgt seinen DK (Dauerkatheter) komplett selbstständig und mit Erfolg (kein Einnässen von Kleidung oder Bettwäsche)">
+					description = <"Harnkontinent oder selbstständige Versorgung des Dauerkatheters.">
+				>
+				["at0045"] = <
+					text = <"Kompensiert seine Harninkontinenz selbstständig und mit überwiegendem Erfolg (durchschnittlich nicht mehr als 1x/Tag Einnässen von Kleidung oder Bettwäsche) oder benötigt Hilfe bei der Versorgung seines Harnkathetersystems">
+					description = <"Seltene Harninkontinenz oder benötigt Hilfe bei der Versorgung des Dauerkatheters.">
+				>
+				["at0046"] = <
+					text = <"Ist durchschnittlich mehr als 1x/Tag harninkontinent">
+					description = <"Regelmäßige Harninkontinenz.">
+				>
+				["at0047"] = <
+					text = <"Gesamtpunktzahl">
+					description = <"Summe der einzelnen Bewertungen, die für jede der beitragenden Variablen zugewiesen wurden.">
+				>
+				["at0048"] = <
+					text = <"Baum">
+					description = <"@ internal @">
+				>
+				["at0049"] = <
+					text = <"Erweiterungen">
+					description = <"Zusätzliche Informationen, die zur Erfassung lokaler Inhalte oder zur Anpassung an andere Referenzmodelle/Formalismen erforderlich sind.">
+				>
+				["at0050"] = <
+					text = <"Baum">
+					description = <"@ internal @">
+				>
+				["at0051"] = <
+					text = <"Einflussfaktoren">
+					description = <"Beschreibung aller Probleme oder Faktoren, die sich auf die Bewertung auswirken können.">
+				>
+				["at0052"] = <
+					text = <"Bemerkungen">
+					description = <"Bemerkungen, die während des Tests gemacht wurden.">
+				>
+				["at0053"] = <
+					text = <"Auswertung">
+					description = <"Hier besteht die Möglichkeit Auswertungen zu definieren, die es zum Barthel Index gibt.">
+				>
+			>
+		>
+	>
