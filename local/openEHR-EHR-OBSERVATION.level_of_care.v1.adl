@@ -1,0 +1,156 @@
+archetype (adl_version=1.4; uid=07151774-5640-48c8-b14f-c193ddd89273)
+	openEHR-EHR-OBSERVATION.level_of_care.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::de]>
+
+description
+	original_author = <
+		["date"] = <"2022-08-17">
+		["name"] = <"Darin Leonhardt">
+		["organisation"] = <"Peter L. Reichertz Institut für Medizinische Informatik">
+		["email"] = <"Leonhardt.Darin@mh-hannover.de">
+	>
+	lifecycle_state = <"published">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Zur Repräsentation des Pflegegrades einer pflegebedürftigen Person in Deutschland.">
+			keywords = <"Pflegegrad, Pflegebedürftigkeit, Pflegestufe", ...>
+			use = <"Zur Repräsentation des vorliegenden Pflegegrades von Personen ab dem vollendeten 11. Lebensjahr in Deutschland.">
+			misuse = <"Nicht zur Repräsentation eines Pflegegrades von Kindern unter zwölf Jahren.
+Nicht für die Berechnung eines Pflegegrades vorgesehen. Für diesen Zweck muss ein anderer Archetyp verwendet werden.
+Nicht zur Repräsentation einer Pflegeleistung/ Pflegegrades im Ausland.
+Nicht für die Evaluation eines Pflegegrades vorgesehen.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Pflegegrade (ohne Datum) Bundesgesundheitsministerium.de. Verfügbar unter: https://www.bundesgesundheitsministerium.de/pflegegrade.html (Zugegriffen: 17. August 2022).
+(Ohne Datum) Medizinischerdienst.de. Verfügbar unter: https://www.medizinischerdienst.de/fileadmin/user_upload/19-05-20_NBI_Pflegebeduerftigkeit_Fach-Info.pdf (Zugegriffen: 17. August 2022).
+§ 15 SGB XI Ermittlung des Grades der Pflegebedürftigkeit, Begutachtungsinstrument (ohne Datum) Sozialgesetzbuch-sgb.de. Verfügbar unter: https://www.sozialgesetzbuch-sgb.de/sgbxi/15.html (Zugegriffen: 13. September 2022).">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"4976B925159AA4F1D936296671F1F9A8">
+		["build_uid"] = <"96313ad8-46bd-486b-a8e6-3cb4b183216a">
+		["revision"] = <"1.0.0">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Pflegegrad
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0014] occurrences matches {0..1} matches {    -- Vorhanden?
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Festgestellter Pflegegrad
+										value matches {
+											1|[local::at0016],
+											2|[local::at0017],
+											3|[local::at0018],
+											4|[local::at0019],
+											5|[local::at0020]
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Kommentar
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0005] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0007] occurrences matches {0..*} matches {    -- Erweiterung
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pflegegrad">
+					description = <"Pflegegrad zur Einstufung von Pflegebedürftigkeit einer Person in Deutschland.">
+					comment = <"Pflegegrade erhalten Menschen, die in ihrer Selbständigkeit und Alltagskompetenz eingeschränkt sind. Das beurteilt der Medizinische Dienst (MD) mithilfe von sechs Modulen.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Standardwert, ein undefinierter/s Zeitpunkt oder Intervallereignis, das explizit im Template oder zur Laufzeit der Anwendung definiert werden kann.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Kommentar">
+					description = <"Zusätzliche Informationen zum Pflegegrad, die in anderen Feldern nicht erfasst wurden.">
+				>
+				["at0007"] = <
+					text = <"Erweiterung">
+					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
+					comment = <"Comment: Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen.">
+				>
+				["at0014"] = <
+					text = <"Vorhanden?">
+					description = <"Liegt ein Pflegegrad vor?">
+					comment = <"Als \"Wahr\" darstellen, wenn ein Pflegegrad vorliegt.">
+				>
+				["at0015"] = <
+					text = <"Festgestellter Pflegegrad">
+					description = <"Zur Repräsentation des Pflegegrades einer Person.">
+				>
+				["at0016"] = <
+					text = <"Pflegegrad 1">
+					description = <"Geringe Beeinträchtigungen der Selbstständigkeit oder der Fähigkeiten (12,5 - 27 Punkte).">
+				>
+				["at0017"] = <
+					text = <"Pflegegrad 2">
+					description = <"Erhebliche Beeinträchtigungen der Selbstständigkeit oder der Fähigkeiten (27 - 47,5 Punkte).">
+				>
+				["at0018"] = <
+					text = <"Pflegegrad 3">
+					description = <"Schwere Beeinträchtigungen der Selbstständigkeit oder der Fähigkeiten (47,5 - 70 Punkte).">
+				>
+				["at0019"] = <
+					text = <"Pflegegrad 4">
+					description = <"Schwerste Beeinträchtigungen der Selbstständigkeit oder der Fähigkeiten (70 - 90 Punkte).">
+				>
+				["at0020"] = <
+					text = <"Pflegegrad 5">
+					description = <"Schwerste Beeinträchtigungen der Selbstständigkeit oder der Fähigkeiten mit besonderen Anforderungen an die pflegerische Versorgung (90 - 100 Punkte).">
+				>
+			>
+		>
+	>
