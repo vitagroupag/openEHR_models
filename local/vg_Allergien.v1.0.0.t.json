@@ -1,0 +1,1534 @@
+{
+  "@type" : "TEMPLATE",
+  "uid" : "b0c6eeeb-52bc-4c3f-bd2f-50383ca12323",
+  "description" : {
+    "@type" : "RESOURCE_DESCRIPTION",
+    "originalAuthor" : {
+      "date" : "2024-01-15"
+    },
+    "otherContributors" : [ ],
+    "lifecycleState" : {
+      "codeString" : "unmanaged"
+    },
+    "ipAcknowledgements" : { },
+    "references" : { },
+    "conversionDetails" : { },
+    "otherDetails" : {
+      "licence" : "",
+      "custodian_organisation" : "",
+      "original_namespace" : "",
+      "original_publisher" : "",
+      "custodian_namespace" : "",
+      "sem_ver" : "0.1.0",
+      "build_uid" : "",
+      "MD5-CAM-1.0.1" : "f84c74b56414991e1af85180dbd47d47",
+      "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
+    },
+    "details" : {
+      "de" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "de"
+        },
+        "purpose" : "Zur Repräsentation von vorhandener Allergien. ",
+        "keywords" : [ "Allergie, Liste, Adverse reaction" ],
+        "use" : "Für die Abbildung von vorhandener Allergien.  ",
+        "misuse" : "",
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "fi" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "fi"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "ko" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ko"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "nb" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "nb"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "es-ar" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "es-ar"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "pt-br" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "pt-br"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "en" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "en"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "sl" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "sl"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "ar-sy" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ar-sy"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "it" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "it"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "nl" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "nl"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      }
+    }
+  },
+  "parentArchetypeId" : "openEHR-EHR-COMPOSITION.report.v1",
+  "differential" : true,
+  "archetypeId" : {
+    "@type" : "ARCHETYPE_HRID",
+    "value" : "openEHR-EHR-COMPOSITION.t_report.v1"
+  },
+  "definition" : {
+    "@type" : "C_COMPLEX_OBJECT",
+    "rmTypeName" : "COMPOSITION",
+    "nodeId" : "at0000.1",
+    "attributes" : [ {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "context",
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "EVENT_CONTEXT",
+        "attributes" : [ ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "content",
+      "existence" : "0..1",
+      "cardinality" : {
+        "@type" : "CARDINALITY",
+        "interval" : "1..*",
+        "ordered" : false,
+        "unique" : false
+      },
+      "children" : [ {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "SECTION",
+        "occurrences" : "0..1",
+        "nodeId" : "at0.8",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-SECTION.ovl-adverse_reaction_list-001.v0",
+        "referenceType" : "archetypeOverlay"
+      } ]
+    } ],
+    "attributeTuples" : [ ]
+  },
+  "terminology" : {
+    "@type" : "ARCHETYPE_TERMINOLOGY",
+    "conceptCode" : "at0000",
+    "termDefinitions" : {
+      "ar-sy" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_Allergien.v1.0.0",
+          "description" : "وثيقة لتوصيل المعلومات للآخرين, عادة كاستجابة لطلب من طرف آخر."
+        }
+      },
+      "sl" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_Allergien.v1.0.0",
+          "description" : "*Document to communicate information to others, commonly in response to a request from another party.(en)"
+        }
+      },
+      "en" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_Allergien.v1.0.0",
+          "description" : "Document to communicate information to others, commonly in response to a request from another party."
+        }
+      },
+      "es-ar" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_Allergien.v1.0.0",
+          "description" : "Documento para comunicar información a otros, comunmente en respuesta a la solicitud de un tercero."
+        }
+      },
+      "pt-br" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_Allergien.v1.0.0",
+          "description" : "Documento para comunicar informações a outros, comumente em resposta a uma solicitação de terceiros."
+        }
+      },
+      "nb" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_Allergien.v1.0.0",
+          "description" : "Dokument som brukes for å kommunisere informasjon til andre, ofte som svar på en forespørsel."
+        }
+      },
+      "de" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_Allergien.v1.0.0",
+          "description" : "Ein Dokument zur Übermittlung von Informationen an andere, meist als Antwort auf eine Anfrage."
+        }
+      },
+      "ko" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_Allergien.v1.0.0",
+          "description" : "일반적으로 다른 상대의 요청에 대한 응답으로, 다른 사람들과 정보를 통신하는 문서."
+        }
+      },
+      "fi" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_Allergien.v1.0.0",
+          "description" : "Asiakirja tiedon välittämiseksi muille, vastauksena yleensä toisen osapuolen pyyntöön."
+        }
+      },
+      "it" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_Allergien.v1.0.0",
+          "description" : "Documento per comunicare informazioni ad altri, comunemente in risposta ad una richiesta di un altro soggetto."
+        }
+      },
+      "nl" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_Allergien.v1.0.0",
+          "description" : "Document om informatie met anderen te communiceren, vaak op verzoek van een andere partij."
+        }
+      }
+    },
+    "termBindings" : { },
+    "terminologyExtracts" : { },
+    "valueSets" : { }
+  },
+  "adlVersion" : "1.4",
+  "buildUid" : "b057d0e0-45b9-3d97-ab87-3004b7f6d386",
+  "rmName" : "openehr",
+  "rmRelease" : "1.1.0",
+  "generated" : true,
+  "templateId" : "vg_Allergien.v1.0.0",
+  "otherMetaData" : { },
+  "templateOverlays" : [ {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "a1c0d5fb-0e17-48f6-9cfd-3a741e394b2e",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "6900D18BA6F2C488398A4E20FFFF54AF"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-SECTION.adverse_reaction_list.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-SECTION.ovl-adverse_reaction_list-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "SECTION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "EVALUATION",
+          "occurrences" : "0..*",
+          "nodeId" : "at0001.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-adverse_reaction_risk-001.v1",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "ru" : { },
+        "pt-br" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "7838dcfa-e0f0-43f3-867d-20a61ef567f9",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ru"
+      },
+      "author" : {
+        "name" : "Art Latyp Латыпов Артур Шамилевич",
+        "organisation" : "RusBITech РусБИТех, Москва",
+        "email" : "alatypov@asteis.net"
+      },
+      "accreditation" : "hmm",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Adriana Kitajima, Débora Farage, Fernanda Maia, Laíse Figueiredo, Marivan Abrahão",
+        "organisation" : "Core Consulting",
+        "email" : "contato@coreconsulting.com.br"
+      },
+      "accreditation" : "Hospital Alemão Oswaldo Cruz (HAOC)",
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "4be2d30c-1c45-4a1a-9b5c-280b13a4eb86",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "835718CE5D40FEE9DCD118D558D5DE75"
+      },
+      "details" : { }
+    },
+    "annotations" : {
+      "@type" : "RESOURCE_ANNOTATIONS",
+      "documentation" : {
+        "en" : {
+          "" : {
+            "source" : "openEHR,FHIR"
+          },
+          "/data[at0001]/items[at0006]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0058.1]" : {
+            "source" : "FHIR, DAM"
+          },
+          "/data[at0001]/items[at0063.1]" : {
+            "source" : "FHIR, DAM"
+          },
+          "/data[at0001]/items[at0101.1]" : {
+            "source" : "DAM, openEHR"
+          },
+          "/protocol[at0042]/items[at0062.1]" : {
+            "source" : "openEHR, FHIR, DAM"
+          },
+          "/protocol[at0042]/items[at0047.1]" : {
+            "source" : "FHIR, openEHR, DAM"
+          },
+          "/protocol[at0042]/items[at0044.1]" : {
+            "source" : "openEHR"
+          },
+          "/protocol[at0042]/items[at0099.1]/items[at0048]" : {
+            "source" : "openEHR"
+          },
+          "/protocol[at0042]/items[at0099.1]/items[at0045]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0032]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]" : {
+            "source" : "openEHR,FHIR,DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0041]" : {
+            "source" : "FHIR, openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0029]" : {
+            "source" : "FHIR, openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0011.1]" : {
+            "source" : "FHIR, openEHR,DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0021.1]" : {
+            "source" : "FHIR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0012.1]" : {
+            "source" : "FHIR, openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0028.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0089.1]" : {
+            "source" : "DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0020.1]" : {
+            "source" : "FHIR, openEHR,DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0025.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0106.1]" : {
+            "source" : "FHIR, DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0018.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0027.1]" : {
+            "source" : "openEHR, FHIR, DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0040.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0010.1]" : {
+            "source" : "FHIR, openEHR,DAM"
+          },
+          "/data[at0001]/items[at0117.1]" : {
+            "source" : "IMH"
+          },
+          "/data[at0001]/items[at0002.1]" : {
+            "SNOMED_CT_code " : "450980007"
+          }
+        },
+        "pt-br" : {
+          "/data[at0001]/items[at0009.1]/items[at0010.1]" : {
+            "source" : "*FHIR, openEHR,DAM(en)"
+          },
+          "/data[at0001]/items[at0002.1]" : {
+            "source" : "*openEHR,FHIR,DAM(en)"
+          }
+        },
+        "nb" : { },
+        "de" : {
+          "" : {
+            "source" : "openEHR, FHIR"
+          },
+          "/data[at0001]/items[at0006]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0058.1]" : {
+            "source" : "FHIR, DAM"
+          },
+          "/data[at0001]/items[at0063.1]" : {
+            "source" : "FHIR, DAM"
+          },
+          "/data[at0001]/items[at0101.1]" : {
+            "source" : "DAM, openEHR"
+          },
+          "/protocol[at0042]/items[at0062.1]" : {
+            "source" : "openEHR, FHIR, DAM"
+          },
+          "/protocol[at0042]/items[at0047.1]" : {
+            "source" : "FHIR, openEHR, DAM"
+          },
+          "/protocol[at0042]/items[at0044.1]" : {
+            "source" : "openEHR"
+          },
+          "/protocol[at0042]/items[at0099.1]/items[at0048]" : {
+            "source" : "openEHR"
+          },
+          "/protocol[at0042]/items[at0099.1]/items[at0045]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0032]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]" : {
+            "source" : "openEHR, FHIR, DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0041]" : {
+            "source" : "FHIR, openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0029]" : {
+            "source" : "FHIR, openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0011.1]" : {
+            "source" : "FHIR, openEHR, DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0021.1]" : {
+            "source" : "FHIR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0012.1]" : {
+            "source" : "FHIR, openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0028.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0089.1]" : {
+            "source" : "DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0020.1]" : {
+            "source" : "FHIR, openEHR, DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0025.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0106.1]" : {
+            "source" : "FHIR, DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0018.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0027.1]" : {
+            "source" : "openEHR, FHIR, DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0040.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0010.1]" : {
+            "source" : "FHIR, openEHR, DAM"
+          },
+          "/data[at0001]/items[at0117.1]" : {
+            "source" : "IMH"
+          },
+          "/data[at0001]/items[at0002.1]" : {
+            "source" : "openEHR, FHIR, DAM"
+          }
+        },
+        "sv" : {
+          "/data[at0001]/items[at0006]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0058.1]" : {
+            "source" : "FHIR, DAM"
+          },
+          "/data[at0001]/items[at0063.1]" : {
+            "source" : "FHIR, DAM"
+          },
+          "/data[at0001]/items[at0101.1]" : {
+            "source" : "DAM, openEHR"
+          },
+          "/protocol[at0042]/items[at0047.1]" : {
+            "source" : "FHIR, openEHR, DAM"
+          },
+          "/protocol[at0042]/items[at0044.1]" : {
+            "source" : "openEHR"
+          },
+          "/protocol[at0042]/items[at0099.1]/items[at0048]" : {
+            "source" : "openEHR"
+          },
+          "/protocol[at0042]/items[at0099.1]/items[at0045]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0032]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]" : {
+            "source" : "openEHR,FHIR,DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0041]" : {
+            "source" : "FHIR, openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0029]" : {
+            "source" : "FHIR, openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0011.1]" : {
+            "source" : "FHIR, openEHR,DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0021.1]" : {
+            "source" : "FHIR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0012.1]" : {
+            "source" : "FHIR, openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0028.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0089.1]" : {
+            "source" : "DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0020.1]" : {
+            "source" : "FHIR, openEHR,DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0025.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0106.1]" : {
+            "source" : "FHIR, DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0018.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0027.1]" : {
+            "source" : "openEHR, FHIR, DAM"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0040.1]" : {
+            "source" : "openEHR"
+          },
+          "/data[at0001]/items[at0009.1]/items[at0010.1]" : {
+            "source" : "FHIR, openEHR,DAM"
+          },
+          "/data[at0001]/items[at0117.1]" : {
+            "source" : "IMH"
+          },
+          "/data[at0001]/items[at0002.1]" : {
+            "source" : "openEHR,FHIR,DAM"
+          }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-EVALUATION.adverse_reaction_risk.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-EVALUATION.ovl-adverse_reaction_risk-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "EVALUATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0002.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0063.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "ac0.3" ],
+                      "selectedTerminologies" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_TEXT",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0101.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "ac0.4" ],
+                      "selectedTerminologies" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0120.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "ac0.2" ],
+                      "selectedTerminologies" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_TEXT",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0117.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_DATE_TIME",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0058.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "ac0.1" ],
+                      "selectedTerminologies" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_TEXT",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..0",
+              "nodeId" : "at0009.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "items",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0010.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0021.1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_CODED_TEXT",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "defining_code",
+                        "children" : [ {
+                          "@type" : "C_TERMINOLOGY_CODE",
+                          "rmTypeName" : "TERMINOLOGY_CODE",
+                          "occurrences" : "1..1",
+                          "terminologyId" : {
+                            "value" : "local"
+                          },
+                          "constraint" : [ "ac0.5" ],
+                          "selectedTerminologies" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0011.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0012.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "nodeId" : "at0027.1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_DATE_TIME",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0028.1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_DURATION",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0089.1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_CODED_TEXT",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "defining_code",
+                        "children" : [ {
+                          "@type" : "C_TERMINOLOGY_CODE",
+                          "rmTypeName" : "TERMINOLOGY_CODE",
+                          "occurrences" : "1..1",
+                          "terminologyId" : {
+                            "value" : "local"
+                          },
+                          "constraint" : [ "ac0.6" ],
+                          "selectedTerminologies" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_TEXT",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0020.1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_DATE_TIME",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0025.1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "DV_DURATION",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0106.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0018.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ELEMENT",
+                  "occurrences" : "0..0",
+                  "nodeId" : "at0040.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0042",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0062.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_DATE_TIME",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0047.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_EHR_URI",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0044.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_BOOLEAN",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..0",
+              "nodeId" : "at0099.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.1",
+            "description" : ""
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.2",
+            "description" : ""
+          },
+          "ac0.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.3",
+            "description" : ""
+          },
+          "ac0.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.4",
+            "description" : ""
+          },
+          "ac0.5" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.5",
+            "description" : ""
+          },
+          "ac0.6" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.6",
+            "description" : ""
+          }
+        },
+        "pt-br" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : ""
+          },
+          "ac0.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.3",
+            "description" : ""
+          },
+          "ac0.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.4",
+            "description" : ""
+          },
+          "ac0.5" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.5",
+            "description" : ""
+          },
+          "ac0.6" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.6",
+            "description" : ""
+          }
+        },
+        "nb" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : ""
+          },
+          "ac0.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.3",
+            "description" : ""
+          },
+          "ac0.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.4",
+            "description" : ""
+          },
+          "ac0.5" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.5",
+            "description" : ""
+          },
+          "ac0.6" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.6",
+            "description" : ""
+          }
+        },
+        "de" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : ""
+          },
+          "ac0.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.3",
+            "description" : ""
+          },
+          "ac0.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.4",
+            "description" : ""
+          },
+          "ac0.5" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.5",
+            "description" : ""
+          },
+          "ac0.6" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.6",
+            "description" : ""
+          }
+        },
+        "sv" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : ""
+          },
+          "ac0.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.3",
+            "description" : ""
+          },
+          "ac0.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.4",
+            "description" : ""
+          },
+          "ac0.5" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.5",
+            "description" : ""
+          },
+          "ac0.6" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.6",
+            "description" : ""
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : {
+        "ac0.1" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.1",
+          "members" : [ "at0059", "at0060", "at0126" ]
+        },
+        "ac0.2" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.2",
+          "members" : [ "at0121", "at0122", "at0123" ]
+        },
+        "ac0.3" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.3",
+          "members" : [ "at0127", "at0064", "at0065", "at0067", "at0066" ]
+        },
+        "ac0.4" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.4",
+          "members" : [ "at0102", "at0103", "at0124" ]
+        },
+        "ac0.5" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.5",
+          "members" : [ "at0095", "at0023", "at0118" ]
+        },
+        "ac0.6" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.6",
+          "members" : [ "at0093", "at0092", "at0090" ]
+        }
+      }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "773f657b-9a49-4e50-bb88-ef1d245b845e",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Emma Malm",
+        "organisation" : "Karolinska Universitetssjukhuset",
+        "email" : "emma.malm@cambio.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "lbla@helse-bergen.no" : "lbla@helse-bergen.no",
+        "name" : "Lars Bitsch-Larsen",
+        "organisation" : "Haukeland University Hospital, Bergen Norway"
+      },
+      "accreditation" : "MD DEAA MBA spec in anesthesia and intensive care, spec in tropical med.",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Osmeire Chamelette Sanzovo",
+        "organisation" : "Hospital Sírio Libanês",
+        "email" : "osmeire.acsanzovo@hsl.org.br"
+      },
+      "otherDetails" : { }
+    } ]
+  } ],
+  "originalLanguage" : {
+    "terminologyId" : {
+      "value" : "ISO_639-1"
+    },
+    "codeString" : "en"
+  },
+  "translations" : [ {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "de"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "fi"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "es-ar"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "nb"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ko"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "pt-br"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "sl"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ar-sy"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "it"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "nl"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  } ]
+}
