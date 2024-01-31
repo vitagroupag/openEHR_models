@@ -1,0 +1,127 @@
+﻿archetype (adl_version=1.4; uid=53b16273-51f2-4b36-875f-b62fbc992e0a)
+	openEHR-EHR-CLUSTER.medication_status_fhir.v0
+
+concept
+	[at0000]	-- FHIR_Medikamentenstatus
+language
+	original_language = <[ISO_639-1::de]>
+description
+	original_author = <
+		["name"] = <"Sarah Ballout">
+		["organisation"] = <"MHH-Hannover">
+		["email"] = <"ballout.sarah@mh-hannover.de">
+		["date"] = <"2021-03-08">
+	>
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Ein Code, der die Beurteilung des Patienten oder einer anderen Beurteilungsquelle über den Status des angewendeten Medikaments darstellt. Im Allgemeinen wird dies aktiv oder abgeschlossen sein.">
+			use = <"Zur Darstellung von Status in einem \"MedicationStatement\".
+
+Ein \"MedicationStatement\" stellt eine Aussage zu einem bestimmten Zeitpunkt dar.
+Der Status ist nur zu dem Zeitpunkt repräsentativ, an dem er geltend gemacht wurde.
+
+Dieses Element enthält Codes, die den Status der Anwendung des Medikaments durch den Patienten angeben (z. B. gestoppt oder angehalten), sowie Codes, die den Status der Aussage über die Anwendung des Medikamentes selbst angeben (z. B. Fehlerhafte Anwendung).
+
+ 
+">
+			keywords = <"Medikation", "Medikamentenstatus", "Status", "FHIR", "Medikationseintrag", "Medikament", "Arzneimittel", "Medication Statement">
+			misuse = <"Nicht zur Darstellung von Status der Verabreichung eines Medikamentes als Prozess.">
+			copyright = <"© HiGHmed">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Antje Wulff", ...>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"HiGHmed">
+		["references"] = <"Medication Status Codes (FHIR-ValueSet) 
+http://hl7.org/fhir/R4/codesystem-medication-statement-status.html">
+		["original_namespace"] = <"org.highmed">
+		["original_publisher"] = <"HiGHmed">
+		["custodian_namespace"] = <"org.highmed">
+		["MD5-CAM-1.0.1"] = <"2707826AABBBC567CFA8708F294904ED">
+		["build_uid"] = <"fc08fc53-a372-4f4b-8d6e-b21dc30ebd43">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- FHIR_Medikamentenstatus
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] matches {    -- Status
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0002,    -- Aktiv
+							at0003,    -- Abgeschlossen
+							at0004,    -- Fehlerhafte Anwendung
+							at0005,    -- Beabsichtigt
+							at0006,    -- Gestoppt
+							at0007,    -- Angehalten
+							at0008,    -- Unbekannt
+							at0009]    -- Nicht genommen
+						}
+					}
+				}
+			}
+			ELEMENT[at0014] occurrences matches {0..*} matches {    -- Kommentar
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"FHIR_Medikamentenstatus">
+					description = <"Ein Code, der die Beurteilung des Patienten oder einer anderen Beurteilungsquelle über den Status des angewendeten Medikaments darstellt, mit dem sich diese Angabe befasst. Im Allgemeinen wird dies aktiv oder abgeschlossen sein.">
+				>
+				["at0001"] = <
+					text = <"Status">
+					description = <"Status der Einnahme des Medikamentes im Verlauf oder nach dem Ende der Therapie bzw. der Nachsorge.">
+				>
+				["at0002"] = <
+					text = <"Aktiv">
+					description = <"Das Medikament wird noch angewendet.">
+				>
+				["at0003"] = <
+					text = <"Abgeschlossen">
+					description = <"Das Medikament wird nicht mehr angewendet.">
+				>
+				["at0004"] = <
+					text = <"Fehlerhafte Anwendung">
+					description = <"Einige der Aktionen, die im Medikation Statement enthalten sind, können bereits stattgefunden haben. Beispielsweise kann der Patient einen Teil der Medikamente eingenommen haben.">
+				>
+				["at0005"] = <
+					text = <"Beabsichtigt">
+					description = <"Die Medikation kann irgendwann in der Zukunft angewendet werden.">
+				>
+				["at0006"] = <
+					text = <"Gestoppt">
+					description = <"Die im Medikation Statement implizierten Aktionen wurden dauerhaft gestoppt, bevor alle von ihnen eingetreten sind. Dies sollte nicht verwendet werden, wenn Medikation Statement versehentlich eingegeben wurde.">
+				>
+				["at0007"] = <
+					text = <"Angehalten">
+					description = <"Die im Medikation Statement implizierten Aktionen wurden vorübergehend gestoppt, werden aber voraussichtlich später fortgesetzt. Kann auch als \"ausgesetzt\" bezeichnet werden.">
+				>
+				["at0008"] = <
+					text = <"Unbekannt">
+					description = <"Der Status des Medikaments ist derzeit nicht bekannt.">
+				>
+				["at0009"] = <
+					text = <"Nicht genommen">
+					description = <"Das Medikament wurde vom Patienten nicht angewendet.">
+				>
+				["at0014"] = <
+					text = <"Kommentar">
+					description = <"Zusätzliche Informationen über die Medikation, die nicht in anderen Bereichen dargestellt wurden.">
+				>
+			>
+		>
+	>
