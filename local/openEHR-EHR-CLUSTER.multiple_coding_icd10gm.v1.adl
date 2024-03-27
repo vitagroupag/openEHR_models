@@ -1,0 +1,131 @@
+archetype (adl_version=1.4; uid=c8b3498d-455e-4440-8221-48a0666040d9)
+	openEHR-EHR-CLUSTER.multiple_coding_icd10gm.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"????">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2022-03-31">
+		["name"] = <"Blanca Flores">
+		["organisation"] = <"Universitätsklinikum Heidelberg">
+		["email"] = <"blanca.floresmarroquin@med.uni-heidelberg.de">
+	>
+	lifecycle_state = <"published">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Zur Darstellung mehrerer Kodierungsmarker für ICD-10-GM-Kodes nach dem Kreuz-Stern-System bzw. für die genauere Spezifikation von Codes für ein bestimmtes gesundheitliches Problem oder eine bestimmte Diagnose.">
+			keywords = <"Mehrfachkodierung, Ätiologie, Manifestation, Kreuz-Stern-System, ICD-10, Genauere Spezifikation, Ausrufezeichen, Mehrfachkodierungskennzeichen, Diagnose, Klassifikation, Kodierung, Verschlüsselung", ...>
+			copyright = <"© HiGHmed">
+			use = <"Verwenden Sie diesen Archetyp, um mehrere Kodierungsmarker für Diagnosen in ICD-10-GM Terminologie darzustellen.
+
+Dieser Cluster-Archetyp ist dafür vorgesehen, in Archetypen der Familie Problem/Diagnose im Slot für die die zusätzliche Details aufgenommen zu werden.">
+			misuse = <"Darf nicht zur Darstellung von Mehrfachkodierungskennzeichen für andere Terminologien als ICD-10-GM verwendet werden.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To represent multiple coding markers for ICD-10-GM codes using the Cross-Star system for a specific health problem or diagnosis.">
+			keywords = <"Multiple coding, Double coding, Aetiology, Manifestation, Cross-Star system, Coding, ICD-10, Multiple coding identifiers, Diagnosis, Classification.", ...>
+			copyright = <"© HiGHmed">
+			use = <"Use this archetype to represent multiple coding markers for diagnoses in ICD-10-GM terminology.
+
+This cluster archetype is intended to be included in archetypes of the Problem/Diagnosis family in the additional details slot.">
+			misuse = <"May not be used to represent multiple coding codes for terminologies other than ICD-10-GM.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"HiGHmed">
+		["references"] = <"https://simplifier.net/medizininformatikinitiative-moduldiagnosen; https://www.dimdi.de
+
+">
+		["original_namespace"] = <"org.highmed">
+		["original_publisher"] = <"HiGHmed">
+		["custodian_namespace"] = <"org.highmed">
+		["MD5-CAM-1.0.1"] = <"C5D8EBC78308C8803FE9363B3F191CA7">
+		["build_uid"] = <"6a432256-0bd1-40c8-868c-df5a2ac0ef40">
+		["revision"] = <"1.1.0">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Multiple_coding_ICD-10-GM
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Multiple coding identifier
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0002,    -- †
+							at0003,    -- *
+							at0004]    -- !
+						}
+					}
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Multiple_coding_ICD-10-GM">
+					description = <"Additional codes for postcoordinated ICD-10-GM codes according to the Cross-Star system.">
+				>
+				["at0001"] = <
+					text = <"Multiple coding identifier">
+					description = <"ICD-10 GM additional codes according to cross-star system">
+				>
+				["at0002"] = <
+					text = <"†">
+					description = <"Aetiology">
+				>
+				["at0003"] = <
+					text = <"*">
+					description = <"Manifestation">
+				>
+				["at0004"] = <
+					text = <"!">
+					description = <"Additional information">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Mehrfachkodierungskennzeichen_ICD-10-GM">
+					description = <"Zusatzkennzeichen für postkoordinierte ICD-10-GM-Kodes.">
+				>
+				["at0001"] = <
+					text = <"Mehrfachkodierungkennzeichen">
+					description = <"ICD-10 GM Zusatzkennzeichen nach Kreuz-Stern-System.">
+				>
+				["at0002"] = <
+					text = <"†">
+					description = <"Ätiologie.">
+				>
+				["at0003"] = <
+					text = <"*">
+					description = <"Manifestation.">
+				>
+				["at0004"] = <
+					text = <"!">
+					description = <"Zusatzinformation.">
+				>
+			>
+		>
+	>
