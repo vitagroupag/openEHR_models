@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "1.0.0",
+      "sem_ver" : "1.0.1",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "cdc02c1b78ba5b95f2f011b9944f7e83",
+      "MD5-CAM-1.0.1" : "72a7c188e6ee86de64dc3a37d7e8820c",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -280,7 +280,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "vg_procedure.v1.0.0",
+          "text" : "vg_procedure.v1.0.1",
           "description" : "Ein Dokument zur Übermittlung von Informationen an andere, meist als Antwort auf eine Anfrage."
         }
       },
