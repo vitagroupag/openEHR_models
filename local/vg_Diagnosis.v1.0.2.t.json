@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "3.1.0",
+      "sem_ver" : "4.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "a8782b6490be5f14a991598ba3dc013e",
+      "MD5-CAM-1.0.1" : "86009ce46ac7bcc5c9385bda970b80c7",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -4308,7 +4308,7 @@
                   "selectedTerminologies" : [ "http://terminology.hl7.org/CodeSystem/condition-clinical" ],
                   "includedExternalTerminologyCodes" : [ {
                     "terminologyId" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                    "code" : "Active",
+                    "code" : "active",
                     "value" : "Active"
                   }, {
                     "terminologyId" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
@@ -4316,19 +4316,19 @@
                     "value" : "Recurrence"
                   }, {
                     "terminologyId" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                    "code" : "Relapse",
+                    "code" : "relapse",
                     "value" : "Relapse"
                   }, {
                     "terminologyId" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                    "code" : "Inactive",
+                    "code" : "inactive",
                     "value" : "Inactive"
                   }, {
                     "terminologyId" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                    "code" : "Remission",
+                    "code" : "remission",
                     "value" : "Remission"
                   }, {
                     "terminologyId" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                    "code" : "Resolved",
+                    "code" : "resolved",
                     "value" : "Resolved"
                   } ]
                 } ]
