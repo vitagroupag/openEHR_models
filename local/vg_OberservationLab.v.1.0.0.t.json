@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "1.0.0",
+      "sem_ver" : "2.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "d8c5e4d8dfaabbd25fffdb601d1f4c0b",
+      "MD5-CAM-1.0.1" : "c7031155384aeebeffca44776e6b844e",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -529,6 +529,78 @@
                     "children" : [ {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0073.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_CODED_TEXT",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "defining_code",
+                            "children" : [ {
+                              "@type" : "C_TERMINOLOGY_CODE",
+                              "rmTypeName" : "TERMINOLOGY_CODE",
+                              "occurrences" : "1..1",
+                              "terminologyId" : {
+                                "value" : "http://hl7.org/fhir/observation-status"
+                              },
+                              "constraint" : [ ],
+                              "selectedTerminologies" : [ "http://hl7.org/fhir/observation-status" ],
+                              "includedExternalTerminologyCodes" : [ {
+                                "terminologyId" : "http://hl7.org/fhir/observation-status",
+                                "code" : "registered",
+                                "value" : "Registered"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/observation-status",
+                                "code" : "preliminary",
+                                "value" : "Preliminary"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/observation-status",
+                                "code" : "final",
+                                "value" : "Final"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/observation-status",
+                                "code" : "amended",
+                                "value" : "Amended"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/observation-status",
+                                "code" : "corrected",
+                                "value" : "Corrected"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/observation-status",
+                                "code" : "cancelled",
+                                "value" : "Cancelled"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/observation-status",
+                                "code" : "entered-in-error",
+                                "value" : "Entered in Error"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/observation-status",
+                                "code" : "unknown",
+                                "value" : "Unknown"
+                              } ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0077.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
                       "occurrences" : "0..0",
                       "nodeId" : "at0098.1",
                       "attributes" : [ ],
@@ -584,16 +656,7 @@
               "rmTypeName" : "ELEMENT",
               "occurrences" : "0..0",
               "nodeId" : "at0111.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_BOOLEAN",
-                  "attributes" : [ ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             } ]
           } ],
@@ -618,7 +681,23 @@
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
-      "valueSets" : { }
+      "valueSets" : {
+        "ac0.2" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.2",
+          "members" : [ "at0107", "at0037", "at0120", "at0038", "at0040", "at0115", "at0119", "at0074", "at0116" ]
+        },
+        "ac0.3" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.3",
+          "members" : [ ]
+        },
+        "ac0.4" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.4",
+          "members" : [ ]
+        }
+      }
     },
     "adlVersion" : "1.4",
     "buildUid" : "7ed9a9d7-c2b7-47e7-8777-4afc3cff28a9",
@@ -1083,7 +1162,19 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ ],
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "at0015", "at0016", "at0017", "at0018", "at0020", "at0019", "at0021", "at0023", "at0022" ]
+                } ]
+              } ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
