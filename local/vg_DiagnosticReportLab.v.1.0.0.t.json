@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "1.0.0",
+      "sem_ver" : "2.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "aeace85ba33c85750f317096174936b0",
+      "MD5-CAM-1.0.1" : "6e7677e1dbef18fb319edbd3b4260ba1",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -472,26 +472,26 @@
       "@type" : "RESOURCE_ANNOTATIONS",
       "documentation" : {
         "ar-sy" : {
-          "/data[at0001]/events[at0002]/data[at0003]/items[at0100]" : {
+          "/data[at0001]/events[at0002.1]/data[at0003]/items[at0100]" : {
             "fhir_mapping" : "*DiagnosticReport.requestDetail.clinicalNotes(en)"
           },
-          "/data[at0001]/events[at0002]/data[at0003]/items[at0057]" : {
+          "/data[at0001]/events[at0002.1]/data[at0003]/items[at0057]" : {
             "fhir_mapping" : "*DiagnosticReport.conclusion(en)"
           },
-          "/data[at0001]/events[at0002]/data[at0003]/items[at0118]" : {
+          "/data[at0001]/events[at0002.1]/data[at0003]/items[at0118]" : {
             "fhir_mapping" : "*DiagnosticReport.presentedForm(en)"
           }
         },
         "en" : { },
         "nb" : { },
         "zh-cn" : {
-          "/data[at0001]/events[at0002]/data[at0003]/items[at0100]" : {
+          "/data[at0001]/events[at0002.1]/data[at0003]/items[at0100]" : {
             "fhir_mapping" : "*DiagnosticReport.requestDetail.clinicalNotes(en)"
           },
-          "/data[at0001]/events[at0002]/data[at0003]/items[at0057]" : {
+          "/data[at0001]/events[at0002.1]/data[at0003]/items[at0057]" : {
             "fhir_mapping" : "*DiagnosticReport.conclusion(en)"
           },
-          "/data[at0001]/events[at0002]/data[at0003]/items[at0118]" : {
+          "/data[at0001]/events[at0002.1]/data[at0003]/items[at0118]" : {
             "fhir_mapping" : "*DiagnosticReport.presentedForm(en)"
           }
         },
@@ -525,7 +525,7 @@
             "children" : [ {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "EVENT",
-              "nodeId" : "at0002",
+              "nodeId" : "at0002.1",
               "attributes" : [ {
                 "@type" : "C_ATTRIBUTE",
                 "rmAttributeName" : "data",
@@ -566,6 +566,80 @@
                               } ]
                             } ]
                           } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0073.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_CODED_TEXT",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "defining_code",
+                            "children" : [ {
+                              "@type" : "C_TERMINOLOGY_CODE",
+                              "rmTypeName" : "TERMINOLOGY_CODE",
+                              "occurrences" : "1..1",
+                              "terminologyId" : {
+                                "value" : "http://hl7.org/fhir/diagnostic-report-status"
+                              },
+                              "constraint" : [ ],
+                              "selectedTerminologies" : [ "http://hl7.org/fhir/diagnostic-report-status" ],
+                              "includedExternalTerminologyCodes" : [ {
+                                "terminologyId" : "http://hl7.org/fhir/diagnostic-report-status",
+                                "code" : "registered",
+                                "value" : "Registered"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/diagnostic-report-status",
+                                "code" : "partial",
+                                "value" : "Partial"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/diagnostic-report-status",
+                                "code" : "preliminary",
+                                "value" : "Preliminary"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/diagnostic-report-status",
+                                "code" : "final",
+                                "value" : "Final"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/diagnostic-report-status",
+                                "code" : "amended",
+                                "value" : "Amended"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/diagnostic-report-status",
+                                "code" : "corrected",
+                                "value" : "Corrected"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/diagnostic-report-status",
+                                "code" : "appended",
+                                "value" : "Appended"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/diagnostic-report-status",
+                                "code" : "cancelled",
+                                "value" : "Cancelled"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/diagnostic-report-status",
+                                "code" : "entered-in-error",
+                                "value" : "Entered in Error"
+                              }, {
+                                "terminologyId" : "http://hl7.org/fhir/diagnostic-report-status",
+                                "code" : "unknown",
+                                "value" : "Unknown"
+                              } ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "attributes" : [ ],
                           "attributeTuples" : [ ]
                         } ]
                       } ],
@@ -768,7 +842,23 @@
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
-      "valueSets" : { }
+      "valueSets" : {
+        "ac0.2" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.2",
+          "members" : [ "at0107", "at0037", "at0120", "at0038", "at0040", "at0115", "at0119", "at0074", "at0116" ]
+        },
+        "ac0.3" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.3",
+          "members" : [ ]
+        },
+        "ac0.4" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.4",
+          "members" : [ ]
+        }
+      }
     },
     "adlVersion" : "1.4",
     "buildUid" : "7ed9a9d7-c2b7-47e7-8777-4afc3cff28a9",
