@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "4.0.0",
+      "sem_ver" : "5.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "962a076b39b9c16539fb84ed7a39304c",
+      "MD5-CAM-1.0.1" : "f7238f6642e7d5ba29d30d6bc36d4e4b",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -555,12 +555,12 @@
                               "rmTypeName" : "TERMINOLOGY_CODE",
                               "occurrences" : "0..1",
                               "terminologyId" : {
-                                "value" : "Laboratory report"
+                                "value" : "http://loinc.org"
                               },
                               "constraint" : [ ],
-                              "selectedTerminologies" : [ "Laboratory report" ],
+                              "selectedTerminologies" : [ "http://loinc.org" ],
                               "includedExternalTerminologyCodes" : [ {
-                                "terminologyId" : "Laboratory report",
+                                "terminologyId" : "http://loinc.org",
                                 "code" : "11502-2",
                                 "value" : "Laboratory report"
                               } ]
