@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "6.0.0",
+      "sem_ver" : "6.1.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "4bba543b58b40b5e25aa18bd7d4966fd",
+      "MD5-CAM-1.0.1" : "e9aea0e8475249726579368d620a2352",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -235,7 +235,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "vg_laboratory_test_result.v.1.1.0",
+          "text" : "vg_DiagnosticReportLab.v1.1.1",
           "description" : "Document to communicate information to others, commonly in response to a request from another party."
         }
       },
