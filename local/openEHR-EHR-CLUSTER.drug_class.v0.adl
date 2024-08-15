@@ -1,0 +1,116 @@
+archetype (adl_version=1.4; uid=f787ba05-e895-46ff-bf6f-07def085b8f6)
+	openEHR-EHR-CLUSTER.drug_class.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::de]>
+
+description
+	original_author = <
+		["date"] = <"2020-01-30">
+		["name"] = <"Kim Sommer">
+		["organisation"] = <"Medizinische Hochschule Hannover">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Dieser Archetyp dient der Einordnung eines Arzneimittels in eine Gruppe, Klasse oder Kategorie.">
+			keywords = <"Arzneimittelgruppe","Arzneimittel","Medikation","Gruppe","Kategorie","Klasse","Klassifizierung","Klassifikation","Medikament","Medikamentengruppe">
+			copyright = <"© HiGHmed">
+			use = <"Zur Darstellung der Einordnung eines Arzneimittels, welches in dem übergeordneten Archetyp angegeben wurde, in eine Gruppe, Klasse oder Kategorie z.B. nach Wirkstoff, Indikation oder anderen Ordnungszwecken.
+
+Dieser Archetyp kann im Slot \"Arzneimitteldetails\" innerhalb INSTRUCTION.medication_order und ACTION.medication oder im Slot \"Strukturierte Angaben\" innerhalb CLUSTER.medication verwendet werden.
+
+In Deutschland existieren verschiedene Kataloge, sogenannte Arzneimittelverzeichnisse wie z.B. die Rote Liste und die Gelbe Liste, die verfügbare Medikamente auflisten. Die Medikamente sind dabei in Gruppen untergliedert, die in diesem Archetyp erfasst werden können. (Beispiel aus der Roten Liste: Arzneimittel = Aspirin® Complex  Granulat, Gruppe = Andere Kombinationen mit Acetylsalicylsäure, Code = 05.1.B.2.2.1.3)
+
+Zusätzlich kann dieser Archetyp auch für intern verwendete Arzneimittelklassen verwendet werden.
+
+Auch die Einordnung in ein Klassifikationssystem, wie z.B. das von der Weltgesundheitsorganisation koordinierte Anatomisch-Therapeutisch-Chemische (ATC) Klassifikationssystem, ist mit diesem Archetyp möglich, die Kodierung mit einer Terminologie, im übergeordneten Archetyp wird aber bevorzugt.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"HiGHmed">
+		["original_namespace"] = <"org.highmed">
+		["original_publisher"] = <"HiGHmed">
+		["custodian_namespace"] = <"org.highmed">
+		["MD5-CAM-1.0.1"] = <"014E566E2D6FA001BE95EAA621A78F3A">
+		["build_uid"] = <"5ddfb6e5-6353-4fd3-be5d-b11087eeb315">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Arzneimittelgruppe
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Name
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0004] occurrences matches {0..1} matches {    -- Katalog
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Katalogname
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Version
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {    -- Beschreibung
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Kommentar
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Arzneimittelgruppe">
+					description = <"Zur Einordnung eines Arzneimittels in eine Gruppe, Klasse oder Kategorie.">
+				>
+				["at0001"] = <
+					text = <"Name">
+					description = <"Name der Arzneimittelgruppe.">
+				>
+				["at0002"] = <
+					text = <"Katalogname">
+					description = <"Name des verwendeten Katalogs oder Verzeichnisses.">
+					comment = <"Bekannte Arzneimittelverzeichnisse in Deutschland sind u.a. die Rote Liste, die Gelbe Liste oder die Lauer-Taxe.">
+				>
+				["at0004"] = <
+					text = <"Katalog">
+					description = <"Hier können Arzneimittelverzeichnisse, sowie intern verwendete Kataloge angegeben werden.">
+				>
+				["at0005"] = <
+					text = <"Version">
+					description = <"Versionsnummer des verwendeten Katalogs oder Verzeichnisses.">
+				>
+				["at0007"] = <
+					text = <"Kommentar">
+					description = <"Zur Dokumentation von zusätzlichen Informationen über die Einordnung des Arzneimittels in eine Gruppe, Klasse oder Kategorie, die nicht in anderen Feldern erfasst wurden.">
+				>
+				["at0010"] = <
+					text = <"Beschreibung">
+					description = <"Zusätzliche Beschreibung um charakteristische Merkmale des verwendeten Katalogs oder Verzeichnisses zu erfassen.">
+					comment = <"Hier können z.B. Referenzen, wie eine offizielle Webseite oder Literatur angegeben werden.">
+				>
+			>
+		>
+	>
