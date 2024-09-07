@@ -6,6 +6,13 @@ concept
 
 language
 	original_language = <[ISO_639-1::de]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+	>
 
 description
 	original_author = <
@@ -16,6 +23,10 @@ description
 		["de"] = <
 			language = <[ISO_639-1::de]>
 		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -23,7 +34,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"4935ad87fc310b87b47e756f8f43e555">
+		["MD5-CAM-1.0.1"] = <"a761d4056cd5f55f04ad36b3950c803b">
 		["build_uid"] = <"b6f3164b-745e-3ea7-90af-364159e3a4f9">
 	>
 
@@ -61,6 +72,17 @@ definition
 					allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Gerät
 						include
 							archetype_id/value matches {/.*|openEHR-EHR-CLUSTER\.device\.v1/}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {    -- Messmethode
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0010,    -- *Bioelektrischen Impedanzanalyse (en)
+									at0011]    -- *Dual Energy X-ray Absorptiometry (en)
+								}
+							}
+						}
 					}
 				}
 			}
@@ -102,6 +124,66 @@ ontology
 				["at0008"] = <
 					text = <"Gerät">
 					description = <"">
+				>
+				["at0009"] = <
+					text = <"Messmethode">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"*Bioelektrischen Impedanzanalyse (en)">
+					description = <"*Bioelektrischen Impedanzanalyse (en)">
+				>
+				["at0011"] = <
+					text = <"*Dual Energy X-ray Absorptiometry (en)">
+					description = <"*Dual Energy X-ray Absorptiometry (en)">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Body Fat Percentage">
+					description = <"*body_fat_percentage (de)">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Body fat percentage">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Comment">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0008"] = <
+					text = <"Device">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Method">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Bioelektrischen Impedanzanalyse">
+					description = <"Bioelektrischen Impedanzanalyse">
+				>
+				["at0011"] = <
+					text = <"Dual Energy X-ray Absorptiometry">
+					description = <"Dual Energy X-ray Absorptiometry">
 				>
 			>
 		>
