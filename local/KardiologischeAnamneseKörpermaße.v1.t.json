@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "3.0.0",
+      "sem_ver" : "3.0.1",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "e1490a0f51621c63f7e9fe1825cff88e",
+      "MD5-CAM-1.0.1" : "061a238ee894f7fe052e084ab8a840e4",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -3095,7 +3095,7 @@
           "@type" : "C_ARCHETYPE_ROOT",
           "rmTypeName" : "OBSERVATION",
           "occurrences" : "0..1",
-          "nodeId" : "at0.20",
+          "nodeId" : "at0.28",
           "attributes" : [ ],
           "attributeTuples" : [ ],
           "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-body_weight-001.v2",
@@ -3104,7 +3104,7 @@
           "@type" : "C_ARCHETYPE_ROOT",
           "rmTypeName" : "OBSERVATION",
           "occurrences" : "0..1",
-          "nodeId" : "at0.22",
+          "nodeId" : "at0.30",
           "attributes" : [ ],
           "attributeTuples" : [ ],
           "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-body_fat_percentage-001.v0",
@@ -3594,7 +3594,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "80b761e9-46be-449b-8dcf-ad3960d70a6c",
+    "uid" : "58f96f24-08bd-4577-88f8-6a5f6cb65068",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -4057,7 +4057,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "09853bb1-3b04-464b-ae00-3b0f40c195ee",
+    "uid" : "dbd14844-7923-44d4-8ce6-0d292dfade5b",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -4087,7 +4087,8 @@
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000",
       "termDefinitions" : {
-        "de" : { }
+        "de" : { },
+        "en" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -4105,7 +4106,17 @@
       },
       "codeString" : "de"
     },
-    "translations" : [ ]
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "en"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    } ]
   } ],
   "originalLanguage" : {
     "terminologyId" : {
