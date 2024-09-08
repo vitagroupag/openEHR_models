@@ -1,0 +1,546 @@
+archetype (adl_version=1.4; uid=dd095e74-c55c-4458-aa81-21ccef21f5d5)
+	openEHR-EHR-OBSERVATION.tinetti_mobility_test.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::de]>
+
+description
+	original_author = <
+		["date"] = <"2020-10-16">
+		["name"] = <"Bianca Frenzel">
+		["organisation"] = <"Medizinische Hochschule Hannover">
+		["email"] = <"Frenzel.Bianca@mh-hannover.de">
+	>
+	lifecycle_state = <"published">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Der Motilitätstest nach Tinetti (1986) wird verwendet, um die Motilität eines älteren Patienten und das damit assoziierte Sturzrisiko zu erfassen.">
+			keywords = <"Tinetti","geriatrisches Assessment","Sturzrisiko","Sturz","Motilitätstest">
+			copyright = <"© HiGHmed">
+			use = <"Dieser Archetyp wird verwendet, um einen Fragebogen darzustellen, der die Motilität eines älteren Patienten und das damit assoziierte Sturzrisiko erfasst.">
+			misuse = <"Dieser Archetyp darf nicht zur Dokumentation von anderen Sturzrisiko Tests, wie z. B. der Chair-Rising-Test oder Timed Up And Go verwendet werden.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"HiGHmed">
+		["references"] = <"Tinetti ME. Performance-oriented assessment of mobility problems in elderly patients. J Am Geriatr Soc 1986;34:119-126">
+		["original_namespace"] = <"org.highmed">
+		["original_publisher"] = <"HiGHmed">
+		["custodian_namespace"] = <"org.highmed">
+		["MD5-CAM-1.0.1"] = <"ED3257CFC8A2F8091027E3E6014AC2FB">
+		["build_uid"] = <"3b40872f-f768-49d8-bbc2-441f47f6e554">
+		["revision"] = <"1.0.3">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Motilitätstest nach Tinetti
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {    -- Jedes Ereignis
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Baum
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0008] occurrences matches {0..1} matches {    -- Teil 1: Balancetest
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0004] occurrences matches {0..1} matches {    -- Gleichgewicht im Sitzen
+												value matches {
+													0|[local::at0005],
+													1|[local::at0006]
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..1} matches {    -- Aufstehen vom Stuhl
+												value matches {
+													0|[local::at0010],
+													1|[local::at0011],
+													2|[local::at0012],
+													3|[local::at0013],
+													4|[local::at0014]
+												}
+											}
+											ELEMENT[at0016] occurrences matches {0..1} matches {    -- Balance in den ersten 5 Sekunden
+												value matches {
+													0|[local::at0017],
+													1|[local::at0018],
+													2|[local::at0019]
+												}
+											}
+											ELEMENT[at0021] occurrences matches {0..1} matches {    -- Stehsicherheit
+												value matches {
+													0|[local::at0022],
+													1|[local::at0023],
+													2|[local::at0024]
+												}
+											}
+											ELEMENT[at0026] occurrences matches {0..1} matches {    -- Balance mit geschlossenen Augen
+												value matches {
+													0|[local::at0027],
+													1|[local::at0028]
+												}
+											}
+											ELEMENT[at0030] occurrences matches {0..1} matches {    -- Drehung um 360° mit offenen Augen
+												value matches {
+													0|[local::at0031],
+													1|[local::at0032],
+													2|[local::at0033]
+												}
+											}
+											ELEMENT[at0035] occurrences matches {0..1} matches {    -- Stoß gegen die Brust (3x leicht)
+												value matches {
+													0|[local::at0036],
+													1|[local::at0037],
+													2|[local::at0038]
+												}
+											}
+											ELEMENT[at0040] occurrences matches {0..1} matches {    -- Hinsetzen
+												value matches {
+													0|[local::at0041],
+													1|[local::at0042]
+												}
+											}
+											ELEMENT[at0044] occurrences matches {0..1} matches {    -- Punkte Balancetest
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..15|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0047] occurrences matches {0..1} matches {    -- Teil 2: Gehprobe
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0048] occurrences matches {0..1} matches {    -- Schrittauslösung
+												value matches {
+													0|[local::at0049],
+													1|[local::at0050],
+													2|[local::at0051]
+												}
+											}
+											ELEMENT[at0053] occurrences matches {0..1} matches {    -- Schritthöhe
+												value matches {
+													0|[local::at0054],
+													1|[local::at0055],
+													2|[local::at0056]
+												}
+											}
+											ELEMENT[at0058] occurrences matches {0..1} matches {    -- Schrittlänge
+												value matches {
+													1|[local::at0059],
+													2|[local::at0060]
+												}
+											}
+											ELEMENT[at0061] occurrences matches {0..1} matches {    -- Schrittsymmetrie
+												value matches {
+													0|[local::at0062],
+													1|[local::at0063]
+												}
+											}
+											ELEMENT[at0066] occurrences matches {0..1} matches {    -- Gangkontinuität
+												value matches {
+													0|[local::at0067],
+													1|[local::at0068],
+													2|[local::at0069]
+												}
+											}
+											ELEMENT[at0071] occurrences matches {0..1} matches {    -- Wegabweichung
+												value matches {
+													0|[local::at0072],
+													1|[local::at0073],
+													2|[local::at0074]
+												}
+											}
+											ELEMENT[at0076] occurrences matches {0..1} matches {    -- Rumpfstabilität
+												value matches {
+													0|[local::at0077],
+													1|[local::at0078]
+												}
+											}
+											ELEMENT[at0080] occurrences matches {0..1} matches {    -- Schrittbreite
+												value matches {
+													0|[local::at0081],
+													1|[local::at0082]
+												}
+											}
+											ELEMENT[at0084] occurrences matches {0..1} matches {    -- Punkte Gehprobe
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..13|}
+													}
+												}
+											}
+										}
+									}
+									ELEMENT[at0085] occurrences matches {0..1} matches {    -- Gesamtpunktzahl
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..28|}
+											}
+										}
+									}
+									ELEMENT[at0089] occurrences matches {0..1} matches {    -- Auswertung
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0090,    -- 0-9 Punkte
+													at0091,    -- 10-14 Punkte
+													at0092,    -- 15-19 Punkte
+													at0093,    -- 20-27 Punkte
+													at0094]    -- 28 Punkte
+												}
+											}
+										}
+									}
+									ELEMENT[at0088] occurrences matches {0..1} matches {    -- Bemerkungen
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0046] occurrences matches {0..*} matches {    -- Hilfsmittel
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0086] matches {    -- Baum
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0087] occurrences matches {0..*} matches {    -- Erweiterungen
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Motilitätstest nach Tinetti">
+					description = <"Performancetest zur Prüfung von Balance und Gang.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Jedes Ereignis">
+					description = <"Standardwert, ein undefinierter/s Zeitpunkt oder Intervallereignis, das explizit im Template oder zur Laufzeit der Anwendung definiert werden kann.">
+				>
+				["at0003"] = <
+					text = <"Baum">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Gleichgewicht im Sitzen">
+					description = <"Gleichgewicht im Sitzen.">
+				>
+				["at0005"] = <
+					text = <"Unsicher">
+					description = <"Gleichgewicht im Sitzen ist unsicher.">
+				>
+				["at0006"] = <
+					text = <"Sicher, stabil">
+					description = <"Gleichgewicht im Sitzen ist stabil.">
+				>
+				["at0008"] = <
+					text = <"Teil 1: Balancetest">
+					description = <"1. Balancetest.">
+				>
+				["at0009"] = <
+					text = <"Aufstehen vom Stuhl">
+					description = <"Aufstehen vom Stuhl.">
+				>
+				["at0010"] = <
+					text = <"Nicht möglich">
+					description = <"Aufstehen vom Stuhl nicht möglich.">
+				>
+				["at0011"] = <
+					text = <"Nur mit Hilfe">
+					description = <"Aufstehen vom Stuhl nur mit Hilfe möglich.">
+				>
+				["at0012"] = <
+					text = <"Diverse Versuche, rutscht nach vorn">
+					description = <"Aufstehen vom Stuhl nur nach mehreren Versuchen möglich.">
+				>
+				["at0013"] = <
+					text = <"Braucht Armlehne oder Halt (nur ein Versuch)">
+					description = <"Aufstehen vom Stuhl klappt mit Armlehne beim ersten Versuch.">
+				>
+				["at0014"] = <
+					text = <"In einer fließenden Bewegung">
+					description = <"Aufstehen vom Stuhl klappt in einer fließenden Bewegung.">
+				>
+				["at0016"] = <
+					text = <"Balance in den ersten 5 Sekunden">
+					description = <"Balance in den ersten 5 Sekunden.">
+				>
+				["at0017"] = <
+					text = <"Unsicher">
+					description = <"Balance ist in den ersten 5 Sekunden unsicher.">
+				>
+				["at0018"] = <
+					text = <"Sicher, mit Halt">
+					description = <"Balance ist in den ersten 5 Sekunden mit Halt sicher.">
+				>
+				["at0019"] = <
+					text = <"Sicher, ohne Halt">
+					description = <"Balance ist in den ersten 5 Sekunden sicher.">
+				>
+				["at0021"] = <
+					text = <"Stehsicherheit">
+					description = <"Stehsicherheit.">
+				>
+				["at0022"] = <
+					text = <"Unsicher">
+					description = <"Unsichere Stehsicherheit.">
+				>
+				["at0023"] = <
+					text = <"Sicher, aber ohne geschlossene Füße">
+					description = <"Sichere Stehsicherheit, aber ohne geschlossenen Füße.">
+				>
+				["at0024"] = <
+					text = <"Sicher, mit geschlossenen Füßen">
+					description = <"Sichere Stehsicherheit.">
+				>
+				["at0026"] = <
+					text = <"Balance mit geschlossenen Augen">
+					description = <"Balance mit geschlossenen Augen.">
+				>
+				["at0027"] = <
+					text = <"Unsicher">
+					description = <"Balance mit geschlossenen Augen ist unsicher.">
+				>
+				["at0028"] = <
+					text = <"Sicher, ohne Halt">
+					description = <"Sichere Balance mit geschlossenen Augen.">
+				>
+				["at0030"] = <
+					text = <"Drehung um 360° mit offenen Augen">
+					description = <"Drehung um 360° mit offenen Augen.">
+				>
+				["at0031"] = <
+					text = <"Unsicher, braucht Hilfe">
+					description = <"Drehung erfolgt unsicher und es wird Hilfe benötigt.">
+				>
+				["at0032"] = <
+					text = <"Diskontinuierliche Bewegung, beide Füße am Boden vor dem nächsten Schritt">
+					description = <"Drehung erfolgt diskontinuierlich, beide Füße sind vor dem nächsten Schritt am Boden.">
+				>
+				["at0033"] = <
+					text = <"Kontinuierliche Bewegung, sicher">
+					description = <"Sichere Drehung.">
+				>
+				["at0035"] = <
+					text = <"Stoß gegen die Brust (3x leicht)">
+					description = <"Stoß gegen die Brust (3x leicht).">
+				>
+				["at0036"] = <
+					text = <"Würde ohne Hilfe oder Halt fallen">
+					description = <"Bei einem Stoß gegen die Brust würde Person ohne Hilfe oder Halt fallen.">
+				>
+				["at0037"] = <
+					text = <"Muss Füße bewegen, behält aber Balance">
+					description = <"Bei einem Stoß gegen die Brust muss die Person die Füße bewegen, hält aber die Balance.">
+				>
+				["at0038"] = <
+					text = <"Gibt sicheren Widerstand">
+					description = <"Person gibt sicheren Widerstand bei einem Stoß gegen die Brust.">
+				>
+				["at0040"] = <
+					text = <"Hinsetzen">
+					description = <"Hinsetzen.">
+				>
+				["at0041"] = <
+					text = <"Lässt sich plumpsen, unzentriert, braucht Lehne">
+					description = <"Beim Hinsetzen lässt Person sich plumpsen, braucht Lehne oder landet unzentriert.">
+				>
+				["at0042"] = <
+					text = <"Flüssige Bewegung">
+					description = <"Flüssige Bewegung beim Hinsetzen.">
+				>
+				["at0044"] = <
+					text = <"Punkte Balancetest">
+					description = <"Punkte Balancetest.">
+				>
+				["at0046"] = <
+					text = <"Hilfsmittel">
+					description = <"Hilfsmittel, die während des Tests verwendet wurden.">
+				>
+				["at0047"] = <
+					text = <"Teil 2: Gehprobe">
+					description = <"Teil 2 Gehprobe.">
+				>
+				["at0048"] = <
+					text = <"Schrittauslösung">
+					description = <"Schrittauslösung.">
+				>
+				["at0049"] = <
+					text = <"Gehen ohne fremde Hilfe nicht möglich">
+					description = <"Ohne fremde Hilfe ist die Schrittauslösung nicht möglich.">
+				>
+				["at0050"] = <
+					text = <"Zögert, mehrere Versuche, stockender Beginn">
+					description = <"Schrittauslösung nur verzögert und stockender Beginn.">
+				>
+				["at0051"] = <
+					text = <"Beginnt ohne Zögern zu gehen, fließende Bewegungen">
+					description = <"Schrittauslösung erfolgt ohne Verzögerung in einer fließenden Bewegung.">
+				>
+				["at0053"] = <
+					text = <"Schritthöhe">
+					description = <"Schritthöhe.">
+				>
+				["at0054"] = <
+					text = <"Kein selbstständiges Gehen möglich">
+					description = <"Schritthöhe nicht erfassbar, da kein selbstständiges Gehen möglich.">
+				>
+				["at0055"] = <
+					text = <"Schlurfen, übertriebenes Hochziehen">
+					description = <"Schritthöhe ist entweder ein Schlurfen oder ein übertriebenes Hochziehen.">
+				>
+				["at0056"] = <
+					text = <"Fuß total vom Boden gelöst, max. 2-4cm über Untergrund">
+					description = <"Schritthöhe ist normal, maximal 2-4cm über den Untergrund.">
+				>
+				["at0058"] = <
+					text = <"Schrittlänge">
+					description = <"Schrittlänge (von Zehen des einen bis Ferse des anderen Fußes).">
+				>
+				["at0059"] = <
+					text = <"Weniger als Fußlänge">
+					description = <"Schrittlänge ist kürzer als die Fußlänge.">
+				>
+				["at0060"] = <
+					text = <"Mindestens Fußlänge">
+					description = <"Schrittlänge ist mindestens die Fußlänge.">
+				>
+				["at0061"] = <
+					text = <"Schrittsymmetrie">
+					description = <"Schrittsymmetrie.">
+				>
+				["at0062"] = <
+					text = <"Schrittlänge variiert, Hinken">
+					description = <"Schrittsymmetrie nicht vorhanden.">
+				>
+				["at0063"] = <
+					text = <"Schrittlänge beidseits gleich">
+					description = <"Schrittsymmetrie vorhanden.">
+				>
+				["at0066"] = <
+					text = <"Gangkontinuität">
+					description = <"Gangkontinuität.">
+				>
+				["at0067"] = <
+					text = <"Kein selbstständiges Gehen möglich">
+					description = <"Gangkontinuität kann nicht erfasst werden, da kein selbstständiges Gehen möglich ist.">
+				>
+				["at0068"] = <
+					text = <"Phasen mit beiden Füßen am Boden, diskontinuierlich">
+					description = <"Gangkontinuität ist diskontinuierlich, beide Füßen sind phasenweise am Boden.">
+				>
+				["at0069"] = <
+					text = <"Beim Absetzen des einen wird der andere Fuß gehoben, keine Pausen">
+					description = <"Gangkontinuität vorhanden, keine Pausen.">
+				>
+				["at0071"] = <
+					text = <"Wegabweichung">
+					description = <"Wegabweichung.">
+				>
+				["at0072"] = <
+					text = <"Kein selbstständiges Gehen möglich">
+					description = <"Wegabweichung kann nicht gemessen werden, da kein selbstständiges Gehen möglich ist.">
+				>
+				["at0073"] = <
+					text = <"Schwanken, einseitige Abweichung">
+					description = <"Wegabweichung erfolgt einseitig, Schwanken vorhanden.">
+				>
+				["at0074"] = <
+					text = <"Füße werden entlang einer imaginären Linie abgesetzt">
+					description = <"Wegabweichung nicht vorhanden, Gehen erfolgt in einer Linie.">
+				>
+				["at0076"] = <
+					text = <"Rumpfstabilität">
+					description = <"Rumpfstabilität.">
+				>
+				["at0077"] = <
+					text = <"Abweichen, Schwanken, Unsicherheit">
+					description = <"Instabile Rumpfstabilität, schwanken und Unsicherheit.">
+				>
+				["at0078"] = <
+					text = <"Rücken und Knie gestreckt, Arme werden nicht zur Stabilisierung gebraucht">
+					description = <"Stabile Rumpfstabilität.">
+				>
+				["at0080"] = <
+					text = <"Schrittbreite">
+					description = <"Schrittbreite.">
+				>
+				["at0081"] = <
+					text = <"Breitbeinig oder überkreuz">
+					description = <"Schrittbreite ist breitbeinig oder überkreuz.">
+				>
+				["at0082"] = <
+					text = <"Füße berühren sich beinahe">
+					description = <"Schrittbreite ist normal, Füße berühren sich beinahe.">
+				>
+				["at0084"] = <
+					text = <"Punkte Gehprobe">
+					description = <"Punkte Gehprobe.">
+				>
+				["at0085"] = <
+					text = <"Gesamtpunktzahl">
+					description = <"Gesamtpunktzahl des Tests, 0-9 Punkte: Sturzrisiko massiv erhöht, 10-14 Punkte: Sturzrisiko deutlich erhöht, 15-19 Punkte: Sturzrisiko mäßig erhöht, 20-27 Punkte: Sturzrisiko evtl. erhöht.">
+				>
+				["at0086"] = <
+					text = <"Baum">
+					description = <"@ internal @">
+				>
+				["at0087"] = <
+					text = <"Erweiterungen">
+					description = <"Zusätzliche Informationen, die zur Erfassung lokaler Inhalte oder zur Anpassung an andere Referenzmodelle/Formalismen erforderlich sind.">
+				>
+				["at0088"] = <
+					text = <"Bemerkungen">
+					description = <"Bemerkungen, die während des Tests gemacht wurden.">
+				>
+				["at0089"] = <
+					text = <"Auswertung">
+					description = <"Auswertung, die sich aus der erreichten Punktzahl ergibt.">
+				>
+				["at0090"] = <
+					text = <"0-9 Punkte">
+					description = <"Mobilität massiv eingeschränkt, Sturzrisiko massiv erhöht.">
+				>
+				["at0091"] = <
+					text = <"10-14 Punkte">
+					description = <"Mobilität mäßig eingeschränkt, Sturzrisiko deutlich erhöht.">
+				>
+				["at0092"] = <
+					text = <"15-19 Punkte">
+					description = <"Mobilität leicht eingeschränkt, Sturzrisiko erhöht.">
+				>
+				["at0093"] = <
+					text = <"20-27 Punkte">
+					description = <"Mobilität leicht eingeschränkt, Sturzrisiko eventuell erhöht.">
+				>
+				["at0094"] = <
+					text = <"28 Punkte">
+					description = <"Maximale Punktzahl: kein Hinweis auf Gang- oder Gleichgewichtsstörung.">
+				>
+			>
+		>
+	>
