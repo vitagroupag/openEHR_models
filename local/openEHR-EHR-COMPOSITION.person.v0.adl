@@ -1,0 +1,89 @@
+archetype (adl_version=1.4; uid=7469804b-05a8-4367-beba-cf5539afd06d)
+	openEHR-EHR-COMPOSITION.person.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::de]>
+
+description
+	original_author = <
+		["date"] = <"2020-10-01">
+		["name"] = <"Alina Rehberg">
+		["organisation"] = <"Medizinische Hochschule Hannover">
+		["email"] = <"rehberg.alina@mh-hannover.de">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Ein generischer Container-Archetyp zur Bereitstellung von Informationen, die mit anderen geteilt werden müssen.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["custodian_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["MD5-CAM-1.0.1"] = <"6AFE570A2D850AB1D7AA794A541ECC42">
+		["build_uid"] = <"e90866c8-cd11-4368-997e-e76bcc9d4057">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- Personendaten
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0003] matches {    -- Item tree
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0004] occurrences matches {0..1} matches {    -- Personen ID
+								value matches {
+									DV_TEXT matches {*}
+									DV_IDENTIFIER matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Erweiterung
+								include
+									archetype_id/value matches {/.*/}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Personendaten">
+					description = <"Dokument zur Übermittlung von Informationen über Personen">
+				>
+				["at0003"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Personen ID">
+					description = <"ID der Person">
+				>
+				["at0005"] = <
+					text = <"Erweiterung">
+					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
+					comment = <"Zum Beispiel: lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen oder CIMI-Modelle.">
+				>
+			>
+		>
+	>
