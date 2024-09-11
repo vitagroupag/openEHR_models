@@ -1,0 +1,210 @@
+archetype (adl_version=1.4; uid=6916178a-bc92-48c7-9f8e-956b36e43172)
+	openEHR-EHR-CLUSTER.death_details.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::de]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"Kristina Scheuermann">
+				["organisation"] = <"Medizinische Hochschule Hannover (MHH)">
+				["email"] = <"scheuermann.kristina@mh-hannover.de">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2019-09-10">
+		["name"] = <"Sarah Ballout">
+		["organisation"] = <"MHH-Hannover">
+		["email"] = <"ballout.sarah@mh-hannover.de">
+	>
+	lifecycle_state = <"published">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Zur Darstellung der Angaben zum Tod einer Person.">
+			keywords = <"Tod","Versterben","Todesursache","Sterbedatum","Sterben","Verscheiden","Lebensende">
+			copyright = <"© HiGHmed">
+			use = <"Dieser Archetyp wird verwendet, um die Angaben zum Tod und die Todesursache einer Person zu erfassen.">
+			misuse = <"Nicht zur Darstellung von Informationen über lebende Personen gedacht.
+Nicht zur Darstellung von Fehlgeburten oder Schwangerschaftsabbrüchen verwenden.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the details related to the death of a person.">
+			keywords = <"death","die","cause of death","date of death","mortality","dying","end of life","decease">
+			use = <"This archetype is used to record a person's death details and cause of death.">
+			misuse = <"Not intended for record information about living persons.
+Do not use to record miscarriages or abortions.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"HiGHmed">
+		["original_namespace"] = <"org.highmed">
+		["original_publisher"] = <"HiGHmed">
+		["custodian_namespace"] = <"org.highmed">
+		["MD5-CAM-1.0.1"] = <"08195CD0534CD20D2E992E574BDB94F8">
+		["build_uid"] = <"b48910c4-cad4-49da-bda4-8e7bd40b725b">
+		["revision"] = <"1.0.3">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Angaben zum Tod
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Sterbedatum
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Tod aufgrund der Primärdiagnose?
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Todesursache
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {    -- Informationsquelle
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0007,    -- Sterberegister
+							at0008,    -- Gesundheitsdienstleister
+							at0009,    -- Verwandte
+							at0010,    -- Eine andere Quelle
+							at0011]    -- Unbekannt
+						}
+					}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Kommentar
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Spezifische Angaben
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Angaben zum Tod">
+					description = <"Angaben über den Tod einer Person, die mit übergeordneten Datenelementen für die Registrierung übereinstimmen zB. Sterberegister. ">
+				>
+				["at0001"] = <
+					text = <"Sterbedatum">
+					description = <"Der Zeitpunkt, an dem die Person verstorben ist. ">
+				>
+				["at0002"] = <
+					text = <"Tod aufgrund der Primärdiagnose?">
+					description = <"Ist der Tod auf die Primärdiagnose zurückzuführen?">
+				>
+				["at0003"] = <
+					text = <"Todesursache">
+					description = <"Die Ursache, welche zum Tode geführt hat.">
+					comment = <"Die Todesursache sollte, wenn möglich, mit einer Terminologie kodiert werden.">
+				>
+				["at0004"] = <
+					text = <"Kommentar">
+					description = <"Ergänzende Angaben über den Tod, die nicht in anderen Bereichen erfasst wurden.">
+				>
+				["at0005"] = <
+					text = <"Spezifische Angaben">
+					description = <"Spezifische strukturierte Angaben über den Tod.">
+				>
+				["at0006"] = <
+					text = <"Informationsquelle">
+					description = <"Gibt an, woher die Informationen über den Tod stammen und wie sicher diese Informationen sind.">
+				>
+				["at0007"] = <
+					text = <"Sterberegister">
+					description = <"Der Tod wurde von einem Sterberegister/notariell gemeldet.">
+				>
+				["at0008"] = <
+					text = <"Gesundheitsdienstleister">
+					description = <"Zeigt an, dass der Tod von einem Gesundheitsdienstleister gemeldet wurde.">
+				>
+				["at0009"] = <
+					text = <"Verwandte">
+					description = <"Zeigt an, dass der Tod von einem Verwandten gemeldet wurde.">
+				>
+				["at0010"] = <
+					text = <"Eine andere Quelle">
+					description = <"Zeigt an, dass der Tod von einer anderen Quelle gemeldet wurde.">
+				>
+				["at0011"] = <
+					text = <"Unbekannt">
+					description = <"Zeigt an, dass die Quelle der Benachrichtigung über den Tod unbekannt ist.">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Details of death">
+					description = <"Information about the death of a person that matches higher-level data elements for registration e.g. Mortality Register.">
+				>
+				["at0001"] = <
+					text = <"Date of death">
+					description = <"The date on which the person died.">
+				>
+				["at0002"] = <
+					text = <"Death due to primary diagnosis?">
+					description = <"Is death due to the primary diagnosis?">
+				>
+				["at0003"] = <
+					text = <"Cause of death">
+					description = <"The cause which led to death.">
+					comment = <"Cause of death should be coded with a terminology if possible.">
+				>
+				["at0004"] = <
+					text = <"Comment">
+					description = <"Additional information concerning death that was not recorded in other fields.">
+				>
+				["at0005"] = <
+					text = <"Specific details">
+					description = <"Specific structured information about death.">
+				>
+				["at0006"] = <
+					text = <"Information source(s)">
+					description = <"Indicates where the information about the death came from and how certain this information is.">
+				>
+				["at0007"] = <
+					text = <"Mortality register">
+					description = <"Death was reported by a mortality registry/notary.">
+				>
+				["at0008"] = <
+					text = <"Healthcare Provider">
+					description = <"Indicates that the death was reported by a healthcare provider.">
+				>
+				["at0009"] = <
+					text = <"Relative">
+					description = <"Indicates that the death was reported by a relative.">
+				>
+				["at0010"] = <
+					text = <"Other source">
+					description = <"Indicates that the death was reported by another source.">
+				>
+				["at0011"] = <
+					text = <"Unknown">
+					description = <"Indicates that the source of the death notification is unknown.">
+				>
+			>
+		>
+	>
