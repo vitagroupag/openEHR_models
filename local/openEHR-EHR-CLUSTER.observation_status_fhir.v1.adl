@@ -1,0 +1,121 @@
+archetype (adl_version=1.4; uid=dc2412df-42e6-46d4-a7d5-e76954f45a7d)
+	openEHR-EHR-CLUSTER.observation_status_fhir.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::de]>
+
+description
+	original_author = <
+		["date"] = <"2022-10-20">
+		["name"] = <"Natalia Strauch">
+		["organisation"] = <"MHH-Hannover">
+		["email"] = <"strauch.natalia@mh-hannover.de">
+	>
+	lifecycle_state = <"published">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Ein Code, der den Status einer Beobachtung angibt, z.B. registriert, korrigiert oder final.">
+			keywords = <"Status","FHIR","Beobachtung","Observation","Ergebnis">
+			copyright = <"© HiGHmed">
+			use = <"Zur Darstellung des Status einer Beobachtung in einem FHIR-Profil zur Beobachtung (Observation), wie ein Laborergebnis, Befund oder Zustand.
+Der Status ist nur zu dem Zeitpunkt repräsentativ, an dem er geltend gemacht wurde.des">
+			misuse = <"Nicht zur Darstellung des Status anderer Konzepte außer einer Beobachtung.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"HiGHmed">
+		["references"] = <"https://simplifier.net/organization/koordinationsstellemii
+http://hl7.org/fhir/observation-status">
+		["original_namespace"] = <"org.highmed">
+		["original_publisher"] = <"HiGHmed">
+		["custodian_namespace"] = <"org.highmed">
+		["MD5-CAM-1.0.1"] = <"3AC67209BBB1A11D6CBDD901C55580B1">
+		["build_uid"] = <"d3772b4c-1c85-4759-9417-edb6d59d5c24">
+		["revision"] = <"1.0.0">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- FHIR_Status der Beobachtung
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0015] matches {    -- Status
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0024,    -- Registriert
+							at0025,    -- Vorläufig
+							at0026,    -- Final
+							at0027,    -- Geändert
+							at0028,    -- Korrigiert
+							at0029,    -- Abgebrochen
+							at0030,    -- Irrtümlich eingegeben
+							at0031]    -- Unbekannt
+						}
+					}
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0014] occurrences matches {0..*} matches {    -- Kommentar
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"FHIR_Status der Beobachtung">
+					description = <"Ein Code, der den Status einer Beobachtung angibt, z.B. registriert, korrigiert oder final.">
+				>
+				["at0014"] = <
+					text = <"Kommentar">
+					description = <"Zusätzliche Informationen über den Status der Beobachtung, die nicht in anderen Bereichen dargestellt wurden.">
+				>
+				["at0015"] = <
+					text = <"Status">
+					description = <"Status der Beobachtung.">
+				>
+				["at0024"] = <
+					text = <"Registriert">
+					description = <"Die Existenz der Beobachtung ist registriert, aber es ist noch kein Ergebnis verfügbar.">
+				>
+				["at0025"] = <
+					text = <"Vorläufig">
+					description = <"Dies ist eine erste oder vorläufige Beobachtung: Daten können unvollständig oder unbestätigt sein.">
+				>
+				["at0026"] = <
+					text = <"Final">
+					description = <"Die Beobachtung ist abgeschlossen und es sind keine weiteren Maßnahmen erforderlich.">
+				>
+				["at0027"] = <
+					text = <"Geändert">
+					description = <"Nachdem die Beobachtung endgültig war, wurde sie nachträglich geändert. Dies umfasst Aktualisierungen/neue Informationen und Korrekturen.">
+				>
+				["at0028"] = <
+					text = <"Korrigiert">
+					description = <"Nachdem die Beobachtung endgültig war, wurde sie geändert, um einen Fehler im Testergebnis zu korrigieren.">
+				>
+				["at0029"] = <
+					text = <"Abgebrochen">
+					description = <"Die Beobachtung ist nicht verfügbar, weil die Messung nicht gestartet oder nicht abgeschlossen wurde (manchmal auch „Storniert“ genannt).">
+				>
+				["at0030"] = <
+					text = <"Irrtümlich eingegeben">
+					description = <"Die Beobachtung wurde nach der letzten endgültigen Veröffentlichung zurückgezogen. Diese elektronische Aufzeichnung hätte niemals existieren dürfen, obwohl es möglich ist, dass Entscheidungen in der realen Welt darauf beruhten. (Falls reale Aktivitäten stattgefunden haben, sollte der Status „Abgebrochen“ und nicht „Irrtümlich eingegeben“ lauten).">
+				>
+				["at0031"] = <
+					text = <"Unbekannt">
+					description = <"Dem Quellsystem ist nicht bekannt, welcher der Statuswerte aktuell für diese Beobachtung gilt.">
+				>
+			>
+		>
+	>
