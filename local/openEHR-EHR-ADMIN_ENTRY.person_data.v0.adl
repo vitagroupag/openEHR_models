@@ -1,0 +1,152 @@
+archetype (adl_version=1.4; uid=05fdd8e7-31ec-477f-8eed-9a0769b66f3d)
+	openEHR-EHR-ADMIN_ENTRY.person_data.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::de]>
+
+description
+	original_author = <
+		["date"] = <"2020-04-27">
+		["name"] = <"Alina Rehberg">
+		["organisation"] = <"Medizinische Hochschule Hannover">
+		["email"] = <"rehberg.alina@mh-hannover.de">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Darstellung der demografischen Daten einer Person wie Geburtsdatum und Telefonnummer.">
+		>
+	>
+	other_details = <
+		["custodian_organisation"] = <"HiGHmed">
+		["original_namespace"] = <"org.highmed">
+		["original_publisher"] = <"HiGHmed">
+		["custodian_namespace"] = <"org.highmed">
+		["MD5-CAM-1.0.1"] = <"DDB0ABB0815AAFEC82BA2096C7882EE4">
+		["build_uid"] = <"c94cf692-a193-4ca1-ab63-d6714ff1f970">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {    -- Personendaten
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Baum
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Art der Person
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0009,    -- Mitarbeiter
+									at0010,    -- Patient
+									at0011]    -- sonstiges
+								}
+							}
+							DV_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {    -- Personenname
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-CLUSTER\.person_name\.v0/}
+					}
+					allow_archetype CLUSTER[at0028] occurrences matches {0..*} matches {    -- Details zur Geburt
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-CLUSTER\.person_birth_data_iso\.v0/}
+					}
+					CLUSTER[at0024] occurrences matches {0..1} matches {    -- Angaben zum Tod
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0025] occurrences matches {0..1} matches {    -- Verstorben?
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0013] occurrences matches {0..*} matches {    -- Details zum Tod
+								include
+									archetype_id/value matches {/.*|openEHR-EHR-CLUSTER\.death_details\.v1/}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Adresse
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-CLUSTER\.address_cc\.v0/}
+					}
+					allow_archetype CLUSTER[at0031] occurrences matches {0..*} matches {    -- Kontaktangaben
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-CLUSTER\.telecom_details\.v0/}
+					}
+					allow_archetype CLUSTER[at0007] occurrences matches {0..*} matches {    -- Erweiterungen
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Personendaten">
+					description = <"Demografische Daten zu einer Person wie Geburtsdatum und Telefonnummer.">
+				>
+				["at0001"] = <
+					text = <"Baum">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Adresse">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Erweiterungen">
+					description = <"Details zur Person">
+				>
+				["at0008"] = <
+					text = <"Art der Person">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Mitarbeiter">
+					description = <"Mitarbeiter">
+				>
+				["at0010"] = <
+					text = <"Patient">
+					description = <"Patient">
+				>
+				["at0011"] = <
+					text = <"sonstiges">
+					description = <"sonstiges">
+				>
+				["at0013"] = <
+					text = <"Details zum Tod">
+					description = <"Angaben zum Tod">
+				>
+				["at0024"] = <
+					text = <"Angaben zum Tod">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Verstorben?">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Personenname">
+					description = <"Personenname">
+				>
+				["at0028"] = <
+					text = <"Details zur Geburt">
+					description = <"Details zur Geburt">
+				>
+				["at0031"] = <
+					text = <"Kontaktangaben">
+					description = <"">
+				>
+			>
+		>
+	>
