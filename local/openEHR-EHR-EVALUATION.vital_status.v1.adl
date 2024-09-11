@@ -1,0 +1,131 @@
+archetype (adl_version=1.4; uid=436e42cb-939e-4fba-bda1-2cbdabfbd384)
+	openEHR-EHR-EVALUATION.vital_status.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::de]>
+
+description
+	original_author = <
+		["date"] = <"2022-09-12">
+		["name"] = <"Darin Leonhardt">
+		["organisation"] = <"PLRI">
+		["email"] = <"leonhardt.darin@mh-hannover.de">
+	>
+	lifecycle_state = <"published">
+	other_contributors = <"Natalia Strauch", ...>
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Zur Darstellung des Vitalstatus einer Person, der z.B. bei der Entlassung aus dem Krankenhaus in Krankenakten verzeichnet wird.">
+			keywords = <"Vitalstatus, vital, Lebendigkeit, Lebenszeitpunkt, Vitalität, Zustand, Status", ...>
+			use = <"Diesen Archetypen verwenden, um den Vitalstatus (\"Letzten bekannten Lebenszeitpunktes\") einer Person darzustellen.
+
+Mindestens bei jeder Aufnahme / Entlassung der PatientInnen wird ein Vitalstatus erstellt. Es ist zu beachten, dass die administrative Entlassung der PatientInnen auch aufgrund des Todes dokumentiert wird.
+
+Für jede Beurteilung soll eine neue Archetypen-Instanz verwendet werden.">
+			misuse = <"Nicht zur Darstellung von Informationen zum Tod einer Person.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Firely (ohne Datum) De.Medizininformatikinitiative.Kerndatensatz.Person, Medizininformatik-initiative.de. Verfügbar unter: https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus (Zugegriffen: 12. September 2022).
+
+Firely (ohne Datum) De.Medizininformatikinitiative.Kerndatensatz.Person, Medizininformatik-initiative.de. Verfügbar unter: https://www.medizininformatik-initiative.de/fhir/core/modul-person/CodeSystem/Vitalstatus (Zugegriffen: 12. September 2022).
+
+[DE] Medizininformatik Initiative - Modul Person - Implementierungsleitfaden - Version 2.0 (ohne Datum) Simplifier.net. Verfügbar unter: https://simplifier.net/guide/medizininformatikinitiative-modulperson-implementationguide/VitalstatusObservation?version=current (Zugegriffen: 14. September 2022).">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"DD10AF7A98CA0FAF10467F86BFE9CFF1">
+		["build_uid"] = <"69c355b0-7d8f-40a4-ba44-e0308dc926ca">
+		["revision"] = <"1.0.0">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Vitalstatus
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0006] matches {    -- Vitalstatus
+						value matches {
+							DV_TEXT matches {*}
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {    -- Zusätzliche Angaben
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0013] occurrences matches {0..*} matches {    -- Kommentar
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0002] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0018] matches {    -- Zeitpunkt der Feststellung
+						value matches {
+							DV_DATE_TIME matches {*}
+							DV_DURATION matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0021] occurrences matches {0..*} matches {    -- Erweiterung
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vitalstatus">
+					description = <"Zur Darstellung des Vitalstatus (\"Letzter bekannter Lebenszeitpunkt\") eines Patienten, der mindestens bei der Aufnahme oder Entlassung festgestellt wird.">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Vitalstatus">
+					description = <"Vitalstatus der Person.">
+					comment = <"Zum Beispiel: Patient lebt oder ist verstorben. Nach Möglichkeit wird die Codierung des Vitalstatus mit einer Terminologie bevorzugt.
+fhir_mapping: Observation.value[x].coding:Vitalstatus.">
+				>
+				["at0010"] = <
+					text = <"Zusätzliche Angaben">
+					description = <"Zusätzliche Angaben zum Vitalstatus.">
+				>
+				["at0013"] = <
+					text = <"Kommentar">
+					description = <"Zusätzliche Informationen zum Vitalstatus, die in anderen Feldern nicht erfasst wurden.">
+				>
+				["at0018"] = <
+					text = <"Zeitpunkt der Feststellung">
+					description = <"Die Zeit oder Zeitspanne, zu der der Vitalstatus als wahr behauptet wird.">
+					comment = <"Partielle Datumsangaben sind auch erlaubt. Enthält nicht den Todeszeitpunkt. fhir_mapping: Observation.effective[x].">
+				>
+				["at0021"] = <
+					text = <"Erweiterung">
+					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/ Formalismen.">
+					comment = <"Zum Beispiel: Lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen.">
+				>
+			>
+		>
+	>
