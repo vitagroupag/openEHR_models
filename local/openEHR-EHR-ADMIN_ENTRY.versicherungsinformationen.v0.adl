@@ -1,0 +1,93 @@
+archetype (adl_version=1.4; uid=87b20782-c621-4c40-9e58-14ea107a6837)
+	openEHR-EHR-ADMIN_ENTRY.versicherungsinformationen.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::de]>
+
+description
+	original_author = <
+		["name"] = <"Caroline Bönisch">
+		["email"] = <"caroline.boenisch@med.uni-goettingen.de">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Zur Abbildung von Versicherungsinformationen eines Patienten. ">
+			keywords = <"Versicherung","Identifikation","Gesundheitsversicherung","Versicherungsinformationen ","Krankenkasse","Krankenversicherung">
+			copyright = <"© UMG, HiGHmed">
+			use = <"Nur für die Versicherungsinformationen eines Patienten nutzen.">
+			misuse = <"Nicht für andere administrative Informationen nutzen. ">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"HiGHmed">
+		["original_namespace"] = <"org.highmed">
+		["original_publisher"] = <"HiGHmed">
+		["custodian_namespace"] = <"org.highmed">
+		["MD5-CAM-1.0.1"] = <"C9780D95195C491B1D68E9F8390F1180">
+		["build_uid"] = <"86364105-5a61-4979-9b35-5e38df503a9c">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {    -- Versicherungsinformationen
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Baum
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0011] occurrences matches {0..1} matches {    -- Name der Versicherung
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Versicherungstyp
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {*}    -- Versicherungsnummer
+					ELEMENT[at0010] occurrences matches {0..1} matches {    -- Institutionskennzeichen der Krankenkasse
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Versicherungsinformationen">
+					description = <"Zur Abbildung von Versicherungsinformationen eines Patienten">
+				>
+				["at0001"] = <
+					text = <"Baum">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Versicherungstyp">
+					description = <"Versicherungstyp des Patienten (selbst; gesetzliche Krankenversicherung; private Krankenversicherung; Berufsgenossenschaft; unentgeltliche truppenärztliche Versorgung)">
+				>
+				["at0006"] = <
+					text = <"Versicherungsnummer">
+					description = <"Nummer, die der (Kranken-)Versicherung des Patienten zugewiesen wurde. Diese findet sich z.B. auf der Mitgliedskarte der Krankenkasse.">
+				>
+				["at0010"] = <
+					text = <"Institutionskennzeichen der Krankenkasse">
+					description = <"z.B. Techniker Krankenkasse 106577501">
+				>
+				["at0011"] = <
+					text = <"Name der Versicherung">
+					description = <"Name der Versicherung, z.B. AOK Niedersachsen, Techniker Krankenkasse etc.">
+				>
+			>
+		>
+	>
