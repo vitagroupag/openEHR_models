@@ -1,33 +1,46 @@
-﻿archetype (adl_version=1.4; uid=da50064c-f62b-4444-98f5-f403b327e0d0)
+archetype (adl_version=1.4; uid=da50064c-f62b-4444-98f5-f403b327e0d0)
 	openEHR-EHR-CLUSTER.entry_category.v0
 
 concept
-	[at0000]	-- Kategorie des Eintrags
+	[at0000]
+
 language
 	original_language = <[ISO_639-1::de]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+			>
+		>
+	>
+
 description
 	original_author = <
+		["date"] = <"2019-09-17">
 		["name"] = <"Louisa Bode">
 		["organisation"] = <"Hannover Medical School">
 		["email"] = <"bode.louisa@mh-hannover.de">
-		["date"] = <"2019-09-17">
 	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Natalia Strauch; strauch.natalia@mh-hannover.de", ...>
 	details = <
 		["de"] = <
 			language = <[ISO_639-1::de]>
 			purpose = <"Dieser Archetyp dient als eine Erweiterung eines beliebigen ENTRY-Archetyps, um eine Kategorisierung eines Eintrags zur Evaluation, Aktion, Observation oder Instruktion darzustellen.">
+			keywords = <"Art des Eintrags","Kategorie","Typ","Stratifikation","Eingruppierung">
+			copyright = <"© HiGHmed">
 			use = <"Dieser Archetyp kann für die Darstellung von bestimmten Kategorien oder Typen von Diagnosen, Prozeduren, Medikation oder Aufträgen verwendet werden, wenn dies für Abfrage- oder Berichtszwecke erforderlich ist.
 
 Er wird genutzt, um zusätzliche relevante Informationen für die Beschreibung einer Diagnose, Behandlung oder einer Prozedur bei einem Patienten, darzustellen.
 
 Dieser Archetyp wurde für die allgemeine Verwendung in eigenständigen Archetypen entwickelt, die einen Eintrag darstellen. Er kann zum Beispiel im Slot \"Erweiterung\" im OBSERVATION.medication_statement verwendet werden, um den Eintrag in eine Kategorie z. B. Aufnahmemedikation zuzuordnen oder er kann im Archetyp hinzugefügt werden, wo ein Eintrag zur Diagnose spezifiziert werden muss, wie zum Beispiel im Archetyp EVALUATION.problem_diagnosis.">
-			keywords = <"Art des Eintrags", "Kategorie", "Typ", "Stratifikation", "Eingruppierung">
 			misuse = <"Nicht für die Verwendung in CLUSTER-Archetypen vorgesehen.">
-			copyright = <"© HiGHmed">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			copyright = <"© openEHR Foundation">
 		>
 	>
-	lifecycle_state = <"in_development">
-	other_contributors = <"Natalia Strauch; strauch.natalia@mh-hannover.de", ...>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"HiGHmed">
@@ -35,27 +48,26 @@ Dieser Archetyp wurde für die allgemeine Verwendung in eigenständigen Archetyp
 		["original_namespace"] = <"org.highmed">
 		["original_publisher"] = <"HiGHmed">
 		["custodian_namespace"] = <"org.highmed">
-		["MD5-CAM-1.0.1"] = <"07559D9AA6F76784AE95ADE028603EC0">
+		["MD5-CAM-1.0.1"] = <"7e2329d4e8702d37c84d4d5034b74bc7">
 		["build_uid"] = <"2005ae81-37d4-45a9-88fc-f22e58733026">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Kategorie des Eintrags
+	CLUSTER[at0000] matches {    -- Kategorie des Eintrags
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Kategorie
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Kategorie
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {	-- Kommentar
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Kommentar
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
 		}
 	}
-
 
 ontology
 	term_definitions = <
@@ -73,6 +85,23 @@ ontology
 				["at0003"] = <
 					text = <"Kommentar">
 					description = <"Kommentar zu der Kategorie, oder Erläuterung.">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Category of entry">
+					description = <"Category for isik vitalsigns">
+				>
+				["at0002"] = <
+					text = <"category">
+					description = <"category code of the observation">
+					comment = <"*Belassen Sie als Freitext oder beschränken Sie sich auf eine interne oder externe Codeliste. (de)">
+				>
+				["at0003"] = <
+					text = <"comment">
+					description = <"comment field">
 				>
 			>
 		>
