@@ -22,9 +22,9 @@
       "original_namespace" : "vitasystems.ag",
       "original_publisher" : "vitagroup AG",
       "custodian_namespace" : "",
-      "sem_ver" : "1.2.0",
+      "sem_ver" : "1.3.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "a2ff726c2b0c647117d9a4e1aae6e9f3",
+      "MD5-CAM-1.0.1" : "6fc73c045e7cf99cb5e7e4964262402b",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -228,7 +228,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "vg_OxygenSaturation.v1.0.0",
+          "text" : "vg_OxygenSaturation.v1.0.1",
           "description" : "Document to communicate information to others, commonly in response to a request from another party."
         }
       },
@@ -236,7 +236,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "vg_BloodPressure.v1.0.0",
+          "text" : "vg_BloodPressure.v1.0.1",
           "description" : "Documento para comunicar información a otros, comunmente en respuesta a la solicitud de un tercero."
         }
       },
@@ -252,7 +252,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "vg_BloodPressure.v1.0.0",
+          "text" : "vg_BloodPressure.v1.0.1",
           "description" : "Dokument som brukes for å kommunisere informasjon til andre, ofte som svar på en forespørsel."
         }
       },
@@ -260,7 +260,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "vg_OxygenSaturation.v1.0.0",
+          "text" : "vg_OxygenSaturation.v1.0.1",
           "description" : "Ein Dokument zur Übermittlung von Informationen an andere, meist als Antwort auf eine Anfrage."
         }
       },
