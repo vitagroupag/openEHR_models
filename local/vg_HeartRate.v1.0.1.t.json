@@ -1,0 +1,1255 @@
+{
+  "@type" : "TEMPLATE",
+  "uid" : "83d67837-5e8a-481a-88da-632bbd5dd043",
+  "description" : {
+    "@type" : "RESOURCE_DESCRIPTION",
+    "originalAuthor" : {
+      "date" : "2023-10-05",
+      "name" : "Birger Haarbrandt",
+      "organisation" : "vitagroup AG",
+      "email" : "birger.haarbrandt@vitagroup.ag"
+    },
+    "otherContributors" : [ ],
+    "lifecycleState" : {
+      "codeString" : "release_candidate"
+    },
+    "ipAcknowledgements" : { },
+    "references" : { },
+    "conversionDetails" : { },
+    "otherDetails" : {
+      "licence" : "CC BY-SA 4.0",
+      "custodian_organisation" : "vitagroup AG",
+      "original_namespace" : "vitasystems.ag",
+      "original_publisher" : "vitagroup AG",
+      "custodian_namespace" : "",
+      "sem_ver" : "2.0.0",
+      "build_uid" : "",
+      "MD5-CAM-1.0.1" : "7e1ee67a754c72ebf26319b00d33d741",
+      "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
+    },
+    "details" : {
+      "de" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "de"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "fi" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "fi"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "ko" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ko"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "nb" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "nb"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "es-ar" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "es-ar"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "pt-br" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "pt-br"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "en" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "en"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "sl" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "sl"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "ar-sy" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ar-sy"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "it" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "it"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      },
+      "nl" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "nl"
+        },
+        "keywords" : [ ],
+        "originalResourceUri" : { },
+        "otherDetails" : { }
+      }
+    }
+  },
+  "parentArchetypeId" : "openEHR-EHR-COMPOSITION.report.v1",
+  "differential" : true,
+  "archetypeId" : {
+    "@type" : "ARCHETYPE_HRID",
+    "value" : "openEHR-EHR-COMPOSITION.t_report.v1"
+  },
+  "definition" : {
+    "@type" : "C_COMPLEX_OBJECT",
+    "rmTypeName" : "COMPOSITION",
+    "nodeId" : "at0000.1",
+    "attributes" : [ {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "context",
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "EVENT_CONTEXT",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "other_context",
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "ITEM_TREE",
+            "nodeId" : "at0001",
+            "attributes" : [ {
+              "@type" : "C_ATTRIBUTE",
+              "rmAttributeName" : "items",
+              "children" : [ {
+                "@type" : "C_ARCHETYPE_ROOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..1",
+                "nodeId" : "at0006.1",
+                "attributes" : [ ],
+                "attributeTuples" : [ ],
+                "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-entry_category-001.v0",
+                "referenceType" : "archetypeOverlay"
+              } ]
+            } ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "content",
+      "existence" : "0..1",
+      "cardinality" : {
+        "@type" : "CARDINALITY",
+        "interval" : "1..*",
+        "ordered" : false,
+        "unique" : false
+      },
+      "children" : [ {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "OBSERVATION",
+        "occurrences" : "0..1",
+        "nodeId" : "at0.6",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-pulse-001.v2",
+        "referenceType" : "archetypeOverlay"
+      } ]
+    } ],
+    "attributeTuples" : [ ]
+  },
+  "terminology" : {
+    "@type" : "ARCHETYPE_TERMINOLOGY",
+    "conceptCode" : "at0000",
+    "termDefinitions" : {
+      "ar-sy" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_BloodPressure.v1.0.0",
+          "description" : "وثيقة لتوصيل المعلومات للآخرين, عادة كاستجابة لطلب من طرف آخر."
+        }
+      },
+      "sl" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_BloodPressure.v1.0.0",
+          "description" : "*Document to communicate information to others, commonly in response to a request from another party.(en)"
+        }
+      },
+      "en" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_HeartRate.v1.0.1",
+          "description" : "Document to communicate information to others, commonly in response to a request from another party."
+        }
+      },
+      "es-ar" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_BloodPressure.v1.0.0",
+          "description" : "Documento para comunicar información a otros, comunmente en respuesta a la solicitud de un tercero."
+        }
+      },
+      "pt-br" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_BloodPressure.v1.0.0",
+          "description" : "Documento para comunicar informações a outros, comumente em resposta a uma solicitação de terceiros."
+        }
+      },
+      "nb" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_BloodPressure.v1.0.0",
+          "description" : "Dokument som brukes for å kommunisere informasjon til andre, ofte som svar på en forespørsel."
+        }
+      },
+      "de" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_HeartRate.v1.0.1",
+          "description" : "Ein Dokument zur Übermittlung von Informationen an andere, meist als Antwort auf eine Anfrage."
+        }
+      },
+      "ko" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_BloodPressure.v1.0.0",
+          "description" : "일반적으로 다른 상대의 요청에 대한 응답으로, 다른 사람들과 정보를 통신하는 문서."
+        }
+      },
+      "fi" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_BloodPressure.v1.0.0",
+          "description" : "Asiakirja tiedon välittämiseksi muille, vastauksena yleensä toisen osapuolen pyyntöön."
+        }
+      },
+      "it" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_BloodPressure.v1.0.0",
+          "description" : "Documento per comunicare informazioni ad altri, comunemente in risposta ad una richiesta di un altro soggetto."
+        }
+      },
+      "nl" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "vg_BloodPressure.v1.0.0",
+          "description" : "Document om informatie met anderen te communiceren, vaak op verzoek van een andere partij."
+        }
+      }
+    },
+    "termBindings" : { },
+    "terminologyExtracts" : { },
+    "valueSets" : { }
+  },
+  "adlVersion" : "1.4",
+  "buildUid" : "d15828fa-cf5a-35d4-b43c-0781836f5d34",
+  "rmName" : "openehr",
+  "rmRelease" : "1.1.0",
+  "generated" : true,
+  "templateId" : "vg_HeartRate.v1.0.1",
+  "otherMetaData" : { },
+  "templateOverlays" : [ {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "740cef61-36d1-48a4-b0ea-dc297cdc8e19",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "367B17CB3B1709A6BDF8A32723647224"
+      },
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Dokumentation der Frequenz und der zugehörigen Attribute einer Puls- oder Herzfrequenz.",
+          "keywords" : [ "Frequenz", "Herzfrequenz", "Rhythmus", "Herzschlag", "Puls", "Pulsfrequenz", "Pulsschlag", "Blutdruck", "Vitalparameter", "Vitalzeichen" ],
+          "use" : "Zur allgemeinen Dokumentation der vorhandenen oder nicht vorhandenen Puls- oder Herzfrequenz.\r\n\r\nIn der Praxis werden die Begriffe \"Herzfrequenz\" und \"Pulsfrequenz\" oft synonym verwendet, obwohl sie an verschiedenen Körperstellen gemessen werden können. Dieser Archetyp ist für beide Begriffe vorgesehen, wobei das Element \"Körperstelle\" der Unterscheidung dient.\r\n\r\nZur Dokumentation der Puls- oder Herzfrequenz und dessen Eigenschaften, sowie der klinischen Interpretationen der Messergebnisse.\r\n\r\nMessungen, wie die maximale Pulsfrequenz oder die maximale Herzfrequenz, die über eine gewisse Zeit gemessen werden, können im Feature \"Event\" mit der Bezeichnung \"Maximum\" dokumentiert werden. Andere zeitpunkt- oder intervallbezogene Ereignisse können innerhalb des Templates oder zur Laufzeit angegeben werden.\r\n\r\nBei der Entwicklung dieses Archetyps gab es einige Unstimmigkeiten zu der Darstellung der Regelmäßigkeit der Puls- oder der Herzfrequenz. Dieser Archetyp stellt die relevanten Datenpunkte separat dar: zunächst wird \"Regelmäßig\" vs. \"Unregelmäßig\" festgelegt und dann, wenn die Messung \"Unregelmäßig\" ist, können weitere Optionen von \"Normal unregelmäßig\" und \"Ungleichmäßig Unregelmäßig\" angegeben werden. In der Praxis könnten klinische Systeme den Nutzern eine Kombination der Werte aus den beiden Datenelementen \"Regelmäßig\" und \"Unregelmäßig\" anbieten - zum Beispiel \"Regelmäßig\", \"Regelmäßig unregelmäßig\" und \"Ungleichmäßig unregelmäßig\", die aus diesen beiden Datenelementen stammen. Die Daten können entgegen einander aufgezeichnet werden, mit der Annahme, dass bei der Angabe einer unregelmäßigen Herzfrequenz auch der Wert \"Unregelmäßig\" im Datenelement \"Regelmäßigkeit\" automatisch ausgewählt wird.\r\n\r\nIn bestimmten Situationen ist es wichtig, sehr spezifisch zu sein, damit eine an einer peripheren Körperstelle gemessene Frequenz, wie beispielsweise der Arteria radialis, von der Herzfrequenz unterschieden werden kann. Um ein Pulsdefizit aufzuzeichnen, zeichnen Sie die Messung der mechanischen Herzfrequenz und einer peripheren Pulsfrequenz separat in diesem Archetyp auf - der Unterschied zwischen diesen Messungen ist das Pulsdefizit. Das tatsächliche Pulsdefizit wird in einem separaten OBSERVATION-Archetyp aufgezeichnet.",
+          "misuse" : "Nicht zur Dokumentation einer Herzfrequenz, errechnet aus dem RR-Intervall einer EKG-Messung - der Archetyp OBSERVATION.ecg_result soll für diesen Zweck verwendet werden.\r\n\r\nNicht zur Dokumentation von Details einer Kardiovaskulären Untersuchung oder Bewertung verwenden. Andere spezifische CLUSTER-Archetypen werden verwendet, um Merkmale wie den Herzspitzenstoß, Herzspitzengeräusche und allgemeine Herzgeräusche oder auskultatorische Befunde aufzuzeichnen.\r\n\r\nInsbesondere ist dieser Archetyp nicht dazu gedacht, die Beurteilung einer peripheren Gefäßerkrankung aufzuzeichnen, die eine Dokumentation des Vorhandenseins und der Stärke jeder peripheren Pulsfrequenz erfordert. Ein spezifischer CLUSTER-Archetyp wird verwendet, um die allgemeinen Ergebnisse der Untersuchung von peripheren Pulsfrequenzen zu erfassen.\r\n\r\nNicht zur Dokumentation des fetalen Blutdrucks verwenden - der Archetyp OBSERVATION.fetal_heart soll für diesen Zweck verwendet werden.\r\n\r\nNicht zur Dokumentation des Pulsdefizits verwenden - für diesen Zweck soll ein spezifischer OBSERVATION-Archetyp verwendet werden.\r\n\r\nKonzepte, wie die Zielherzfrequenz, sollen im Zusammenhang mit dessen Zielen und Trainingsbewertungen in separaten EVALUATION-Archetypen erfasst werden.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ru" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ru"
+          },
+          "purpose" : "Для записи информации о частоте  и ритме  сердцечных сокращений.",
+          "keywords" : [ "ЧСС", "ритм", "сердечный ритм", "частотат сердечных сокращений" ],
+          "use" : "Используется для записи измеренных характеристик, связанных с темпом и ритма сердца, в том числе простая констатация наличия сердечного ритма. Эти характеристики не регистрируются путем прямого наблюдения самого сердца, а подразумевают альтернативные источники, включая прямую аускультацию сердца или электрокардиограф, отражающий электрическую активность сердца.\r\nЧастота и ритм сердечных сокращений  (или специализация этого архетипа - Пульс), как правило, регистрируются в качестве одного из компонентов жизненно важных признаков - включая кровяное давление, дыхание, температуру и оксиметрию. Для каждого из этих понятий существуют специальные архетипы. ",
+          "misuse" : "Не следует использовать для записи выводов о измеряемых частоте и ритме сердечных сокращений. Такого рода заявления, как, например, пациент находится в состоянии фибрилляция предсердий или тахикардии, должны быть записаны в других специальных архетипах, относящихся к категории ОЦЕНКА.\r\nНе следует использовать для записи механической частоты сердечных сокращений, ритма и связанные с ними характеристик - это записывается используя специализацию этого архетипа - OBSERVATION.heart_rate-pulse.\r\nНе используется для записи другой информации обширной системы обследования или оценки сердечно-сосудистой системы. Другие специфические архетипы используются для записи таких характеристик, как верхушечный толчок, шумы, результаты аускультаци и т.д.\r\nТакие понятия, как максимальная или целевая частота сердечных сокращений, должны записываться в отдельных архетипах, предназначенных специально для осуществления оценки.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att mäta puls eller hjärtfrekvens och beskriva relaterade egenskaper.",
+          "keywords" : [ "frekvens", "rytm", "slag", "puls", "hjärta", "vitaltecken" ],
+          "use" : "Används för att registrera närvaro eller frånvaro av puls eller hjärtslag.\r\n\r\nAnvänds för att registrera puls eller hjärtfrekvens samt relaterade observationer avseende deras mönster och karaktär samt för att dokumentera den kliniska tolkningen av fynd.\r\n\r\nI praktiken används termerna puls och hjärtfrekvens ofta i samma betydelse. För att tillgodose klinikers skiftande preferenser tillåter den här arketypen användning av båda termerna i de fall mätplatsen är ospecificerad.\r\n\r\nMätningar såsom maxpuls eller hjärtfrekvens i ett tidsintervall kan registreras i en \"Maximum\"-händelse. Andra enstaka händelser eller intervallhändelser kan specificeras i en mall, eller genereras automatiskt av vissa IT-system.\r\n\r\nI vissa fall är det dock viktigt att skilja pulsmätning i en perifer artär, exempelvis ett radialt kärl, från mätning av den centrala hjärtfrekvensen. Den här arketypen tillåter ytterst specifika data och gör åtskillnad mellan central hjärtfrekvens och puls som mäts i en specifik artär. För att registrera pulsdeficit, registrera mätningar av den mekaniska hjärtfrekvensen och en perifer pulsfrekvens i två fält i denna arketyp. Skillnaden mellan dessa mätvärden är pulsdeficiten. Den aktuella pulsdeficiten kommer att registreras i en separat OBSERVATION arketyp.\r\n\r\nI utvecklingen av denna arketyp har det varit en viss spänning kring presentationen av pulsens eller hjärtslagets regelbundenhet. Denna arketyp presenterar de relevanta datapunkterna separat: Först fastställda \"Regelbunden\" och \"Oregelbunden\" och sedan ytterligare alternativ om \"Oregelbunden\" väljs dvs. \"regelbundet oregelbunden\" och \"oregelbundet oregelbunden\".\r\n\r\nI praktiken skulle de kliniska systemen kunna erbjuda användarna en kombination av värdena från den \"regelbundna\" och \"oregelbundna typen\"- exempelvis \"regelbunden\", \"regelbundet oregelbunden\" och \"oregelbundet oregelbunden\" som hämtas från dessa två fält. Data kan registreras mot båda fälten med antagandet att om en av de oregelbundna typerna väljs, så är det \"oregelbundna\" värdet i dataelementet \"regelbunden\" också automatiskt markerat.",
+          "misuse" : "Ska inte användas för att registrera andningsfrekvens i samband med EKG-rapporter. Till detta ska arketypen OBSERVATION.ecg användas.\r\n\r\nSka inte användas för att registrera andra delar av en kardiovaskulär undersökning eller värdering. Till det ska speciella CLUSTER-arketyper användas, exempelvis för att registrera egenskaper såsom hjärtspetsstöt, blåsljud och *bruits* samt auskultatoriska fynd.\r\n\r\nSka i synnerhet inte användas för att registrera värdering av perifera vaskulära sjukdomar. Dessa kräver att närvaron av och styrkan hos varje perifer puls dokumenteras. Till detta ska en speciell CLUSTER-arketyp användas.\r\n\r\nSka inte användas för att registrera hjärtfrekvensen hos foster. Till detta ska arketypen OBSERVATION.fetal_heart användas.\r\n\r\nSka inte användas för att registrera pulsdeficit. Till detta ska en särskild OBSERVATION-arketyp användas.\r\n\r\nSka inte användas när hjärtfrekvens är ett behandlingsmål. Till det ändamålet ska EVALUATION-arketyper som är till för mål och värdering av träning användas.\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fi" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fi"
+          },
+          "purpose" : "*To record details about the rate and associated attributes for a pulse or heart beat.(en)",
+          "keywords" : [ "*rate(en)", "*rhythm(en)", "*beat(en)", "*pulse(en)", "*heart(en)", "*vital(en)", "*sign(en)" ],
+          "use" : "*Use to record the presence or absence of a pulse or heart beat.\r\n\r\nIn practice, the terms 'heart rate' and 'pulse rate' are often used interchangeably, although they may be measured at different body sites. This archetype allows either term to be used when the measurement site is not specified, to suit clinician preferences.\r\n\r\nUse to record the measurement of the pulse rate, or heart rate, observations about the associated pattern and character, and clinical interpretation of the findings.\r\n\r\nMeasurements such as the maximum pulse or heart rate over an interval of time can be recorded using 'Maximum' event. Others point-in-time or interval events may be specified within a template or at run-time.\r\n\r\nIn development of this archetype, there has been some tension around representation of the regularity of the pulse or heart beat. This archetype represents the relevant data points separately: firstly establishing 'Regular' vs 'Irregular' and then, if 'Irregular', further options of 'Regularly irregular' and 'Irregularly irregular'. In practice, clinical systems could offer users a combination of the values from the 'Regular?' and 'Irregular type' - for example, 'Regular', 'Regularly irregular' and 'Irregularly irregular' drawn from these two data elements. Data could be recorded against both data elements with the assumption that if one of the irregular types are selected, then the 'Irregular' value in the 'Regular?' data element is also automatically selected.\r\n\r\nIn certain situations it is important to be very specific so that a rate observed at a peripheral body site, such as the radial artery, can be differentiated from the rate of the heart. To record a pulse deficit, record the measurements of the mechanical heart rate and a peripheral pulse rate in two instances of this archetype - the difference between these measurments is the pulse deficit. The actual pulse deficit will be recorded in a separate OBSERVATION archetype.(en)",
+          "misuse" : "*Not to be used to record the R-R rate in the context of an Electrocardiograph report - use the OBSERVATION.ecg archetypefor this purpose.\r\n\r\nNot to be used to record other details of the full cardiovascular examination or assessment. Other specific CLUSTER archetypes will be used to record characteristics such as apex beat, murmurs and bruits, or auscultatory findings.\r\n\r\nIn particular, this archetype is not intended to record the assessment of peripheral vascular disease, which requires documentation of the presence and strength of each peripheral pulse.  A specific CLUSTER archetype will be used to record the general findings on examination of peripheral pulses.  \r\n\r\nNot to be used to record fetal heart rate - use the OBSERVATION.fetal_heart archetype for this purpose.\r\n\r\nNot to be used to record the pulse deficit - use a specific OBSERVATION archetype for this purpose.\r\n\r\nConcepts such as Target Heart Rate should be recorded in separate EVALUATION archetypes related to goals and exercise assessment.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om frekvens og tilhørende egenskaper for puls eller hjertefrekvens.",
+          "keywords" : [ "frekvens", "rytme", "slag", "puls", "hjerte", "pulsslag", "hjerteslag", "hjertefrekvens" ],
+          "use" : "Brukes til å registrere tilstedeværelse eller fravær av puls eller hjerteslag.\r\n\r\nBrukes til å registrere en måling av pulsfrekvensen eller hjertefrekvensen, med tilhørende observasjoner rundt rytmen.\r\n\r\nMålinger som makspuls over et tidsintervall kan registreres ved å bruke en intervallhendelse med en \"maksimum\"-funksjon. Andre tidspunkts- eller intervallhendelser kan spesifiseres i en template eller i applikasjonen.\r\n\r\nI praksis brukes begrepene hjertefrekvens og pulsfrekvens mye om hverandre. Denne arketypen tillater uspesifikke registreringer når målestedet ikke er oppgitt, for å best mulig kunne tilpasses klinikernes preferanser.\r\n\r\nI noen situasjoner er det imidlertid viktig å skille mellom en pulsfrekvens målt ved en perifer arterie som f.eks. arteria radialis, og den sentralt målte hjertefrekvensen. Denne arketypen tillater svært spesifikke data, inkludert en strukturert differensiering mellom sentral hjertefrekvens og perifer pulsfrekvens.\r\n\r\nUnder utviklingen av denne arketypen har det vært diskusjon rundt representasjon av regelmessighet av puls og hjerteslag. Denne arketypen representerer de relevante informasjonselementer separat; Først ved å etablere regelmessig kontra uregelmessig, og hvis uregelmessig så kan det videre beskrives hvilken form for uregelmessighet, hhv. 'Regelmessig uregelmessig' og 'Uregelmessig uregelmessig'. I praksis kan kliniske systemer tilby en kombinasjon av verdiene fra 'Regelmessig' og 'Type uregelmessighet' - for eksempel, 'Regelmessig, 'Regelmessig uregelmessig' og 'Uregelmessig uregelmessig' bli utledet fra disse to dataelementene. Data kan lagres i begge dataelementene med antakelsen om at hvis en av verdiene i 'Type uregelmessighet' er registrert, vil verdien for 'Uregelmessig' i dataelementet 'Rytme' automatisk bli valgt.\r\n\r\nVed å bruke to separate instanser kan arketypen benyttes til å registrere målingene av hjertefrekvens og pulsfrekvens som ligger til grunn for en registrering av pulsdeficit. Selve registreringen av pulsdeficitt gjøres imidlertid i en egen OBSERVATION-arketype.",
+          "misuse" : "Brukes ikke til å registrere R-R-frekvens i sammenheng med en EKG-rapport, til dette brukes \"OBSERVATION.ecg\"-arketypen.\r\n\r\nSkal ikke brukes til å registrere andre deler av en full kardiovaskulær undersøkelse eller vurdering. Til dette brukes spesifikke CLUSTER-arketyper for å registrere andre egenskaper som hjertespisstøt, bilyder og auskultatoriske funn.\r\n\r\nArketypen er ikke ment til å registrere vurderingen av perifer karsykdom der det er nødvendig å dokumentere tilstedeværelsen og styrken av hver enkelt perifere puls. Til dette brukes en spesifikk CLUSTER-arketype.\r\n\r\nSkal ikke brukes til å registrere hjertefrekvensen til et foster, dette gjøres ved hjelp av arketypen \"OBSERVATION.fetal_heart\".\r\n\r\nSkal ikke brukes til å registrere pulsdeficit - bruk en spesifik OBSERVATION arketype til dette formålet.\r\n\r\nHjertefrekvens som et mål for behandling registreres i egne EVALUATION-arketyper relatert til mål og vurdering av trening.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para gravar detalhes sobre a frequência e os atributos associados ao pulso ou batimento cardíaco.",
+          "keywords" : [ "frequência", "ritmo", "batimento", "pulso", "coração", "vital", "sinal" ],
+          "use" : "Use para registrar a presença ou ausência de pulso ou batimento cardíaco.\r\n\r\nNa prática, os termos \"frequência cardíaca\" e \"frequência do pulso\" são frequentemente utilizados indistintamente, embora possam ser medidos em diferentes locais do corpo. Este arquétipo permite que qualquer termo seja usado quando o local da medição não é especificado, de acordo com as preferências clínicas.\r\n\r\nUse para registrar a medida da freqüência do pulso, ou freqüência cardíaca, observações sobre o padrão e caráter associados e interpretação clínica dos achados.\r\n\r\nMedições como o pulso máximo ou freqüência cardíaca durante um intervalo de tempo podem ser gravadas usando o evento \"Máximo\". Outros eventos pontuais ou intervalados podem ser especificados dentro de um modelo ou em tempo de execução.\r\n\r\nNo desenvolvimento deste arquétipo, houve alguma tensão em torno da representação da regularidade do pulso ou batimento cardíaco. Este arquétipo representa os pontos de dados relevantes separadamente: primeiro estabelecendo 'Regular' vs 'Irregular' e, em seguida, 'Irregular', outras opções de 'Regularmente irregular' e 'Irregularmente irregular'. Na prática, os sistemas clínicos poderiam oferecer aos usuários uma combinação dos valores do \"Regular?\" E 'Tipo irregular' - por exemplo, 'Regular', 'Regularmente irregular' e 'Irregularmente irregular' extraídos destes dois elementos de dados. Os dados poderiam ser registrados contra os dois elementos de dados com a suposição de que, se um dos tipos irregulares for selecionado, então o valor 'Irregular' no elemento de dados 'Regular?' também é automaticamente selecionado.\r\n\r\nUse para registrar a presença ou ausência de pulso ou batimento cardíaco.\r\n\r\nNa prática, os termos \"frequência cardíaca\" e \"frequência de pulso\" são frequentemente utilizados indistintamente, embora possam ser medidos em diferentes locais do corpo. Este arquétipo permite que qualquer termo seja usado quando o local da medição não é especificado, de acordo com as preferências clínicas.\r\n\r\nUse para registrar a medida da freqüência do pulso, ou freqüência cardíaca, observações sobre o padrão e caráter associados e interpretação clínica dos achados.\r\n\r\nMedições como o pulso máximo ou freqüência cardíaca durante um intervalo de tempo podem ser gravadas usando o evento \"Máximo\". Outros eventos pontuais ou intervalados podem ser especificados dentro de um modelo ou em tempo de execução.\r\n\r\nNo desenvolvimento deste arquétipo, houve alguma tensão em torno da representação da regularidade do pulso ou batimento cardíaco. Este arquétipo representa os pontos de dados relevantes separadamente: primeiro estabelecendo 'Regular' vs 'Irregular' e, em seguida, 'Irregular', outras opções de 'Regularmente irregular' e 'Irregularmente irregular'. Na prática, os sistemas clínicos poderiam oferecer aos usuários uma combinação dos valores do \"Regular?\" E 'Tipo irregular' - por exemplo, 'Regular', 'Regularmente irregular' e 'Irregularmente irregular' extraídos destes dois elementos de dados. Os dados poderiam ser registrados contra os dois elementos de dados com a suposição de que, se um dos tipos irregulares for selecionado, então o valor 'Irregular' no elemento de dados 'Regular?' também é automaticamente selecionado.\r\n\r\nEm certas situações, é importante ser muito específico para que uma frequência observada num local do corpo periférico, tal como a artéria radial, possa ser diferenciada da frequência do coração. Para registrar um déficit de pulso, registre as medidas da freqüência cardíaca mecânica e uma frequência de pulso periférico em duas instâncias deste arquétipo - a diferença entre essas medições é o déficit de pulso. O déficit de pulso real será registrado em um arquétipo OBSERVATION separado.",
+          "misuse" : "Não deve ser utilizado para registrar a taxa R-R no contexto de um relatório de eletrocardiografia - use o arquétipo OBSERVATION.ecg para este fim.\r\n\r\nNão deve ser utilizado para registrar outros detalhes do exame ou avaliação cardiovascular completa. Outros arquétipos CLUSTER específicos serão usados para registrar características como a batida do ápice, murmúrios e sopros, ou achados na ausculta.\r\n\r\nEm particular, este arquétipo não pretende registar a avaliação da doença vascular periférica, que requer documentação da presença e da força de cada pulso periférico. Um arquétipo CLUSTER específico será usado para registrar os achados gerais no exame de pulsos periféricos.\r\n\r\nNão deve ser usado para registrar a freqüência cardíaca fetal - use o arquétipo OBSERVATION.fetal_heart para esta finalidade.\r\n\r\nNão deve ser usado para registrar o déficit de pulso - use um arquétipo OBSERVATION específico para este fim.\r\n\r\nConceitos como a Frequência Cardíaca-alvo devem ser registrados em arquétipos de EVALUATION separados relacionados com as metas e a avaliação do exercício.\r\n\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about the rate and associated attributes for a pulse or heart beat.",
+          "keywords" : [ "rate", "rhythm", "beat", "pulse", "heart", "vital", "sign" ],
+          "use" : "Use to record the presence or absence of a pulse or heart beat.\r\n\r\nIn practice, the terms 'heart rate' and 'pulse rate' are often used interchangeably, although they may be measured at different body sites. This archetype is intended to be used for either term and the measurement site element is used to differentiate them.\r\n\r\nUse to record the measurement of the pulse rate, or heart rate, observations about the associated pattern and character, and clinical interpretation of the findings.\r\n\r\nMeasurements such as the maximum pulse or heart rate over an interval of time can be recorded using 'Maximum' event. Others point-in-time or interval events may be specified within a template or at run-time.\r\n\r\nIn development of this archetype, there has been some tension around representation of the regularity of the pulse or heart beat. This archetype represents the relevant data points separately: firstly establishing 'Regular' vs 'Irregular' and then, if 'Irregular', further options of 'Regularly irregular' and 'Irregularly irregular'. In practice, clinical systems could offer users a combination of the values from the 'Regularity' and 'Irregular type' - for example, 'Regular', 'Regularly irregular' and 'Irregularly irregular' drawn from these two data elements. Data could be recorded against both data elements with the assumption that if one of the irregular types are selected, then the 'Irregular' value in the 'Regularity' data element is also automatically selected.\r\n\r\nIn certain situations it is important to be very specific so that a rate observed at a peripheral body site, such as the radial artery, can be differentiated from the rate of the heart. To record a pulse deficit, record the measurements of the mechanical heart rate and a peripheral pulse rate in two instances of this archetype - the difference between these measurments is the pulse deficit. The actual pulse deficit will be recorded in a separate OBSERVATION archetype.",
+          "misuse" : "Not to be used to record the R-R rate in the context of an Electrocardiograph report - use the OBSERVATION.ecg archetype for this purpose.\r\n\r\nNot to be used to record other details of the full cardiovascular examination or assessment. Other specific CLUSTER archetypes will be used to record characteristics such as apex beat, murmurs and bruits, or auscultatory findings.\r\n\r\nIn particular, this archetype is not intended to record the assessment of peripheral vascular disease, which requires documentation of the presence and strength of each peripheral pulse. A specific CLUSTER archetype will be used to record the general findings on examination of peripheral pulses. \r\n\r\nNot to be used to record fetal heart rate - use the OBSERVATION.fetal_heart archetype for this purpose.\r\n\r\nNot to be used to record the pulse deficit - use a specific OBSERVATION archetype for this purpose.\r\n\r\nConcepts such as Target Heart Rate should be recorded in separate EVALUATION archetypes related to goals and exercise assessment.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ar-sy" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ar-sy"
+          },
+          "purpose" : "لتسجيل تفاصيل حول معدل و نظم القلب.",
+          "keywords" : [ "المعدل", "معدل القلب", "النظم" ],
+          "use" : "يستخدم لتسجيل الخصائص التي تم قياسها فيما يتعلق بمعدل و نظم القلب, بما في ذلك بيان بسيط حول وجود نبض و معدل ضربات القلب. و لا يتم استخدام هذه القراءات بالملاحظة المباشرة للقلب ذاته, و إنما يتنم استنباطها من مصادر بديلة تتضمن التسمع المباشر للقلب أو تخطيط كهربية القلب بما يعكس النشاط الكهربي للقلب.\r\nمعدل و نظم القلب ( أو تخصيصهما إلى النبض) عادة ما يتم تسجيلهم على أنهم يمثلون واحدا من العلامات الحياتية – و التي تتكون من ضغط الدم, التنفس, درجة الحرارة, و قياس التأكسج. و يوجد نماذج إضافية مخصصة لكل نوع من هذه المفاهيم.",
+          "misuse" : "لا يستخدم لتسجيل استنتاجات حول معدل و نظم القلب الذي تم قياسهما. و ينبغي تسجيل بيانات مثل (المريض يعاني من الرجفان الأذيني) أو (يعاني من تسرع ضربات القلب) في نماذج أخرى مخصصة و متعلقة بتقييم حالة المريض.\r\nلا تستخدم لتسجيل معدل القلب الميكانيكي, أو النظم أو الخصائص الأخرى – و يتم تسجيل ذلك باستخدام تخصيص لهذا النموذج يسمى ملاحظة. معدل القلب – النبض.\r\nلا يستخدم لتسجيل تفاصيل فحص أو تقييم أكثر شمولا للجهاز القلبي الوريدي. و يمكن أن تستخدم نماذج معينة أخرى لتسجيل خصائص مثل نبض قمة القلب, النفخات, و الموجودات عند التسمع, إلى آخره.\r\nالمفاهيم الأخرى مثل أقصى معدل للقلب, أو معدل القلب المستهدف ينبغي أن يتم تسجيلها في نماذج أخرى متعلقة بتقييم المجهود.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "Para registrar la frecuencia del pulso o latidos del corazón, y la descripción asociada a sus características como componente de los signos vitales",
+          "keywords" : [ "frecuencia, ritmo, latido, pulso, corazón, signo, signos vitales" ],
+          "use" : "Utilizar para registrar la presencia o ausencia de pulso o latidos del corazón.\r\n\r\nUtilizar para registrar la frecuencia del pulso o latidos del corazón, y observaciones sobre el ritmo.\r\n\r\nUtilizar para registrar la descripción de las características asociadas al pulso o latidos del corazón, comunmente registradas por parte de los signos vitales.\r\n\r\nMedidas como el pulso o latidos máximos en un intervalo de tiempo puede ser registrado en un evento de intervalo asociado a la función 'máximo'.\r\nOtros eventos puntuales o intervaloes pueden ser especificados dentro de una plantilla o en tiempo de ejecución.\r\n\r\nEn la práctica los términos pulso y latidos del corazón son intercambiables. Este arquetipo permite especificar el término que se desea utilizar para nombrar a la medida cuando no se especifica la localización corporal donde se realiza la medida.\r\n\r\nEn algunas situaciones, es importante diferenciar la frecuencia del pulso en una arteria periférica, como la arteria radial, en contraste con los latidos del corazón medidos centralmente. Este arquetipo permite registrar datos específicos y diferenciar entre frecuencia cardiaca central, y pulso medido sobre una arteria específica.",
+          "misuse" : "No debe ser utilizado para el cálculo de intervalos RR para l frecuencia cardiaca en el contexto de un estudio electrocardiográfico, para eso utilizar el arquetipo OBSERVATION.ecg.\r\n         \r\nNo debe ser utilizado para registrar otros detalles de la examiniación o evaluación cardiovascular.\r\nPara registrar características como latido apexiano, solplos, murmullos y hallazgos específicos, pueden utilizarse otros arquetipos CLUSTER.\r\n\r\nEste arquetipo no fue diseñado para el registro de la evaluación de enfermedad vascular periférica, la cual requiere documentación sobre la presencia e intensidad de cada pulso periférico. Un CLUSTER específico debe utilizarse para registrar hallazgos generales en la examinación de pulsos periféricos.\r\n\r\nNo debe ser utilizado para registrar la frecuencia cardiaca fetal, esto se registra en el arquetipo OBSERVATION.fetal_heart.\r\n\r\nConceptos como la frecuencia cardiaca objetivo deben ser registrados en arquetipos EVALUATION relacionados a objetivos sobre signos vitales y ejercicio.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "Voor het vastleggen van de frequentie en andere eigenschappen van de pols of de hartslag.",
+          "keywords" : [ "frequentie", "ritme", "slag", "pols", "hart", "vitaal", "teken" ],
+          "use" : "Gebruik voor het vastleggen van de aanwezigheid of afwezigheid van een pols of hartslag.\r\n\r\nIn de praktijk worden de termen hart frequentie and polsfrequentie vaak door elkaar gebruikt, hoewel ze op andere locaties op het lichaam gemeten kunnen worden. Dit archetype is bedoeld om gebruikt te worden voor beide termen en het element meetlocatie wordt gebruikt om ze te onderscheiden.\r\n\r\nGebruik voor het vastleggen van een meting van de polsfrequentie of de hartfrequentie, observaties over het bijbehorende patroon, karakter en de klinische interpretatie van de bevindingen.\r\n\r\nMetingen zoals de maximale pols- of hartfrequentie gedurende een interval kunnen worden vastgelegd met behulp van 'maximum' gebeurtenis. Andere momenten of interval gebeurtenissen kunnen gespecificieerd worden in een template of terwijl de applicatie loopt.\r\n\r\nTijdens de ontwikkeling van dit archetype is er spanning geweest rond het vastleggen van de regulariteit van de pols- of hartfreqeuntie. Dit archetype legt de relevante data apart vast: ten eerste door het vastleggen van 'regulair' of 'irregulair' en vervolgens, indien 'irregulair', de extra opties 'regelmatig irregulair' en 'onregelmatig irregulair'. In d praktijk kunnen klinische systemen een combinatie tonen aan de gebruiker van de waardes van de 'regulariteit' en 'irregulair type' - bijvoorbeeld, 'regulair', 'regemlatig irregulair' en 'onregelmatig irregulair' gekozen uit deze twee data elementen. Data kan vastgelegd worden in beide elementen onder de aanname dat wanneer een van de irregulaire types gekozen wordt, dat automatisch de waarde 'irregulair' wordt gekozen in het data element 'regulariteit'.\r\n\r\nIn bepaalde situaties is het belangrijk om heel specifiek te zijn zodat de frequentie, geobserveerd aan een perifeer lichaamslocatie, zoals de arteria radialis, onderscheiden kan worden van de hartfrequentie. Om een polsdeficit vast te leggen, dient de meting van de mechanische hartfrequentie en een perifere hartfrequentie in twee aparte versies van dit archetype vastgelegd te worden - het verschil tussen deze metingen is het polsdeficit. Het daadwerkelijke polsdeficit wordt in een apart OBSERVATION archetype vastgelegd.",
+          "misuse" : "Niet te gebruiken voor het vastleggen van de R-R frequentie in de context van een electrocardiogram verslag - gebruik voor dat doel het OBSERVATION.ecg archetype.\r\n\r\nNiet te gebruiken voor het vastleggen van andere details van een volledig cardiovasculair onderzoek of beoordeling. Andere specifieke CLUSTER archetypes worden gebruikt voor het vastleggen van eigenschappen als apexhartslag, geruizen en bevindingen bij auscultatie. \r\n\r\nIn het bijzonder, is dit archetype niet bedoeld voor het vastleggen van een beoordeling van perifere vaculaire ziekte, die verslaglegging vereisen van de aanwezigheid of kracht van elke individuele perifere pols. Een specifiek CLUSTER archetype wordt gebruikt voor het vastleggen van bevindingen bij onderzoek van de perifere hartslag.\r\n\r\nNiet te gebruiken voor het vastleggen van foetale hartfrequentie - gebruik voor dat doel het OBSERVATION.fetal_heart archetype.\r\n\r\nNiet te gebruiken voor het vastleggen van het polsdeficit - gebruik voor dat doel een specifiek OBSERVATION archetype.\r\n\r\nConcepten zoals streef hart frequentie dienen vastgelegd te worden in een apart EVALUATION archetype gerelateerd aan doelen en inspannings beoordeling.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es-co" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es-co"
+          },
+          "purpose" : "Registrar la medida de la frecuencia de pulso, la frecuencia cardiaca, y la descripción de las características asociadas como uno de los componentes de las observación de signos vitales",
+          "keywords" : [ ],
+          "use" : "*Use to record the presence or absence of a pulse rate or heart rate. \r\n\r\nUse to record the measurement of the pulse rate, or heart rate, and observation about the associated rhythm.\r\n\r\nUse to record a simple description of characteristics that are associated with the pulse or heart beat, that might be commonly recorded as part of a vital signs obervation.\r\n\r\nMeasurements such as the maximum pulse or heart rate over an interval of time can be recorded using \"Maximum' event. Others point-in-time or interval events may be specified within a template or at run-time.\r\n\r\nIn practice, the terms heart rate and pulse rate are often used interchangeably. This archetype allows either term to be used when the measurement site is not specified, to suit clincian preferences.\r\n\r\nIn certain situations, however, it is important to differentiate between a pulse rate observed at a peripheral artery, such as the radial artery, in contrast to the centrally observed heart rate. This archetype allows the data to be very specific and differentiate between central heart rate and the pulse rate recorded at a specified artery.(en)",
+          "misuse" : "*Not to be used to record the R-R rate in the context of an Electrocardiograph report - this is to be recorded using the OBSERVATION.ecg archetype.\r\n\r\nNot to be used to record other details of the full cardiovascular examination or assessment. Other specific CLUSTER archetypes will be used to record characteristics such as apex beat, murmurs and bruits, auscultatory findings,\r\n\r\nIn particular, this archetype is not intended to record the assessment of peripheral vascular disease, which requires documentation of the presence and strength of each peripheral pulse.  A specific CLUSTER archetype will be used to record the general findings on examiantion of peripheral pulses.  \r\n\r\nNot to be used to record fetal heart rate - this is recorded using the OBSERVATION.fetal_heart archetype.\r\n\r\nConcepts such as Target Heart Rate should be recorded in separate EVALUATION archetypes related to goals and exercise assessment.(en)",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.pulse.v2",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-pulse-001.v2"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "nodeId" : "at0002",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "EVENT",
+              "nodeId" : "at0003",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0001.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "state",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0012.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "INTERVAL_EVENT",
+              "nodeId" : "at1036.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "math_function",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "openehr"
+                      },
+                      "constraint" : [ "144" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0001.2",
+                  "targetPath" : "/data[at0002]/events[at0003]/data[at0001.1]",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "state",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0012.2",
+                  "targetPath" : "/data[at0002]/events[at0003]/state[at0012.1]",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0010",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_ARCHETYPE_ROOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..1",
+              "nodeId" : "at1013.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ],
+              "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-device-001.v1",
+              "referenceType" : "archetypeOverlay"
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ar-sy" : { },
+        "es-co" : { },
+        "en" : { },
+        "de" : { },
+        "ru" : { },
+        "pt-br" : { },
+        "sv" : { },
+        "es" : { },
+        "fi" : { },
+        "nb" : { },
+        "nl" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "faf59c32-a8b5-4369-b7f0-578b834271d5",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Jasmin Buck, Sebastian Garde, Ramona Wellmann",
+        "organisation" : "University of Heidelberg, Central Queensland University, Hannover Medical School"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ru"
+      },
+      "author" : {
+        "name" : "Vyacheslav Mavrin",
+        "organisation" : "JSC Comsoft"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Erik Sundvall; Åsa Skagerhult, Kirsi Poikela",
+        "organisation" : "Region Östergötland, Tieto Sweden AB",
+        "email" : "asa.skagerhult@regionostergotland.se, ext.kirsi.poikela@tieto.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fi"
+      },
+      "author" : {
+        "name" : "Vesa Peltola",
+        "organisation" : "Tieto Finland",
+        "email" : "vesa.peltola@tieto.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Silje Ljosland Bakke",
+        "organisation" : "Helse Bergen HF",
+        "email" : "."
+      },
+      "accreditation" : "RN",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Osmeire Chamelette Sanzovo",
+        "organisation" : "Hospital Sírio Libanês - SP",
+        "email" : "osmeire.acsanzovo@hsl.org.br"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Pablo Pazos",
+        "organisation" : "CaboLabs - Health Informatics",
+        "email" : "pablo.pazos@cabolabs.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Joost Holslag",
+        "organisation" : "Nedap",
+        "email" : "joost.holslag@nedap.com"
+      },
+      "accreditation" : "MD",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-co"
+      },
+      "author" : {
+        "name" : "Jose Florez-Arango"
+      },
+      "accreditation" : "MD MS PhD",
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "38cb18cd-1ee3-4c29-aaf8-be541fa14b4e",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "EEC8640C1336806D602A1BC344D4F733"
+      },
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Erfassung der Daten eines Medizingerätes, welches in der Gesundheitsversorgung eingesetzt wird.",
+          "keywords" : [ "Medizingerät", "Maschine", "Implantat", "Gerät", "Katheter", "Prothese", "Hilfsmittel", "biomedizinisch", "Instrument", "Gerätschaften", "Ausrüstung", "Messgerät", "Monitor", "Software" ],
+          "use" : "Zur Erfassung der Details eines Medizingerätes, welches in der Gesundheitsversorgung eingesetzt wird.\r\n\r\nDie Verwendung des Begriffs \"Medizingerät\" variiert je nach Kontext. In der Welt der Standards bezieht sich der Begriff „Gerät“ in der Regel auf mechanische oder elektronische Geräte, die das Gesundheitswesen unterstützen und eine strenge Dokumentation in Bezug auf Standortverfolgung, Wartung, Kalibrierung, Softwareversionen usw. erfordern. Im terminologischen Kontext ist die Verwendung von Medizingeräten sehr weit verbreitet, einschließlich aller medizinischen Produkte, die für die direkte oder indirekte Bereitstellung der klinischen Versorgung verwendet werden können, sofern sie nicht auf eine Weise wirken, die eine direkte pharmakologische, metabolische oder immunologische Wirkung hat.\r\n\r\nBeispiele für medizinische Geräte reichen von einfachen Geräten wie Blasenkathetern, Zungenspateln, Kontaktlinsen, künstlichen Gelenkimplantaten, Brustimplantaten und einfachen\r\nVerbänden bis hin zu fortschrittlichen Geräten wie künstlichen Herzen, Spritzenpumpen, Spirometern, Anwendungen für Mobiltelefone und computergestützten Geräten zur Erfassung medizinischer Point-of-Care-Messungen. \r\n\r\nIn der komplexen Situation, in der ein chirurgisch implantiertes Gerät als Mittel zur Abgabe von Therapeutika, wie bei einer Chemotherapie direkt in den Körper verwendet wird, werden mit diesem Archetyp nur die Details des Medizinprodukts selbst, sowie die Bestellung von Medikamenten und Details zum Medikament aufgezeichnet. Die tatsächliche Verabreichung des therapeutischen Mittels wird unter Verwendung spezifischer arzneimittelbezogener Instruktions- und Aktionsarchetypen aufgezeichnet. \r\n\r\nDieser Archetyp soll das Gerüst für die strukturierte Darstellung von Medizingeräten bereitstellen. Die hier enthaltenen Datenelemente sind für keinen Gerätetyp spezifisch. Für Einmalprodukte sind normalerweise Datenelemente wie Chargennummer und Verfallsdatum erforderlich. Im Gegensatz dazu sind diese normalerweise nicht relevant für langlebige Geräte, die häufig eine Reihe von Kennungen aufweisen, einschließlich UID, Seriennummer, Modell usw.\r\n\r\nDarüber hinaus erfordern verschiedene Arten von Geräten spezifische Informationen, die für ihren Zweck relevant sind. Diese Daten können mithilfe bestimmter CLUSTER-Archetypen aufgezeichnet werden, die im SLOT \"Specific Properties\" (Spezifische Eigenschaften) eingefügt sind. Zum Beispiel: Für die Verwendung eines Harnkatheters sind möglicherweise zusätzliche Angaben zum Durchmesser und der Länge des Katheters, Materialzusammensetzung, Anzahl der Lumen usw. erforderlich.\r\n\r\nWenn das Medizinprodukt eine Reihe von Komponenten enthält, welche für eine Aufzeichnung von Details erforderlich ist, sollte jede einzelne Komponente explizit unter Verwendung eines zusätzlichen Archetyps CLUSTER.device aufgezeichnet werden, der in den SLOT 'Components' eingefügt wird.\r\n\r\nIm Datenfeld 'Software-Version' kann nur eine Version erfasst werden. Dies gilt hauptsächlich für ein Gerät, bei dem es sich um ausschließlich eine Softwareanwendung handelt. Wenn das Gerät über mehrere Software- oder Hardwarekomponenten verfügt, die spezifiziert werden müssen, sollte dies unter Verwendung des Zusatzes CLUSTER.device erfolgen, der in den SLOT 'Components' eingefügt wird.\r\n\r\nVerwenden Sie den Archetyp CLUSTER.device_details, der in den SLOT 'Asset Management' in diesem Archetyp eingefügt ist, um zusätzliche Details für dauerhafte oder andauernde Geräte aufzuzeichnen, die sich auf den Besitz, die Verfolgung des physischen Standorts, Wartungspläne usw. beziehen.\r\n\r\nDieser Archetyp wurde für die allgemeine Verwendung in anderen Archetypen entwickelt, die ein Gerät beschreiben müssen. Beispiele sind: OBSERVATION.blood_pressure für das Blutdruckmessgerät; OBSERVATION.ecg für das EKG-Gerät; BEOBACHTUNG.Urinanalyse der Reagenzstreifen und der zum Testen verwendeten Vorrichtung; ACTION.procedure; und CLUSTER.exam_tympanic_membrane, um das verwendete Otoskop zu beschreiben.",
+          "misuse" : "Nicht zur Aufzeichnung von Daten bezüglich der Medizinprodukte, die eine direkte pharmakologische, metabolische oder immunologische Wirkung\r\nhaben, verwenden. Zum Beispiel: Ein mit Arzneimitteln imprägnierter Verband, für den ein Rezept erforderlich ist, sollte unter Verwendung des Archetyps INSTRUCTION.medication_order aufgezeichnet werden, der sich\r\nauf die Wirkstoffe, die Dosierung usw. konzentriert.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera information om en medicinsk utrustning som används vid tillhandahållandet av hälso- och sjukvård.",
+          "keywords" : [ "utrustning", "maskin", "implantera", "apparat", "kateter", "protes", "aid", "biomedicinsk", "instrument", "Utrustning", "meter", "övervaka", "programvara" ],
+          "use" : "Arketypen används för att registrera information om en medicinsk utrustning. Medicinsk utrustning används vid tillhandahållande av hälso- och sjukvård.\r\nAnvändningen av termen \"medicinsk utrustning\" varierar beroende på sammanhanget. Termen utrustning enligt standarder används för att beskriva mekaniska eller elektroniska produkter som stöder hälso- och sjukvård och kräver noggrann dokumentation om platsspårning, underhåll, kalibrering, programvaruversioner etc. Inom terminologin, användningen av termen utrustning är mycket bred. Det inkluderar alla medicinska utrustningar som kan användas i direkt eller indirekt tillhandahållande av klinisk vård. Termen används inte för de utrustning som registrerar data om läkemedel som har en direkt farmakologisk, metabolisk eller immunologisk effekt. \r\n\r\nExempel på medicintekniska produkter: enkla apparater urinkatetrar, tungdämpare, kontaktlinser, konstgjorda ledimplantat, bröstimplantat. Samt vanliga förband till avancerade utrustningar som konstgjorda hjärtan, sprutdrivare, spirometrar, mobiltelefonapplikationer, även datoriserade utrustningar som fångar upp sjukvårdsmedicinska mätningar.\r\n\r\nDenna arketyp kan användas för att beskrivautrustningar som används i komplicerade situationer, för exempel: i ett fall där en kirurgiskt implanterad utrustning används för att leverera terapeutiska medel direkt in i kroppen i en kemoterapi behandling. Fast används arketypen medicinsk utrustning för att bara registrera detaljerna om själva den medicinska utrustningen och inte behandlingen. Beställningen för medicinering och detaljer om faktiska administrering av det terapeutiska medlet kommer att registreras med hjälp av specifika läkemedelsrelaterade INSTRUKTIONS- och HANDLINGS-arketyper.\r\n\r\nDen här arketypen är designad för att ge ramverk för en strukturerad representation av medicinsk utrustning. Dataelementen i arketypen är inte specifika för någon typ av utrustning. Utrustningar för engångsbruk kräver vanligtvis dataelement som partinummer och utgångsdatum. Däremot är dessa vanligtvis inte relevanta för hållbara utrustningar som ofta har en uppsättning av identifierare, inklusive ett UID, serienummer, modell etc.\r\n\r\nOlika typer av utrustningar kommer att kräva ha specifik information som är relevant för utrustningens syfte. Dessa data kan registreras med specifika CLUSTER-arketyper infogade i SLOT för 'Specifika egenskaper'. Till exempel: användning av en urinkatet kan kräva ytterligare detaljer om kateterns diameter och längd, materialkomposition, antal lumen etc.\r\n\r\nOm den medicinska utrustningen har ett antal komponenter som kräver registrering av detaljer, bör varje enskild komponent registreras med hjälp av en extra CLUSTER.device-arketyp som sätts in i \"Components\" SLOT.\r\n\r\nDatafältet 'Programvara version' gör det möjligt att bara en enda version blir registrerad. Detta gäller främst för en utrustning som är en programvara. Om utrustningen har flera programvara- eller hårdvara komponenter som behöver specificeras, bör detta göras med hjälp av ett tillägg CLUSTER.device som sätts in i 'Components' SLOT.\r\n\r\nDenna arketyp har designats för generisk användning inom andra arketyper. d.v.s. Arketyper som behöver beskriva en utrustning. Exempel är: OBSERVATION.blood_pressure för blodtrycksmätaren; OBSERVATION.ecg för EKG-maskinen; OBSERVATION. Urinanalys för reagensremsorna och anordningen som används för testning; ACTION.procedure; och CLUSTER.exam_tympanic_membrane för att specificera det använda otoskopet.",
+          "misuse" : "Får inte användas för att registrera data om läkemedel som har en direkt farmakologisk, metabolisk eller immunologisk effekt. Till exempel: ett läkemedelsimpregnerat förband som kräver recept bör registreras med hjälp av INSTRUCTION.medication_order-arketypen, med fokus på de aktiva ingredienserna, dosering etc. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es-ar" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es-ar"
+          },
+          "purpose" : "Registrar los detalles de un objeto físico, producto o dispositivo utilizado en el sentido mas amplio de la provisión de cuidados de la salud, pero no como medio terapéutico o metabólico.",
+          "keywords" : [ "dispositivo", "máquina", "implante", "cateter", "prótesis", "auxiliar", "biomédico", "instrumento", "equipamiento", "medidor", "monitor", "físico", "objeto" ],
+          "use" : "Utilizado para registrar los detalles de cualquier dispositivo genérico que puede ser utilizado directamente de un modo terapéutico o diagnóstico, o indirectamente como apoyo a la provisión de cuidados de la salud. El uso del término dispositivo varía dependiendo del contexto. En el mundo de los estándares, el término dispositivo tiende a referirse a dispositivos mecánicos o electrónicos que actuan como apoyo del cuidado de la salud y que requiren documentación rigurosa en cuanto a especificaciones, mantenimiento, etc. En el contexto de las terminologías, el uso de dispositivo es muy amplio, incluyendo a cualquier objeto físico que pueda ser utilizado directa o indirectamente en la provisión de cuidados clínicos. Los ejemplos incluyen ventiladores, medidores de flujo expiratorio máximo, espirómetros, lentes oculares y de contacto, catéteres endovasculares, implantes mamarios, prótesis, tubos de drenaje y anillos para callos. \r\nEste arquetipo esta diseñado para proveer la base de una representación estructurada de cualquier dispositivo, desde el simple ejemplo de una marca de tira reactiva urinaria con una fecha de vencimiento hasta un oído biónico implantable que puede requerir documentación compleja, software, hardware, mantenimiento, calibración, etc.\r\nPara los casos de uso habituales podría ser apropiada la especialización de este arquetipo para formas específicas (ej.: cateter endovascular o cateter urinario).",
+          "misuse" : "No debe ser utilizado para el registro de medicamentos, vacunas o similares, que se utizan como medios terapéuticos o metabólicos.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om medisinsk utstyr benyttet i utførelsen av helsetjenester.",
+          "keywords" : [ "medisinsk utstyr", "maskin", "implantat", "apparat", "kateter", "protese", "hjelpemiddel", "instrument", "utstyr", "måler", "monitor", "software", "programvare", "MTU", "medisinsk teknisk utstyr", "MU" ],
+          "use" : "Benyttes for å registrere detaljer om medisinsk utstyr benyttet i utførelsen av helsetjenester.\r\n\r\nTermen \"medisinsk utstyr\" varierer med ulike kontekster. Innen standardisering refererer termen ofte til mekanisk eller elektronisk utstyr som støtter helsetjenesten og krever streng dokumentasjon rundt lokalisering, vedlikehold, kalibrering, programvareversjoner etc. I en terminologikontekst er bruken av \"medisinsk utstyr\" veldig bred, og inkluderer et hvilket som helst medisinsk utstyr som benyttes direkte eller indirekte i utførelsen av helsetjenester. Unntak er utstyr som har en direkte farmakologisk, metabolsk og immunologisk effekt. \r\n\r\nEksempler på medisinsk utstyr strekker seg fra enkelt utstyr som urinkatetre, spatler, kontaktlinser, leddproteser, brystimplantater, bandasjer, hofteproteser, sprøytepumper og spirometre, til avansert utstyr som kunstige hjerter, mobiltelefonapplikasjoner og pasientnære datastyrte enheter for å fange opp medisinske målinger.\r\n\r\nI en kompleks setting hvor en kirurgisk implantert enhet skal brukes for å tilføre et legemiddel, for eksempel cellegift direkte i kroppen, vil denne arketypen kun registrere detaljer om det medisinske utstyret. Ordinasjonen og detaljer rundt den faktiske administrasjonen av legemidlet vil bli lagret i spesifikke medikasjonsrelaterte INSTRUCTION og ACTION-arketyper \r\n\r\nDenne arketypen er designet for å gi et rammeverk for strukturert representasjon av et hvilket som helst medisinsk utstyr, og dataelementene i arketypen er ikke spesifikke for en enkelt type utstyr. Engangsutstyr vil vanligvis kreve registrering av lot-nummer og utløpsdato, i motsetning til flergangsutstyr som vil kreve en rekke identifikatorer som UID, serienummer, modell etc.\r\n\r\nUlikt utstyr vil kunne kreve spesifikk informasjon som er relevant for deres bruksområde. Data om dette kan lagres i spesifikke CLUSTER-arketyper lagt til i SLOTet \"Spesifikke detaljer\". For eksempel: Ved bruk av et urinkateter vil man kunne ønske å registrere tilleggsinformasjon som diameter og lengde på kateteret, hvilke materialer kateteret består av, antall lumen osv.\r\n\r\nHar det medisinske utstyret flere komponenter som krever registrering av detaljer må hver komponent registreres i egen CLUSTER.device arketype lagt til i SLOTet \"Komponent\".\r\n\r\nDatafeltet \"Programvareversjon\" tillater at kun en versjon registreres. Feltet benyttes i hovedsak for medisinsk utstyr som er en programvareapplikasjon. Har det medisinske utstyret flere programvare- eller maskinvarekomponenter som må spesifiseres, gjøres dette ved å legge til en ny CLUSTER.device i \"Komponent\"-SLOTet.\r\n\r\nFor å registrere tilleggsinformasjon for varig eller permanent utstyr som omhandler eierskap, fysisk lokalisering, vedlikeholdsplaner etc, bruk CLUSTER.device_details-arketypen lagt til i SLOTet \"Forvaltning av det medisinske utstyret\" i denne arketypen.\r\n\r\nArketypen er designet for generisk bruk i andre arketyper der man trenger å beskrive medisinsk utstyr. Eksempler: OBSERVATION.blood_pressure for sfygmomanometer, OBSERVATION.ecg for EKG-appararatet, OBSERVATION.urinalysis for urinstix og utstyr som brukes for testing, ACTION.procedure og CLUSTER.exam_tympanic_membrane for detaljer om otoskopet som er benyttet.",
+          "misuse" : "Brukes ikke for å registrere data om medisinske produkter som utøver en direkte farmakologisk, metabolsk eller immunologisk effekt. For eksempel: En bandasje som inneholder et medikament som krever resept registreres i arketypen INSTRUCTION.medication_order, med fokus på aktive ingredienser, dose etc.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para gravar os detalhes de um dispositivo médico usado na prestação de cuidados de saúde.",
+          "keywords" : [ "dispositivo", "máquina", "implante", "catéter", "prótese", "cuidado", "biomedical", "instrumento", "equipamento", "monitor", "software", "utensílio" ],
+          "use" : "Use para gravar os detalhes de um dispositivo médico utilizado na prestação de cuidados de saúde .\r\n\r\nO uso do termo \"dispositivo médico\" varia dependendo do contexto. No mundo dos padrões, o termo dispositivo tende a referir-se a dispositivos mecânicos ou eletrônicos que apoiam cuidados de saúde e exigem documentação rigorosa sobre rastreamento de localização, manutenção, calibração, versões de software etc. Dentro do contexto da terminologia o uso de dispositivo é muito amplo , incluindo qualquer dispositivo médico que pode ser utilizado direta ou indiretamente em cuidados clínicos , desde que não atue de forma que exerça uma ação farmacológica direta , metabólica ou como efeito imunológico .\r\n\r\nOs dispositivos médicos variam de dispositivos simples, como catéteres urinários, abaixadores de língua, lentes de contato, próteses articulares, os implantes mamários e curativos simples, até dispositivos avançados, como corações artificiais, espirômetros, além de aplicativos para celulares e dispositivos computadorizados que capturam medidas médicas.\r\n\r\nEm situações complexas, onde um dispositivo implantado cirurgicamente é usado para administrar agentes terapêuticos, tais como a quimioterapia, este arquétipo irá ser utilizado para gravar apenas os detalhes sobre o próprio dispositivo médico e a prescrição da medicação e detalhes sobre o administração real do agente terapêutico serão registrados utilizando-se a arquétipos INSTRUCTION e ACTION sobre a medicação específica.\r\n\r\nEste arquétipo é projetado para fornecer a estrutura para representação estruturada de qualquer dispositivo médico e os elementos de dados que estão contidos aqui não são específicos para algum tipo de dispositivo. Dispositivos de uso único comumente vão exigir elementos de dados, tais como número de lote e data de validade. Em contrapartida estes geralmente não são relevantes para dispositivos duráveis que, muitas vezes, têm um conjunto de identificadores, incluindo uma UID, número de série, modelo, etc..\r\n\r\nAlém disso, diferentes tipos de dispositivos exigirão informações específicas relevantes para a sua finalidade. Estes dados podem ser gravados utilizando-se arquétipos CLUSTER específico inseridos no SLOT das propriedades específicas. Por exemplo: utilização de um catéter urinário pode exigir detalhes adicionais sobre o diâmetro e o comprimento do catéter, composição do material, número de lúmens etc.\r\n\r\nSe o dispositivo médico tem um número de componentes que necessitem de gravação de dados, todos os componentes individuais deverão ser registrados explicitamente utilizando-se um arquétipo CLUSTER.device adicional introduzido nos campos dos componentes.\r\n\r\nO campo de dados versão do software permite apenas uma única versão a ser gravado. Isto é especialmente aplicável para um dispositivo que é uma aplicação de software. Se o dispositivo possui vários componentes de software ou hardware que precisam ser especificados, este deve ser feito por meio de um CLUSTER.device além de inserido no slot do 'Componentes'.\r\n\r\nPara gravar detalhes adicionais para dispositivos duráveis ou permanentes que se relacionam com a posse, rastreamento de localização física, programações de manutenção etc, o uso do arquétipo CLUSTER.device_details no slot \"A gestão de ativos\" desse arquétipo.\r\n\r\nEste arquétipo foi projetado para uso genérico com outros arquétipos que precisam descrever um dispositivo. Exemplos incluem: OBSERVATION.blood_pressure para o esfigmomanômetro; OBSERVATION.ecg para o equipamento de ECG; OBSERVATION.urinalysis para as tiras de reagente e o dispositivo usado para os testes; ACTION.procedure; e CLUSTER.exam_tympanic_membrane para detalhar o otoscópio usado.",
+          "misuse" : "Não deve ser utilizado para gravar dados sobre os medicamentos que exercem uma ação farmacológica direta , metabólica ou efeito imunológico. Por exemplo: um curativo impregnado que exige uma prescrição deve ser gravado utilizando-se o o arquétipo INSTRUCTION.medication_order, com foco em ingredientes ativos, dosagem, etc.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record the details of a medical device used in the provision of healthcare.",
+          "keywords" : [ "device", "machine", "implant", "appliance", "catheter", "prosthesis", "aid", "biomedical", "instrument", "equipment", "meter", "monitor", "software" ],
+          "use" : "Use to record the details of a medical device used in the provision of healthcare.\r\n\r\nUse of the term 'medical device' varies depending on context. Within the Standards world, the term device tends to refer to mechanical or electronic devices that support healthcare and require rigorous documentation regarding location tracking, maintenance, calibration, software versions etc.  Within the terminology context the use of device is very broad, including any medical device that can be used in direct or indirect provision of clinical care, as long as it does not act in a way that exerts a direct pharmacological, metabolic or  immunological effect.\r\n\r\nExamples of medical devices range from simple devices such as urinary catheters, tongue depressors, contact lenses, artificial joint implants, breast implants and plain dressings through to advanced devices such as artificial hearts, syringe drivers, spirometers, mobile phone applications and computerised devices that capture point-of-care medical measurements. \r\n\r\nIn the complex situation where a surgically implanted device is used as the means to deliver therapeutic agents such as chemotherapy directly into the body, this archetype will be used to record only the details about the medical device itself and the order for medication and details about the actual administration of the therapeutic agent will be recorded using specific medication-related INSTRUCTION and ACTION archetypes.\r\n\r\nThis archetype is designed to provide the framework for structured representation of any medical device and the data elements that are contained here are not specific for any one type of device. Single use devices will commonly require data elements such as Lot Number and Date of Expiry. In contrast these are usually not relevant for durable devices which will often have a set of identifiers, including a UID, Serial Number, Model etc.\r\n\r\nFurther, different types of devices will require specific information relevant to their purpose. This data can be recorded using specific CLUSTER archetypes inserted into the 'Specific properties' SLOT. For example: use of a urinary catheter may require additional details about the diameter and length of catheter, material composition, number of lumens etc.\r\n\r\nIf the medical device has a number of components that require recording of details, each individual component should be recorded explicitly by using an additional CLUSTER.device archetype inserted into the 'Components' SLOT.\r\n\r\nThe data field 'Software Version' allows for only a single version to be recorded. This is primarily applicable for a device which is a software application. If the device has multiple software or hardware components that need to be specified, this should be done by using an addition CLUSTER.device inserted into the 'Components' SLOT.\r\n\r\nTo record additional details for durable or persistent devices that relate to ownership, physical location tracking, maintenance schedules etc, use CLUSTER.device_details archetype inserted into the 'Asset management' SLOT in this archetype.\r\n\r\nThis archetype has been designed for generic use within other archetypes that need to describe a device. Examples include: OBSERVATION.blood_pressure for the sphygmomanometer; OBSERVATION.ecg for the ECG machine; OBSERVATION.urinalysis for the reactent strips and the device used for testing; ACTION.procedure; and CLUSTER.exam_tympanic_membrane to detail the otoscope used.",
+          "misuse" : "Not to be used to record data about medicinal products that exert a direct pharmacological, metabolic or immunologic effect. For example: a medicine impregnated dressing that requires a prescription should be recorded using the  INSTRUCTION.medication_order archetype, focused on the active ingredients, dosage etc.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ar-sy" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ar-sy"
+          },
+          "purpose" : "لتسجيل التفاصيل حول شيئ محسوس, مُنتَج أو جهيزة يتم استخدامها في أوسع وصف لتقديم الخدمة الصحية, و لكن دون طريقة أيضية أو علاجية مباشِرة.",
+          "keywords" : [ "الجهيزة", "الآلة", "الطُّعم", "جهاز مساعد", "القثطار", "البِدْلة", "مساعدة", "طبي بيولوجي", "أداة", "المعدات", "مقياس", "مِرْقب", "بدني/محسوس", "شيئ" ],
+          "use" : "يستخدم لتسجيل التفاصيل حول أي جهيزة جنيسة (غير محدودة الملكية) و التي يمكن أن تستخدم إما مباشرةً بطريقة علاجية أو تشخيصية أو تستخدم بشكل غير مباشر لدعم تقديم الخدمة الصحية.\r\nو يختلف استخدام اللفظ (جهيزة) على حسب السياق. \r\nو في داخل عالم المعايير, فإن اللفظ (جهيزة) يميل إلى الإشارة إلى الجهائز الإلكترونية أو الميكانيكية/الحركية و التي تدعم الرعاية الصحية, و تتطلب توثيق مكثف فيما يتعلق بالمواصفات و الصيانة... إلى آخره.\r\nو في سياق عالم المصطلحات فإن استخدام (جهيزة) واسع جدا, بما في ذلك أي شيئ محسوس يمكن استخدامه في تقديم الرعاية الصحية إما بشكل مباشر أو غير مباشر. \r\nو تتضمن الأمثلة: دوائر أجهزة التنفس الصناعي, مقاييس الجريان القِمِّي, مقاييس التنفس, نظارات العين, العدسات اللاصقة, القثطار داخل الوريد, طُعوم الثدي, البِدْلات, أنابيب المَنْزَح, و الحلقات المسمارية.\r\n\r\nو تم تصميم هذا النموذج ليمثل الأساس لعرض مركب لأي جهيزة, من مثال بسيط لنوع من غميسة البول مع تاريخ الاستخدام, إلى طعم أذن من كائن حيّ و الذي يتطلب توثيق مركب مثل البرنامج الإلكتروني, و الأجزاء الصلبة, و الصيانة و التعيير, إلى آخره.\r\n\r\nو بالنسبة لحالات الاستخدام المعتادة, فقد يكون من المناسب تخصيص هذا النموذج خاصة في القثطار داخل الوريد أو القثطار البولي.",
+          "misuse" : "لا يستخدم لتسجيل المنتجات, مثل الأدوية أو التطعيمات أو ما شابه, و التي تستخدم لأغراض علاجية أو أيضية",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.device.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-device-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ar-sy" : { },
+        "en" : { },
+        "es-ar" : { },
+        "pt-br" : { },
+        "nb" : { },
+        "de" : { },
+        "sv" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "6f11730d-4a02-4ceb-9c00-54b899bf4a2a",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Anneka Sargeant",
+        "organisation" : "Institut für Medizinische Informatik - Universitätsmedizin Göttingen",
+        "email" : "anneka.sargeant@med.uni-goettingen.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Elham Gholami",
+        "organisation" : "SLL",
+        "email" : "elham.gholami@sll.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Buenos Aires, Argentina",
+        "email" : "amarch@cas.austral.edu.ar"
+      },
+      "accreditation" : "MD",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "John Tore Valand",
+        "organisation" : "Helse Bergen HF"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Osmeire Chamelette Sanzovo",
+        "organisation" : "Hospital Sírio Libanês - SP",
+        "email" : "osmeire.acsanzovo@hsl.org.br"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "9318a8b0-0574-459f-a601-70460f20e013",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "07559D9AA6F76784AE95ADE028603EC0"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.entry_category.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-entry_category-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "de" : { },
+        "en" : {
+          "at0002" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002",
+            "text" : "category",
+            "description" : "category code of the observation",
+            "comment" : "*Belassen Sie als Freitext oder beschränken Sie sich auf eine interne oder externe Codeliste. (de)"
+          },
+          "at0003" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003",
+            "text" : "comment",
+            "description" : "comment field"
+          },
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Category of entry",
+            "description" : "Category for isik vitalsigns"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "2005ae81-37d4-45a9-88fc-f22e58733026",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "de"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "en"
+      },
+      "author" : { },
+      "otherDetails" : { }
+    } ]
+  } ],
+  "originalLanguage" : {
+    "terminologyId" : {
+      "value" : "ISO_639-1"
+    },
+    "codeString" : "en"
+  },
+  "translations" : [ {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "de"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "fi"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "es-ar"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "nb"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ko"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "pt-br"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "sl"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ar-sy"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "it"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "nl"
+    },
+    "author" : { },
+    "otherDetails" : { }
+  } ]
+}
