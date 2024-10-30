@@ -22,10 +22,10 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "org.highmed",
-      "MD5-CAM-1.0.1" : "8ae3373042c222ed3b6b49bad65ac7c7",
-      "PARENT:MD5-CAM-1.0.1" : "6AFE570A2D850AB1D7AA794A541ECC42",
+      "MD5-CAM-1.0.1" : "112add4bb0a2f9648ce791e9ffd74222",
+      "PARENT:MD5-CAM-1.0.1" : "cc3b955239f8b169127e14e20b502798",
       "original_language" : "ISO_639-1::de",
-      "sem_ver" : "57.0.0",
+      "sem_ver" : "58.0.0",
       "build_uid" : ""
     },
     "details" : {
