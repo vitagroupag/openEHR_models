@@ -1,0 +1,56 @@
+archetype (adl_version=1.4; uid=7035e04c-60ad-33bd-9a31-9666806576e7)
+	openEHR-EHR-COMPOSITION.test.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2024-10-30">
+	>
+	lifecycle_state = <"Draft">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"42e9aedc4efa51c3efbc3f756b417ef3">
+		["build_uid"] = <"547dd7a9-77cf-3cce-8717-419a1c6a36ae">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- test
+		category matches {
+			DV_CODED_TEXT[at0001] matches {*}    -- DV_CODED_TEXT
+		}
+		content cardinality matches {0..*; unordered; unique} matches {
+			allow_archetype OBSERVATION[at0002] occurrences matches {0..*} matches {    -- OBSERVATION
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"test">
+					description = <"test">
+				>
+				["at0001"] = <
+					text = <"DV_CODED_TEXT">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"OBSERVATION">
+					description = <"*">
+				>
+			>
+		>
+	>
