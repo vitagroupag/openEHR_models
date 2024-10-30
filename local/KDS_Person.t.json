@@ -22,10 +22,10 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "org.highmed",
-      "MD5-CAM-1.0.1" : "c823ade3d69f29326cd8bdb8c97964fc",
+      "MD5-CAM-1.0.1" : "8ae3373042c222ed3b6b49bad65ac7c7",
       "PARENT:MD5-CAM-1.0.1" : "6AFE570A2D850AB1D7AA794A541ECC42",
       "original_language" : "ISO_639-1::de",
-      "sem_ver" : "55.0.0",
+      "sem_ver" : "56.0.0",
       "build_uid" : ""
     },
     "details" : {
@@ -164,6 +164,11 @@
         "@type" : "VALUE_SET",
         "id" : "ac0.2",
         "members" : [ "ac0.1" ]
+      },
+      "ac0.4" : {
+        "@type" : "VALUE_SET",
+        "id" : "ac0.4",
+        "members" : [ "ac0.3" ]
       }
     }
   },
