@@ -27,7 +27,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["custodian_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
-		["MD5-CAM-1.0.1"] = <"6AFE570A2D850AB1D7AA794A541ECC42">
+		["MD5-CAM-1.0.1"] = <"cc3b955239f8b169127e14e20b502798">
 		["build_uid"] = <"e90866c8-cd11-4368-997e-e76bcc9d4057">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -37,7 +37,7 @@ definition
 		category matches {
 			DV_CODED_TEXT matches {
 				defining_code matches {
-					[openehr::433]
+					[openehr::431]
 				}
 			}
 		}
