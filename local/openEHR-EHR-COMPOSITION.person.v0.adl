@@ -37,7 +37,7 @@ definition
 		category matches {
 			DV_CODED_TEXT matches {
 				defining_code matches {
-					[openehr::431]
+					[openehr::431, 433, 451, 815]
 				}
 			}
 		}
