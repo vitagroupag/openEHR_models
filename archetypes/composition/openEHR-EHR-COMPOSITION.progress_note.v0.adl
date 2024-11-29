@@ -68,7 +68,7 @@ A typical nursing progress note during a hospital episode might include EVALUATI
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"3467a663be7b5a238fcb7f0f42c16d6c">
+		["MD5-CAM-1.0.1"] = <"8d9f7ce41c27b8f30464c99e80e2fbb2">
 		["build_uid"] = <"fba771b3-54c6-4bf6-97eb-12c3f52af0fd">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -87,7 +87,7 @@ definition
 				other_context matches {
 					ITEM_TREE[at0001] matches {    -- Item tree
 						items cardinality matches {0..*; unordered} matches {
-							ELEMENT[at0002] occurrences matches {0..1} matches {    -- DV_TEXT
+							ELEMENT[at0002] occurrences matches {0..1} matches {    -- Status
 								value matches {
 									DV_TEXT matches {*}
 								}
@@ -112,7 +112,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"DV_TEXT">
+					text = <"Status">
 					description = <"">
 				>
 			>
@@ -128,7 +128,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Status">
+					text = <"*Status (en)">
 					description = <"">
 				>
 			>
@@ -144,7 +144,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"*DV_TEXT (en)">
+					text = <"*Status (en)">
 					description = <"">
 				>
 			>
