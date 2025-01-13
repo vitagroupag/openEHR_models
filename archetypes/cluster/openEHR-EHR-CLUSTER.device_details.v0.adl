@@ -1,8 +1,9 @@
-﻿archetype (adl_version=1.4; uid=9cf4152b-3fe8-4f5a-9806-999d797a3c55)
+archetype (adl_version=1.4; uid=9cf4152b-3fe8-4f5a-9806-999d797a3c55)
 	openEHR-EHR-CLUSTER.device_details.v0
 
 concept
-	[at0000]	-- Medical device details
+	[at0000]
+
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
@@ -28,53 +29,60 @@ language
 				["name"] = <"Mona Saleh">
 			>
 		>
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+			>
+		>
 	>
+
 description
 	original_author = <
+		["date"] = <"2010-08-16">
 		["name"] = <"Heather Leslie">
 		["organisation"] = <"Atomica Informatics">
 		["email"] = <"heather.leslie@atomicainformatics.com">
-		["date"] = <"2010-08-16">
 	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Ian McNicoll, freshEHR Consulting, United Kingdom", ...>
 	details = <
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			purpose = <"Registrar detalles adicionales relativos a especificaciones, mantenimiento, servicio, limpieza y calibración de un dispositivo. ">
-			use = <"Utilizar para registrar detalles adicionales requeridos para suplementar al genérico CLUSTER.device o sus especializaciones. Este arquetipo focaliza en la captura de los detalles relativos al mantenimiento, limpieza, calibración y otros detalles específicos de los componentes de un dispositivo.">
-			keywords = <"calibración", "mantenimiento", "esterilización", "limpieza", "servicio", "dispositivo">
-			misuse = <"">
+		["de"] = <
+			language = <[ISO_639-1::de]>
 			copyright = <"© openEHR Foundation">
 		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"Anvendes for registrering av detaljer relatert til spesifikasjoner, vedlikehold, servicering, renhold og kalibrering av enhver enhet.">
+			keywords = <"Kalibrerning","vedlikehold","sterilisasjon","service","enhet">
+			copyright = <"© openEHR Foundation">
 			use = <"Anvendes for ytterligere registrering av nødvendige detaljer for supplere den generelle CLUSTER.device eller spesialiserte arketyper. Fokus for denne arketype er at fange opp detaljer relatert til vedlikehold, servicering, renhold, kalibrering og andre spesifikke detaljer om enhetens komponenter.">
-			keywords = <"Kalibrerning", "vedlikehold", "sterilisasjon", "service", "enhet">
-			misuse = <"">
-			copyright = <"© openEHR Foundation">
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"لتسجيل التفاصيل الإضافية المتعلقة بالمواصفات, الصيانة, التصليح, التنظيف و التعيير لأي جهيزة">
-			use = <"يستخدم لتسجيل التفاصيل الإضافية المطلوبة لتزويد النماذج الجنيسة (غير محدودة الملكية) عنقود.جهيزة أو النماذج المخصصة.
-يركز هذا النموذج على التقاط التفاصيل المتعلقة بالصيانة, التصليح, التنظيف, التعيير و تفاصيل محددة حول مكونات الجهيزة">
-			keywords = <"تعيير", "صيانة", "تعقيم", "نظيف", "خدمة", "جهيزة">
-			misuse = <"">
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"Registrar detalles adicionales relativos a especificaciones, mantenimiento, servicio, limpieza y calibración de un dispositivo. ">
+			keywords = <"calibración","mantenimiento","esterilización","limpieza","servicio","dispositivo">
 			copyright = <"© openEHR Foundation">
+			use = <"Utilizar para registrar detalles adicionales requeridos para suplementar al genérico CLUSTER.device o sus especializaciones. Este arquetipo focaliza en la captura de los detalles relativos al mantenimiento, limpieza, calibración y otros detalles específicos de los componentes de un dispositivo.">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record details that can be used to support asset management for any durable or persisting medical device. For example, information about: the physical location of the device; its network URL; and maintenance, service, cleaning, and calibration details.">
+			keywords = <"calibration","maintenance","sterilization","cleaned","service","device">
+			copyright = <"© openEHR Foundation">
 			use = <"Use to record details about durable or persisting medical device.
 
 This archetype is designed to be used in the 'Asset Management' SLOT within the CLUSTER.device archetypes and/or any specialisations of this archetype.">
-			keywords = <"calibration", "maintenance", "sterilization", "cleaned", "service", "device">
 			misuse = <"Not to be used outside of the CLUSTER.device archetype or its specialisations, unless there is a clear identification of the device about which the information is being recorded.">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"لتسجيل التفاصيل الإضافية المتعلقة بالمواصفات, الصيانة, التصليح, التنظيف و التعيير لأي جهيزة">
+			keywords = <"تعيير","صيانة","تعقيم","نظيف","خدمة","جهيزة">
 			copyright = <"© openEHR Foundation">
+			use = <"يستخدم لتسجيل التفاصيل الإضافية المطلوبة لتزويد النماذج الجنيسة (غير محدودة الملكية) عنقود.جهيزة أو النماذج المخصصة.
+يركز هذا النموذج على التقاط التفاصيل المتعلقة بالصيانة, التصليح, التنظيف, التعيير و تفاصيل محددة حول مكونات الجهيزة">
 		>
 	>
-	lifecycle_state = <"in_development">
-	other_contributors = <"Ian McNicoll, freshEHR Consulting, United Kingdom", ...>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
@@ -87,15 +95,15 @@ Guidelines for 64-bit Global Identifier (EUI-64) [Internet]. IEEE Standards Asso
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"A585C08AA295D79F2248D2E61472C89C">
+		["MD5-CAM-1.0.1"] = <"7afa931b2a5ddbe2829ad2a5ccca566d">
 		["build_uid"] = <"41f9352f-9d5b-4a60-a34a-a2c8f43da327">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Medical device details
+	CLUSTER[at0000] matches {    -- Medical device details
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Organisation identifier
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Organisation identifier
 				value matches {
 					DV_TEXT matches {*}
 					DV_IDENTIFIER matches {
@@ -103,127 +111,120 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0023] occurrences matches {0..1} matches {	-- Owner
+			ELEMENT[at0023] occurrences matches {0..1} matches {    -- Owner
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0024] occurrences matches {0..1} matches {	-- Location
+			ELEMENT[at0024] occurrences matches {0..1} matches {    -- Location
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0025] occurrences matches {0..1} matches {	-- Network address
+			ELEMENT[at0025] occurrences matches {0..1} matches {    -- Network address
 				value matches {
 					DV_URI matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {	-- Contact
+			allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {    -- Contact
 				include
 					archetype_id/value matches {/.*/}
 			}
-			allow_archetype CLUSTER[at0018] occurrences matches {0..*} matches {	-- Serviced by
+			allow_archetype CLUSTER[at0018] occurrences matches {0..*} matches {    -- Serviced by
 				include
 					archetype_id/value matches {/.*/}
 			}
-			ELEMENT[at0007] occurrences matches {0..1} matches {	-- Part number
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Part number
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Manufacturer model name
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Manufacturer model name
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0008] occurrences matches {0..1} matches {	-- Hardware revision
+			ELEMENT[at0008] occurrences matches {0..1} matches {    -- Hardware revision
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0010] occurrences matches {0..1} matches {	-- Protocol revision
+			ELEMENT[at0010] occurrences matches {0..1} matches {    -- Protocol revision
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0011] occurrences matches {0..1} matches {	-- Sampling frequency
+			ELEMENT[at0011] occurrences matches {0..1} matches {    -- Sampling frequency
 				value matches {
 					DV_TEXT matches {*}
-					C_DV_QUANTITY <
-					>
+					DV_QUANTITY matches {*}
 				}
 			}
-			ELEMENT[at0012] occurrences matches {0..1} matches {	-- Range
+			ELEMENT[at0012] occurrences matches {0..1} matches {    -- Range
 				value matches {
 					DV_TEXT matches {*}
 					DV_INTERVAL<DV_QUANTITY> matches {
 						upper matches {
-							C_DV_QUANTITY <
-							>
+							DV_QUANTITY matches {*}
 						}
 						lower matches {
-							C_DV_QUANTITY <
-							>
+							DV_QUANTITY matches {*}
 						}
 					}
 				}
 			}
-			ELEMENT[at0013] occurrences matches {0..1} matches {	-- Accuracy
+			ELEMENT[at0013] occurrences matches {0..1} matches {    -- Accuracy
 				value matches {
 					DV_TEXT matches {*}
-					C_DV_QUANTITY <
-					>
+					DV_QUANTITY matches {*}
 				}
 			}
-			ELEMENT[at0014] occurrences matches {0..1} matches {	-- Resolution
+			ELEMENT[at0014] occurrences matches {0..1} matches {    -- Resolution
 				value matches {
 					DV_TEXT matches {*}
-					C_DV_QUANTITY <
-					>
+					DV_QUANTITY matches {*}
 				}
 			}
-			ELEMENT[at0015] occurrences matches {0..1} matches {	-- Regulatory status
+			ELEMENT[at0015] occurrences matches {0..1} matches {    -- Regulatory status
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0022] occurrences matches {0..1} matches {	-- Date last cleaned/sterilized
+			ELEMENT[at0022] occurrences matches {0..1} matches {    -- Date last cleaned/sterilized
 				value matches {
 					DV_DATE_TIME matches {*}
 				}
 			}
-			ELEMENT[at0017] occurrences matches {0..1} matches {	-- Date last calibrated
+			ELEMENT[at0017] occurrences matches {0..1} matches {    -- Date last calibrated
 				value matches {
 					DV_DATE_TIME matches {*}
 				}
 			}
-			ELEMENT[at0016] occurrences matches {0..1} matches {	-- Date last serviced
+			ELEMENT[at0016] occurrences matches {0..1} matches {    -- Date last serviced
 				value matches {
 					DV_DATE_TIME matches {*}
 				}
 			}
-			CLUSTER[at0019] occurrences matches {0..*} matches {	-- Formulae
+			CLUSTER[at0019] occurrences matches {0..*} matches {    -- Formulae
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0020] matches {	-- Formula name
+					ELEMENT[at0020] matches {    -- Formula name
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0021] occurrences matches {0..1} matches {	-- Formula
+					ELEMENT[at0021] occurrences matches {0..1} matches {    -- Formula
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
 				}
 			}
-			allow_archetype CLUSTER[at0027] occurrences matches {0..*} matches {	-- Extension
+			allow_archetype CLUSTER[at0027] occurrences matches {0..*} matches {    -- Extension
 				include
 					archetype_id/value matches {/.*/}
 			}
 		}
 	}
-
-
 
 ontology
 	term_definitions = <
@@ -246,7 +247,7 @@ ontology
 repesenting Model, Unspecified, SerialNumber, PartNumber, HardwareRevision, SoftwareRevision, ProtocolRevision, and ProdSpecGMDN.(en)">
 				>
 				["at0007"] = <
-					text = <"رقم الجزء ">
+					text = <"رقم الجزء">
 					description = <"رقم الجزء الخاص بالجهيزة">
 				>
 				["at0008"] = <
@@ -624,6 +625,107 @@ repesenting Model, Unspecified, SerialNumber, PartNumber, HardwareRevision, Soft
 				["at0027"] = <
 					text = <"*Extension(en)">
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"Details des Medizingeräts">
+					description = <"Spezifische Details, die sich auf das Asset Management für jedes Medizinprodukt beziehen, das für mehr als eine einmalige Verwendung ausgelegt ist.">
+				>
+				["at0001"] = <
+					text = <"Organisationskennzeichen">
+					description = <"Organisationskennzeichen für das Gerät">
+					comment = <"ann eine Textzeichenfolge oder ein IEEE EUI-64-Bezeichner sein">
+				>
+				["at0002"] = <
+					text = <"Modellname des Herstellers">
+					description = <"HL7 CDA-kompatible Darstellung von Details zur Geräteherstellung. ">
+					comment = <"Kann eine einfache Zeichenkette sein oder einfache Markierungen enthalten, z. B. für Continua PHMR-Berichte:
+„Pulse Master 2000||584216|69854|2.1|1.1|1.0|“
+die Modell, Unspecified, SerialNumber, PartNumber, HardwareRevision, SoftwareRevision, ProtocolRevision und ProdSpecGMDN wiedergeben.">
+				>
+				["at0007"] = <
+					text = <"Teilnummer">
+					description = <"Die Teilenummer des Geräts">
+				>
+				["at0008"] = <
+					text = <"Hardware Revision">
+					description = <"Die Hardware-Revisionsnummer.">
+				>
+				["at0010"] = <
+					text = <"Protokoll-Revision">
+					description = <"Die Protokoll Revisionsnummer
+">
+				>
+				["at0011"] = <
+					text = <"Abtastfrequenz">
+					description = <"Die Grenzwerte der Abtastfrequenz des Geräts.">
+				>
+				["at0012"] = <
+					text = <"Wertebereich">
+					description = <"Limitierungen des Wertebereich des Geräts">
+				>
+				["at0013"] = <
+					text = <"Genauigkeit">
+					description = <"Die Genauigkeitsgrenzen des Geräts.">
+				>
+				["at0014"] = <
+					text = <"Auflösung">
+					description = <"Die Auflösungsgrenzen des Geräts.">
+				>
+				["at0015"] = <
+					text = <"Zulassungsstatus">
+					description = <"Angaben, ob das Gerät reguliert ist oder nicht.">
+				>
+				["at0016"] = <
+					text = <"Datum der letzten Wartung">
+					description = <"Das Datum, an dem das Gerät zuletzt gewartet wurde">
+				>
+				["at0017"] = <
+					text = <"Datum der letzten Kalibrierung">
+					description = <"Datum der letzten Kalibrierung des Geräts">
+				>
+				["at0018"] = <
+					text = <"Gewartet durch">
+					description = <"Angaben zum Beauftragten, der den Service durchgeführt hat.">
+				>
+				["at0019"] = <
+					text = <"Formeln">
+					description = <"Details zu den Formeln oder Algorithmen, die das Gerät verwendet, um Ergebnisse/Ausgaben zu erzeugen.">
+				>
+				["at0020"] = <
+					text = <"Bezeichnung der Formel">
+					description = <"Datenelement, das berechnet oder abgeleitet wird">
+				>
+				["at0021"] = <
+					text = <"Formel">
+					description = <"Formel, die zur Berechnung oder Ableitung des Feldes Berechnet verwendet wird.">
+				>
+				["at0022"] = <
+					text = <"Letzte Reinigung / Sterilisation">
+					description = <"Datum, wann das Gerät das letzte Mal gereinigt und/oder sterilisiert wurde">
+				>
+				["at0023"] = <
+					text = <"Besitzer">
+					description = <"Organisation, die für das Medizingerät zuständig ist.">
+				>
+				["at0024"] = <
+					text = <"Standort">
+					description = <"Physischer Standort des Geräts">
+				>
+				["at0025"] = <
+					text = <"Netzwerkadresse">
+					description = <"Netzwerkadresse des Geräts">
+				>
+				["at0026"] = <
+					text = <"Kontaktdaten">
+					description = <"Details der Kontaktdaten des Herstellers oder der für das Gerät verantwortlichen Organisation">
+				>
+				["at0027"] = <
+					text = <"Erweiterung">
+					description = <"Zusätzliche Informationen, die erforderlich sind, um den lokalen Kontext zu erfassen oder mit anderen Referenzmodellen/Formalismen in Einklang zu bringen.">
 				>
 			>
 		>
