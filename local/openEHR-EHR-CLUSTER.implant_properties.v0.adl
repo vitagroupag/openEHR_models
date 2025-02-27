@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"1e59dd558439f3be76f7076fff75f768">
+		["MD5-CAM-1.0.1"] = <"8a857f461e7c2490d8a70a2af6195783">
 		["build_uid"] = <"44f4d84f-288f-3fca-8f4a-ffbbe6f53e0c">
 	>
 
@@ -56,16 +56,9 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0011] occurrences matches {0..1} matches {    -- Eignung für MRT
+			ELEMENT[at0016] occurrences matches {0..1} matches {    -- Eignung für MRT
 				value matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[local::
-							at0012,    -- Sicher
-							at0013,    -- Bedingt sicher
-							at0014]    -- Nicht sicher
-						}
-					}
+					DV_TEXT matches {*}
 				}
 			}
 		}
@@ -107,20 +100,8 @@ ontology
 					text = <"zementfrei">
 					description = <"">
 				>
-				["at0011"] = <
+				["at0016"] = <
 					text = <"Eignung für MRT">
-					description = <"">
-				>
-				["at0012"] = <
-					text = <"Sicher">
-					description = <"">
-				>
-				["at0013"] = <
-					text = <"Bedingt sicher">
-					description = <"">
-				>
-				["at0014"] = <
-					text = <"Nicht sicher">
 					description = <"">
 				>
 			>
