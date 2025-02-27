@@ -1,0 +1,139 @@
+archetype (adl_version=1.4; uid=7ac87683-4211-4090-acad-96550f473f34)
+	openEHR-EHR-CLUSTER.implant_properties-knee.v0
+specialize
+	openEHR-EHR-CLUSTER.implant_properties.v0
+
+concept
+	[at0000.1]
+
+language
+	original_language = <[ISO_639-1::de]>
+
+description
+	original_author = <
+		["date"] = <"2025-02-27">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"45e48e41272873ddde7d4db145806918">
+		["build_uid"] = <"44f4d84f-288f-3fca-8f4a-ffbbe6f53e0c">
+	>
+
+definition
+	CLUSTER[at0000.1] matches {    -- implant_properties
+		items cardinality matches {1..*; unordered} matches {
+			CLUSTER[at0002] occurrences matches {0..1} matches {    -- Größe der Prothese
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Quantitative Größe
+						value matches {
+							DV_QUANTITY matches {*}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Größe nach Kategorie
+						value matches {
+							DV_ORDINAL matches {*}
+						}
+					}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Zementierung
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0008,    -- zementiert
+							at0009,    -- teilzementiert
+							at0010]    -- zementfrei
+						}
+					}
+				}
+			}
+			ELEMENT[at0011] occurrences matches {0..1} matches {    -- Eignung für MRT
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0012,    -- Sicher
+							at0013,    -- Bedingt sicher
+							at0014]    -- Nicht sicher
+						}
+					}
+				}
+			}
+			ELEMENT[at0.1] occurrences matches {0..1} matches {    -- Knie-Inlay-Koppelung
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0002"] = <
+					text = <"Größe der Prothese">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Quantitative Größe">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Größe nach Kategorie">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Zementierung">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"zementiert">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"teilzementiert">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"zementfrei">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Eignung für MRT">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Sicher">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Bedingt sicher">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Nicht sicher">
+					description = <"">
+				>
+				["at0000.1"] = <
+					text = <"implant_properties">
+					description = <"implant_properties">
+				>
+				["at0.1"] = <
+					text = <"Knie-Inlay-Koppelung">
+					description = <"">
+				>
+			>
+		>
+	>
