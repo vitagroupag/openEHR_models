@@ -25,7 +25,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"9c75b554fa26688f0ed4c68715ae47ea">
+		["MD5-CAM-1.0.1"] = <"f0ae7975d3cb080c256f0e40dbad42cc">
 		["build_uid"] = <"44f4d84f-288f-3fca-8f4a-ffbbe6f53e0c">
 	>
 
@@ -70,16 +70,9 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0011] occurrences matches {0..1} matches {    -- Eignung für MRT
+			ELEMENT[at0016] occurrences matches {0..1} matches {    -- Eignung für MRT
 				value matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[local::
-							at0012,    -- Sicher
-							at0013,    -- Bedingt sicher
-							at0014]    -- Nicht sicher
-						}
-					}
+					DV_TEXT matches {*}
 				}
 			}
 			ELEMENT[at0.1] occurrences matches {0..1} matches {    -- Knie-Inlay-Koppelung
@@ -101,10 +94,6 @@ ontology
 				["at0.1"] = <
 					text = <"Knie-Inlay-Koppelung">
 					description = <"">
-				>
-				["at0000"] = <
-					text = <"Implantateigenschaften">
-					description = <"implant_properties">
 				>
 				["at0005.1"] = <
 					text = <"Größe nach Kategorie">
@@ -138,6 +127,26 @@ ontology
 					text = <"Quantitative Größe">
 					description = <"">
 				>
+				["at0011"] = <
+					text = <"Eignung für MRT">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Sicher">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Bedingt sicher">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Nicht sicher">
+					description = <"">
+				>
+				["at0000"] = <
+					text = <"Implantateigenschaften">
+					description = <"implant_properties">
+				>
 				["at0002"] = <
 					text = <"Größe der Prothese">
 					description = <"">
@@ -166,20 +175,8 @@ ontology
 					text = <"zementfrei">
 					description = <"">
 				>
-				["at0011"] = <
+				["at0016"] = <
 					text = <"Eignung für MRT">
-					description = <"">
-				>
-				["at0012"] = <
-					text = <"Sicher">
-					description = <"">
-				>
-				["at0013"] = <
-					text = <"Bedingt sicher">
-					description = <"">
-				>
-				["at0014"] = <
-					text = <"Nicht sicher">
 					description = <"">
 				>
 			>
