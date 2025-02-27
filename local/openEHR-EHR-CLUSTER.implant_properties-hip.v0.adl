@@ -25,7 +25,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"45d2f601b4f1d43b0a3a823930334221">
+		["MD5-CAM-1.0.1"] = <"6fd2cadb92b7818103381e5e77e5ea74">
 		["build_uid"] = <"44f4d84f-288f-3fca-8f4a-ffbbe6f53e0c">
 	>
 
@@ -82,7 +82,14 @@ definition
 			}
 			ELEMENT[at0.3] occurrences matches {0..1} matches {    -- Länge des Prothesenhalses
 				value matches {
-					DV_QUANTITY matches {*}
+					C_DV_QUANTITY <
+						property = <[openehr::122]>
+						list = <
+							["1"] = <
+								units = <"mm">
+							>
+						>
+					>
 				}
 			}
 		}
