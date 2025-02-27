@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"724ace40d2b9004d43e6f67369a6e882">
+		["MD5-CAM-1.0.1"] = <"1e59dd558439f3be76f7076fff75f768">
 		["build_uid"] = <"44f4d84f-288f-3fca-8f4a-ffbbe6f53e0c">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- implant_properties
+	CLUSTER[at0000] matches {    -- Implantateigenschaften
 		items cardinality matches {1..*; unordered} matches {
 			CLUSTER[at0002] occurrences matches {0..1} matches {    -- Größe der Prothese
 				items cardinality matches {1..*; unordered} matches {
@@ -76,7 +76,7 @@ ontology
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"implant_properties">
+					text = <"Implantateigenschaften">
 					description = <"implant_properties">
 				>
 				["at0002"] = <
