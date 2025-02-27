@@ -25,7 +25,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"6cddd65dd269f5f3d8a49f1fe42b1ac0">
+		["MD5-CAM-1.0.1"] = <"9c75b554fa26688f0ed4c68715ae47ea">
 		["build_uid"] = <"44f4d84f-288f-3fca-8f4a-ffbbe6f53e0c">
 	>
 
@@ -103,8 +103,40 @@ ontology
 					description = <"">
 				>
 				["at0000"] = <
-					text = <"implant_properties">
+					text = <"Implantateigenschaften">
 					description = <"implant_properties">
+				>
+				["at0005.1"] = <
+					text = <"Größe nach Kategorie">
+					description = <"">
+				>
+				["at0.2"] = <
+					text = <"S">
+					description = <"Small">
+				>
+				["at0.3"] = <
+					text = <"M">
+					description = <"Middle">
+				>
+				["at0.4"] = <
+					text = <"L">
+					description = <"Large">
+				>
+				["at0.5"] = <
+					text = <"XL">
+					description = <"Extra Large">
+				>
+				["at0.6"] = <
+					text = <"XXL">
+					description = <"Extra Extra Large">
+				>
+				["at0.7"] = <
+					text = <"Uni">
+					description = <"Universell">
+				>
+				["at0004.1"] = <
+					text = <"Quantitative Größe">
+					description = <"">
 				>
 				["at0002"] = <
 					text = <"Größe der Prothese">
@@ -148,38 +180,6 @@ ontology
 				>
 				["at0014"] = <
 					text = <"Nicht sicher">
-					description = <"">
-				>
-				["at0005.1"] = <
-					text = <"Größe nach Kategorie">
-					description = <"">
-				>
-				["at0.2"] = <
-					text = <"S">
-					description = <"Small">
-				>
-				["at0.3"] = <
-					text = <"M">
-					description = <"Middle">
-				>
-				["at0.4"] = <
-					text = <"L">
-					description = <"Large">
-				>
-				["at0.5"] = <
-					text = <"XL">
-					description = <"Extra Large">
-				>
-				["at0.6"] = <
-					text = <"XXL">
-					description = <"Extra Extra Large">
-				>
-				["at0.7"] = <
-					text = <"Uni">
-					description = <"Universell">
-				>
-				["at0004.1"] = <
-					text = <"Quantitative Größe">
 					description = <"">
 				>
 			>
