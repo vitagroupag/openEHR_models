@@ -25,7 +25,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"6fd2cadb92b7818103381e5e77e5ea74">
+		["MD5-CAM-1.0.1"] = <"7f398d9eeb2f222c92701997743a394d">
 		["build_uid"] = <"44f4d84f-288f-3fca-8f4a-ffbbe6f53e0c">
 	>
 
@@ -80,16 +80,29 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0.3] occurrences matches {0..1} matches {    -- Länge des Prothesenhalses
-				value matches {
-					C_DV_QUANTITY <
-						property = <[openehr::122]>
-						list = <
-							["1"] = <
-								units = <"mm">
+			CLUSTER[at0.4] occurrences matches {0..1} matches {    -- Länge des Prothesenhalses
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0.3] occurrences matches {0..1} matches {    -- Quantitative Größe
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"mm">
+									>
+								>
 							>
-						>
-					>
+						}
+					}
+					ELEMENT[at0.5] occurrences matches {0..1} matches {    -- Größe nach Kategorie
+						value matches {
+							1|[local::at0.6],
+							2|[local::at0.7],
+							3|[local::at0.8],
+							4|[local::at0.9],
+							5|[local::at0.10]
+						}
+					}
 				}
 			}
 		}
@@ -156,8 +169,36 @@ ontology
 					description = <"">
 				>
 				["at0.3"] = <
+					text = <"Quantitative Größe">
+					description = <"">
+				>
+				["at0.4"] = <
 					text = <"Länge des Prothesenhalses">
 					description = <"">
+				>
+				["at0.5"] = <
+					text = <"Größe nach Kategorie">
+					description = <"">
+				>
+				["at0.6"] = <
+					text = <"S">
+					description = <"Small">
+				>
+				["at0.7"] = <
+					text = <"M">
+					description = <"Middle">
+				>
+				["at0.8"] = <
+					text = <"L">
+					description = <"Large">
+				>
+				["at0.9"] = <
+					text = <"XL">
+					description = <"Extra Large">
+				>
+				["at0.10"] = <
+					text = <"XXL">
+					description = <"Extra Extra Large">
 				>
 			>
 		>
