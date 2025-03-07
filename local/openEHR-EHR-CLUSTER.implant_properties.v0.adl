@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"8a857f461e7c2490d8a70a2af6195783">
+		["MD5-CAM-1.0.1"] = <"1776c29f95f76bf4556665bf179e5b25">
 		["build_uid"] = <"44f4d84f-288f-3fca-8f4a-ffbbe6f53e0c">
 	>
 
@@ -59,6 +59,11 @@ definition
 			ELEMENT[at0016] occurrences matches {0..1} matches {    -- Eignung für MRT
 				value matches {
 					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0017] occurrences matches {0..1} matches {    -- Zementierung
+				value matches {
+					DV_BOOLEAN matches {*}
 				}
 			}
 		}
@@ -102,6 +107,10 @@ ontology
 				>
 				["at0016"] = <
 					text = <"Eignung für MRT">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Zementierung">
 					description = <"">
 				>
 			>
