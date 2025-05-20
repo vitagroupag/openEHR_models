@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "3.0.0",
+      "sem_ver" : "4.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "22176be8d8ba3c1b75f41430a081e7c1",
+      "MD5-CAM-1.0.1" : "a062fd4c9ba4b496b81f2a1f76cd55d9",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -1054,6 +1054,44 @@
             }, {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0063.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "0..1",
+                      "terminologyId" : {
+                        "value" : "http://snomed.info/sct"
+                      },
+                      "constraint" : [ ],
+                      "selectedTerminologies" : [ "http://snomed.info/sct" ],
+                      "includedExternalTerminologyCodes" : [ {
+                        "terminologyId" : "http://snomed.info/sct",
+                        "code" : "7771000",
+                        "value" : "Links"
+                      }, {
+                        "terminologyId" : "http://snomed.info/sct",
+                        "code" : "24028007",
+                        "value" : "Rechts"
+                      } ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
               "occurrences" : "0..0",
               "nodeId" : "at0048.1",
               "attributes" : [ ],
@@ -1101,8 +1139,8 @@
                         "lower" : "PT0S",
                         "lowerIncluded" : true,
                         "upperIncluded" : false,
-                        "lowerUnbounded" : false,
-                        "upperUnbounded" : true
+                        "upperUnbounded" : true,
+                        "lowerUnbounded" : false
                       } ]
                     } ]
                   } ],
@@ -2349,8 +2387,8 @@
                       "upper" : 90.0,
                       "lowerIncluded" : true,
                       "upperIncluded" : true,
-                      "lowerUnbounded" : false,
-                      "upperUnbounded" : false
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
                     } ]
                   }, {
                     "@type" : "C_INTEGER",
@@ -2360,8 +2398,8 @@
                       "upper" : 6,
                       "lowerIncluded" : true,
                       "upperIncluded" : true,
-                      "lowerUnbounded" : false,
-                      "upperUnbounded" : false
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
                     } ]
                   } ]
                 } ]
@@ -2421,8 +2459,8 @@
                       "upper" : 180.0,
                       "lowerIncluded" : true,
                       "upperIncluded" : true,
-                      "lowerUnbounded" : false,
-                      "upperUnbounded" : false
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
                     } ]
                   }, {
                     "@type" : "C_INTEGER",
@@ -2432,8 +2470,8 @@
                       "upper" : 6,
                       "lowerIncluded" : true,
                       "upperIncluded" : true,
-                      "lowerUnbounded" : false,
-                      "upperUnbounded" : false
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
                     } ]
                   } ]
                 } ]
@@ -2491,8 +2529,8 @@
                     "constraint" : [ {
                       "lowerIncluded" : false,
                       "upperIncluded" : false,
-                      "lowerUnbounded" : true,
-                      "upperUnbounded" : true
+                      "upperUnbounded" : true,
+                      "lowerUnbounded" : true
                     } ]
                   }, {
                     "@type" : "C_INTEGER",
@@ -2502,8 +2540,8 @@
                       "upper" : 2,
                       "lowerIncluded" : true,
                       "upperIncluded" : true,
-                      "lowerUnbounded" : false,
-                      "upperUnbounded" : false
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
                     } ]
                   } ]
                 } ]
@@ -2824,7 +2862,20 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "92a61e68bdb560304c5fbba75d478cfa"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "keywords" : [ ],
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.implant_properties-hip.v0",
     "differential" : true,
@@ -2843,7 +2894,14 @@
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000.1",
       "termDefinitions" : {
-        "de" : { }
+        "de" : {
+          "at0017" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0017",
+            "text" : "Zementierung",
+            "description" : ""
+          }
+        }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -2875,7 +2933,20 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "f0ae7975d3cb080c256f0e40dbad42cc"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "keywords" : [ ],
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.implant_properties-knee.v0",
     "differential" : true,
@@ -2894,7 +2965,14 @@
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000.1",
       "termDefinitions" : {
-        "de" : { }
+        "de" : {
+          "at0017" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0017",
+            "text" : "Zementierung",
+            "description" : ""
+          }
+        }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
