@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"ea67efcd40f034953f8590f7a8c93176">
+		["MD5-CAM-1.0.1"] = <"8b4ecdf03676da33cbf093b43dc90281">
 		["build_uid"] = <"57512d3d-83f3-3421-b23e-38c096b7973e">
 	>
 
@@ -228,6 +228,11 @@ definition
 							DV_IDENTIFIER matches {*}
 						}
 					}
+					ELEMENT[at0043] occurrences matches {0..1} matches {    -- Institutitonskennzeichen
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
 				}
 			}
 		}
@@ -358,7 +363,7 @@ ontology
 				>
 				["at0026"] = <
 					text = <"Fallnummer">
-					description = <"">
+					description = <"Identifikation des Krankenhausfalles">
 				>
 				["at0027"] = <
 					text = <"Beatmungsstunden">
@@ -435,6 +440,11 @@ ontology
 					text = <"PatientenIdentKey">
 					description = <"Pseudonymisierte Patient-ID basierend auf der Patient-ID im KIS-System und der Versicherungsnummer">
 					Feldname = <"ZHCRPATIK">
+				>
+				["at0043"] = <
+					text = <"Institutitonskennzeichen">
+					description = <"Bundesweit eindeutige, neunstellige Zahl für die Abrechnung mit den Trägern der Sozialversicherung">
+					Feldname = <"BIPRUIK">
 				>
 			>
 		>
