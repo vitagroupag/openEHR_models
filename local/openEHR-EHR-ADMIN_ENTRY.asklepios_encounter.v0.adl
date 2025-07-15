@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"8b4ecdf03676da33cbf093b43dc90281">
+		["MD5-CAM-1.0.1"] = <"8e406c2fa59b4bc7f961383169c0f781">
 		["build_uid"] = <"57512d3d-83f3-3421-b23e-38c096b7973e">
 	>
 
@@ -231,6 +231,16 @@ definition
 					ELEMENT[at0043] occurrences matches {0..1} matches {    -- Institutitonskennzeichen
 						value matches {
 							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0044] occurrences matches {0..1} matches {    -- Geschlecht
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0045] occurrences matches {0..1} matches {    -- Alter in Jahren
+						value matches {
+							DV_COUNT matches {*}
 						}
 					}
 				}
@@ -445,6 +455,16 @@ ontology
 					text = <"Institutitonskennzeichen">
 					description = <"Bundesweit eindeutige, neunstellige Zahl für die Abrechnung mit den Trägern der Sozialversicherung">
 					Feldname = <"BIPRUIK">
+				>
+				["at0044"] = <
+					text = <"Geschlecht">
+					description = <"">
+					Feldname = <"BIPRSEX">
+				>
+				["at0045"] = <
+					text = <"Alter in Jahren">
+					description = <"">
+					Feldname = <"BIPRAIJ">
 				>
 			>
 		>
