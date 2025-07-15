@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"ade94627fc7b614552af1cc3c0433126">
+		["MD5-CAM-1.0.1"] = <"ac4f752810e3e069c773b91b782c7bd9">
 		["build_uid"] = <"57512d3d-83f3-3421-b23e-38c096b7973e">
 	>
 
 definition
-	ADMIN_ENTRY[at0000] matches {    -- asklepios_encounter
+	ADMIN_ENTRY[at0000] matches {    -- Asklepios Fall
 		data matches {
 			ITEM_TREE[at0001] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
@@ -51,10 +51,60 @@ definition
 					}
 					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Aufnahmedatum
 						value matches {
-							DV_TIME matches {*}
+							DV_DATE matches {*}
 						}
 					}
 					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Aufnahmedatum Zeit
+						value matches {
+							DV_TIME matches {*}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {    -- Aufnahmeanlass
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0010,    -- Notfall
+									at0011,    -- Einweisung Arzt
+									at0012,    -- Verlegung
+									at0013]    -- Geburt
+								}
+							}
+						}
+					}
+					ELEMENT[at0014] occurrences matches {0..1} matches {    -- Aufnahmegrund (erste und zweite Stelle)
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Aufnahmegrund (dritte und vierte Stelle)
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0016] occurrences matches {0..1} matches {    -- Aufnehmende Abteilung
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {    -- Aufnahmegewicht
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::124]>
+								list = <
+									["1"] = <
+										units = <"mg">
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0018] occurrences matches {0..1} matches {    -- Entlassdatum
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0019] occurrences matches {0..1} matches {    -- Uhrzeit der Entlassung
 						value matches {
 							DV_TIME matches {*}
 						}
@@ -69,7 +119,7 @@ ontology
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"asklepios_encounter">
+					text = <"Asklepios Fall">
 					description = <"asklepios_encounter">
 				>
 				["at0001"] = <
@@ -107,6 +157,54 @@ ontology
 					text = <"Aufnahmedatum Zeit">
 					description = <"Uhrzeit der Aufnahme">
 					Feldname = <"BIPRAUFTI">
+				>
+				["at0009"] = <
+					text = <"Aufnahmeanlass">
+					description = <"Anlass für die stationäre Aufnahme (z. B. Notfall, Einweisung Arzt, Geburt, Verlegung)">
+					Feldname = <"BIPRAUFAN">
+				>
+				["at0010"] = <
+					text = <"Notfall">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Einweisung Arzt">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Verlegung">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Geburt">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Aufnahmegrund (erste und zweite Stelle)">
+					description = <"Angabe, ob es sich um eine voll- oder teilstationäre Behandlung, Geburt, Entbindung, Wiederaufnahme oder Übergangspflege handelt">
+					Feldname = <"BIPRAUF12">
+				>
+				["at0015"] = <
+					text = <"Aufnahmegrund (dritte und vierte Stelle)">
+					description = <"Angabe, ob es sich um einen Normal- oder Notfall oder einen Unfall handelt">
+					Feldname = <"BIPRAUF34">
+				>
+				["at0016"] = <
+					text = <"Aufnehmende Abteilung">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Aufnahmegewicht">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Entlassdatum">
+					description = <"Tag der Entlassung. Bei Fallzusammenführungen ist dies das Entlassdatum vom letzten Aufenthalt.">
+					Feldname = <"BIPRENTDA">
+				>
+				["at0019"] = <
+					text = <"Uhrzeit der Entlassung">
+					description = <"">
 				>
 			>
 		>
