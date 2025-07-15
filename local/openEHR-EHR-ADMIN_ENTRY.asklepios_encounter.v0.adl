@@ -1,0 +1,113 @@
+archetype (adl_version=1.4; uid=4d8dca58-e15e-44f2-b233-d5b3107e49ca)
+	openEHR-EHR-ADMIN_ENTRY.asklepios_encounter.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::de]>
+
+description
+	original_author = <
+		["date"] = <"2025-07-15">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"ade94627fc7b614552af1cc3c0433126">
+		["build_uid"] = <"57512d3d-83f3-3421-b23e-38c096b7973e">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {    -- asklepios_encounter
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Fallart
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Vollstationär
+									at0004,    -- Teilstationär
+									at0005]    -- Ambulant
+								}
+							}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Kennzeichen Fallzusammenlegung
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Aufnahmedatum
+						value matches {
+							DV_TIME matches {*}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Aufnahmedatum Zeit
+						value matches {
+							DV_TIME matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"asklepios_encounter">
+					description = <"asklepios_encounter">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Fallart">
+					description = <"Art des Falls: Vollstationär, Teilstationär, Ambulant">
+					Feldname = <"BIPRUIK">
+				>
+				["at0003"] = <
+					text = <"Vollstationär">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Teilstationär">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Ambulant">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Kennzeichen Fallzusammenlegung">
+					description = <"Kennzeichnung ob mehrere Behandlungsfälle zu einem Fall zusammengefasst">
+					Feldname = <"BIPRKETTE">
+				>
+				["at0007"] = <
+					text = <"Aufnahmedatum">
+					description = <"Tag der Aufnahme">
+					Feldname = <"BIPRAUFDA">
+				>
+				["at0008"] = <
+					text = <"Aufnahmedatum Zeit">
+					description = <"Uhrzeit der Aufnahme">
+					Feldname = <"BIPRAUFTI">
+				>
+			>
+		>
+	>
