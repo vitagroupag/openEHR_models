@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"8e406c2fa59b4bc7f961383169c0f781">
+		["MD5-CAM-1.0.1"] = <"c9bfd0b2f6faef1b5e231dfc837afbb2">
 		["build_uid"] = <"57512d3d-83f3-3421-b23e-38c096b7973e">
 	>
 
@@ -241,6 +241,16 @@ definition
 					ELEMENT[at0045] occurrences matches {0..1} matches {    -- Alter in Jahren
 						value matches {
 							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0047] occurrences matches {0..1} matches {    -- RU Standort (Klinik)
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0046] occurrences matches {0..1} matches {    -- Reporting Unit
+						value matches {
+							DV_CODED_TEXT matches {*}
 						}
 					}
 				}
@@ -465,6 +475,16 @@ ontology
 					text = <"Alter in Jahren">
 					description = <"">
 					Feldname = <"BIPRAIJ">
+				>
+				["at0046"] = <
+					text = <"Reporting Unit">
+					description = <"Angabe zur Reporting Unit, in der der Fall behandelt wurde">
+					Feldname = <"BIPRU">
+				>
+				["at0047"] = <
+					text = <"RU Standort (Klinik)">
+					description = <"Standort der Klinik innerhalb der Reporting Unit. Bei mehreren Standorten einer Reporting Unit ändern sich die beiden letzten Ziffern.">
+					Feldname = <"BIPRUKLI">
 				>
 			>
 		>
