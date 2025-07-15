@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"ac4f752810e3e069c773b91b782c7bd9">
+		["MD5-CAM-1.0.1"] = <"ea67efcd40f034953f8590f7a8c93176">
 		["build_uid"] = <"57512d3d-83f3-3421-b23e-38c096b7973e">
 	>
 
@@ -32,6 +32,11 @@ definition
 		data matches {
 			ITEM_TREE[at0001] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0026] occurrences matches {0..1} matches {    -- Fallnummer
+						value matches {
+							DV_IDENTIFIER matches {*}
+						}
+					}
 					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Fallart
 						value matches {
 							DV_CODED_TEXT matches {
@@ -42,11 +47,6 @@ definition
 									at0005]    -- Ambulant
 								}
 							}
-						}
-					}
-					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Kennzeichen Fallzusammenlegung
-						value matches {
-							DV_BOOLEAN matches {*}
 						}
 					}
 					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Aufnahmedatum
@@ -107,6 +107,125 @@ definition
 					ELEMENT[at0019] occurrences matches {0..1} matches {    -- Uhrzeit der Entlassung
 						value matches {
 							DV_TIME matches {*}
+						}
+					}
+					ELEMENT[at0020] occurrences matches {0..1} matches {    -- Entlassgrund (erste und zweite Stelle)
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0021] occurrences matches {0..1} matches {    -- Entlassgrund (dritte Stelle)
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0022] occurrences matches {0..1} matches {    -- Entlassende Abteilung
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0023] occurrences matches {0..1} matches {    -- Abteilung mit längster Behandlungszeit
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0024] occurrences matches {0..1} matches {    -- Belegungstage
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0025] occurrences matches {0..1} matches {    -- Berechnungstage
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0027] occurrences matches {0..1} matches {    -- Beatmungsstunden
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0028] occurrences matches {0..1} matches {    -- Patientenstatus
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0029] occurrences matches {0..1} matches {    -- Ursachengruppierung
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0030] occurrences matches {0..1} matches {    -- Mittlere Verweildauer für die vergebene DRG
+						value matches {
+							DV_COUNT matches {
+								magnitude matches {|>=0|}
+							}
+						}
+					}
+					ELEMENT[at0031] occurrences matches {0..1} matches {    -- Obere Grenzverweildauer für die vergebene DRG
+						value matches {
+							DV_COUNT matches {
+								magnitude matches {|>=0|}
+							}
+						}
+					}
+					ELEMENT[at0032] occurrences matches {0..1} matches {    -- Diagnosis Related Group (DRG)
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0033] occurrences matches {0..1} matches {    -- Entgeltbereich §21
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0034] occurrences matches {0..1} matches {    -- Kennzeichen Überlieger
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0035] occurrences matches {0..1} matches {    -- Kennzeichen Auslandsfall
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0036] occurrences matches {0..1} matches {    -- OPS Pflegegrad
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0037] occurrences matches {0..1} matches {    -- Grund für Fallzusammenführung
+						value matches {
+							DV_CODED_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Kennzeichen Fallzusammenlegung
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0038] occurrences matches {0..1} matches {    -- Anzahl Tage der nachstationären Behandlung
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0039] occurrences matches {0..1} matches {    -- Anzahl Tage der vorstationären Behandlung
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0040] occurrences matches {0..1} matches {    -- Behandlungsbeginn vorstationär
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0041] occurrences matches {0..1} matches {    -- Behandlungsende nachstationär
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0042] occurrences matches {0..1} matches {    -- PatientenIdentKey
+						value matches {
+							DV_IDENTIFIER matches {*}
 						}
 					}
 				}
@@ -196,6 +315,7 @@ ontology
 				["at0017"] = <
 					text = <"Aufnahmegewicht">
 					description = <"">
+					Feldname = <"BIPRANGEW">
 				>
 				["at0018"] = <
 					text = <"Entlassdatum">
@@ -205,6 +325,116 @@ ontology
 				["at0019"] = <
 					text = <"Uhrzeit der Entlassung">
 					description = <"">
+				>
+				["at0020"] = <
+					text = <"Entlassgrund (erste und zweite Stelle)">
+					description = <"">
+					Feldname = <"BIPRENT12">
+				>
+				["at0021"] = <
+					text = <"Entlassgrund (dritte Stelle)">
+					description = <"Angabe ob arbeitsfähig, arbeitsunfähig oder invasiv beatmet entlassen wurde">
+					Feldname = <"BIPRENT34">
+				>
+				["at0022"] = <
+					text = <"Entlassende Abteilung">
+					description = <"">
+					Feldname = <"BIPRABT3E">
+				>
+				["at0023"] = <
+					text = <"Abteilung mit längster Behandlungszeit">
+					description = <"">
+					Feldname = <"BIPRABT3L">
+				>
+				["at0024"] = <
+					text = <"Belegungstage">
+					description = <"Belegungstag ist ein Tag, an dem ein aufgestelltes Bett von einerm Patienten/einer Patientin vollstationär belegt wurde. Belegungstage sind der Aufnahmetag sowie jeder weitere Tag des Krankenhausaufenthaltes ohne den Verlegungs- oder Entlassungstag aus dem Krankenhaus. Bei nachträglichen Streichungen durch MD oder Fallzusammenführungen kann die Anzahl Belegungstage kürzer sein als die tatsächliche Dauer zwischen Aufnahme- und Entlassdatum">
+					Feldname = <"BIPRBT">
+				>
+				["at0025"] = <
+					text = <"Berechnungstage">
+					description = <"Tage, für die tagesgleiche Pflegesätze in Rechnung gestellt werden. Diese Pflegesätze werden für den Aufnahmetag und jeden weiteren Tag des Krankenhausaufenthalts berechnet">
+					Feldname = <"BIPRBERT">
+				>
+				["at0026"] = <
+					text = <"Fallnummer">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Beatmungsstunden">
+					description = <"Angabe über die Dauer der Beatmung">
+					Feldname = <"BIPRDURH">
+				>
+				["at0028"] = <
+					text = <"Patientenstatus">
+					description = <"Angabe ob der Behandlungsfall eine Aufnahme- oder Entlassverlegung oder ein Kurz-, Normal- oder Langlieger ist.">
+				>
+				["at0029"] = <
+					text = <"Ursachengruppierung">
+					description = <"Untere Grenzverweildauer für die vergebene DRG">
+					Feldname = <"BIPRUGVD">
+				>
+				["at0030"] = <
+					text = <"Mittlere Verweildauer für die vergebene DRG">
+					description = <"">
+					Feldname = <"BIPRMVWDK">
+				>
+				["at0031"] = <
+					text = <"Obere Grenzverweildauer für die vergebene DRG">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Diagnosis Related Group (DRG)">
+					description = <"Die vergebene DRG für den aktuellen Fall">
+					Feldname = <"BIPRDRG">
+				>
+				["at0033"] = <
+					text = <"Entgeltbereich §21">
+					description = <"Angabe über welches Entgelt der Fall abgerechnet wird.">
+					Feldname = <"BIPRETGBE">
+				>
+				["at0034"] = <
+					text = <"Kennzeichen Überlieger">
+					description = <"Kennzeichnung ob es sich um einen Überlieger handelt. Überlieger sind Fälle, die über den Jahreswechsel in Behandlung waren.">
+					Feldname = <"BIPRUEBER">
+				>
+				["at0035"] = <
+					text = <"Kennzeichen Auslandsfall">
+					description = <"">
+					Feldname = <"BIPRAUSL">
+				>
+				["at0036"] = <
+					text = <"OPS Pflegegrad">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Grund für Fallzusammenführung">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Anzahl Tage der nachstationären Behandlung">
+					description = <"Merkmal BT nachstationär">
+					Feldname = <"BIPRFTNS">
+				>
+				["at0039"] = <
+					text = <"Anzahl Tage der vorstationären Behandlung">
+					description = <"Merkmal BT vorstationär">
+					Feldname = <"BIPRFTVS">
+				>
+				["at0040"] = <
+					text = <"Behandlungsbeginn vorstationär">
+					description = <"Datumsangabe des Endes der vorstationären Behandlung">
+					Feldname = <"BIPRBHBVO">
+				>
+				["at0041"] = <
+					text = <"Behandlungsende nachstationär">
+					description = <"Datumsangabe des Endes der nachstationären Behandlung">
+					Feldname = <"BIPRBHENC">
+				>
+				["at0042"] = <
+					text = <"PatientenIdentKey">
+					description = <"Pseudonymisierte Patient-ID basierend auf der Patient-ID im KIS-System und der Versicherungsnummer">
+					Feldname = <"ZHCRPATIK">
 				>
 			>
 		>
