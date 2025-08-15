@@ -1,0 +1,711 @@
+archetype (adl_version=1.4; uid=9e7c0f4d-5d6e-6f8a-bc3d-4e5f6a7b8901)
+	openEHR-EHR-EVALUATION.antimicrobial_stewardship_assessment.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2025-08-15">
+		["name"] = <"AMS Expert">
+		["organisation"] = <"openEHR Archetyping Team">
+		["email"] = <"archetyping@openehr.org">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the assessment of antimicrobial therapy for stewardship purposes, including appropriateness evaluation and optimization recommendations.">
+			keywords = <"antimicrobial","stewardship","AMS","antibiotic","optimization","guidelines","appropriateness">
+			use = <"Use to record antimicrobial stewardship assessments including guideline compliance, therapy optimization opportunities, and intervention recommendations. Typically used by infectious disease specialists, pharmacists, or stewardship teams.">
+			misuse = <"Not to be used for recording antimicrobial prescriptions - use INSTRUCTION.medication_order for that purpose.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"6a578ffc9fe236f50937bee3b58fb59e">
+		["build_uid"] = <"c29d16fb-60a8-3980-a45d-bf481a204ef9">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Antimicrobial stewardship assessment
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Assessment date
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0003] matches {    -- Overall appropriateness
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0004,    -- Appropriate
+									at0005,    -- Suboptimal but acceptable
+									at0006,    -- Inappropriate
+									at0007]    -- Unable to assess
+								}
+							}
+						}
+					}
+					CLUSTER[at0008] occurrences matches {0..*} matches {    -- Therapy assessment
+						items cardinality matches {1..*; unordered} matches {
+							allow_archetype CLUSTER[at0009] occurrences matches {0..1} matches {    -- Antimicrobial details
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.medication_substance\.v1/}
+							}
+							ELEMENT[at0010] occurrences matches {0..1} matches {    -- Indication assessment
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0011,    -- Appropriate indication
+											at0012,    -- Questionable indication
+											at0013,    -- No clear indication
+											at0014]    -- Contraindicated
+										}
+									}
+								}
+							}
+							ELEMENT[at0015] occurrences matches {0..1} matches {    -- Drug selection assessment
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0016,    -- Optimal drug choice
+											at0017,    -- Acceptable alternative
+											at0018,    -- Suboptimal choice
+											at0019]    -- Poor choice
+										}
+									}
+								}
+							}
+							ELEMENT[at0020] occurrences matches {0..1} matches {    -- Dosing assessment
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0021,    -- Appropriate dosing
+											at0022,    -- Minor adjustment needed
+											at0023,    -- Significant adjustment needed
+											at0024]    -- Inappropriate dosing
+										}
+									}
+								}
+							}
+							ELEMENT[at0025] occurrences matches {0..1} matches {    -- Duration assessment
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0026,    -- Appropriate duration
+											at0027,    -- Too short
+											at0028,    -- Too long
+											at0029]    -- Indefinite inappropriately
+										}
+									}
+								}
+							}
+							ELEMENT[at0030] occurrences matches {0..1} matches {    -- Route assessment
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0031,    -- Appropriate route
+											at0032,    -- Switch to oral possible
+											at0033,    -- Switch to IV needed
+											at0034]    -- Inappropriate route
+										}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[at0035] occurrences matches {0..1} matches {    -- Guideline compliance
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0036,    -- Compliant with guidelines
+									at0037,    -- Minor deviation
+									at0038,    -- Major deviation
+									at0039,    -- No relevant guidelines
+									at0040]    -- Guidelines not followed
+								}
+							}
+						}
+					}
+					ELEMENT[at0041] occurrences matches {0..1} matches {    -- Guideline reference
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					CLUSTER[at0042] occurrences matches {0..*} matches {    -- Optimization opportunities
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0043] matches {    -- Intervention type
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0044,    -- De-escalation
+											at0045,    -- Escalation
+											at0046,    -- Drug substitution
+											at0047,    -- Dose optimization
+											at0048,    -- Route optimization
+											at0049,    -- Duration adjustment
+											at0050,    -- Discontinuation
+											at0051,    -- Combination therapy
+											at0052]    -- Therapeutic drug monitoring
+										}
+									}
+								}
+							}
+							ELEMENT[at0053] occurrences matches {0..1} matches {    -- Priority level
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0054,    -- Urgent (within 4 hours)
+											at0055,    -- High (within 24 hours)
+											at0056,    -- Medium (within 72 hours)
+											at0057]    -- Low (routine)
+										}
+									}
+								}
+							}
+							ELEMENT[at0058] occurrences matches {0..1} matches {    -- Specific recommendation
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0059] occurrences matches {0..1} matches {    -- Rationale
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0060] occurrences matches {0..1} matches {    -- Risk assessment
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0061] occurrences matches {0..1} matches {    -- Resistance development risk
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0062,    -- Low risk
+											at0063,    -- Moderate risk
+											at0064,    -- High risk
+											at0065]    -- Very high risk
+										}
+									}
+								}
+							}
+							ELEMENT[at0066] occurrences matches {0..1} matches {    -- Adverse effect risk
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0067,    -- Low risk
+											at0068,    -- Moderate risk
+											at0069,    -- High risk
+											at0070]    -- Very high risk
+										}
+									}
+								}
+							}
+							ELEMENT[at0071] occurrences matches {0..1} matches {    -- C. difficile risk
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0072,    -- Low risk
+											at0073,    -- Moderate risk
+											at0074,    -- High risk
+											at0075]    -- Very high risk
+										}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[at0076] occurrences matches {0..1} matches {    -- Microbiological data available
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0077] occurrences matches {0..1} matches {    -- Culture directed therapy
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0078] occurrences matches {0..1} matches {    -- Therapy type
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0079,    -- Empirical therapy
+									at0080,    -- Targeted therapy
+									at0081,    -- Prophylactic therapy
+									at0082]    -- Preemptive therapy
+								}
+							}
+						}
+					}
+					ELEMENT[at0083] occurrences matches {0..1} matches {    -- Follow-up required
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0084] occurrences matches {0..1} matches {    -- Follow-up date
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0085] occurrences matches {0..1} matches {    -- Assessor
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0086] occurrences matches {0..1} matches {    -- Assessor role
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0087,    -- Infectious disease physician
+									at0088,    -- Clinical pharmacist
+									at0089,    -- Microbiologist
+									at0090,    -- AMS team member
+									at0091]    -- Other
+								}
+							}
+						}
+					}
+					ELEMENT[at0092] occurrences matches {0..1} matches {    -- Comments
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0093] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0094] occurrences matches {0..1} matches {    -- Assessment criteria
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0095] occurrences matches {0..1} matches {    -- Assessment tool
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0096] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Antimicrobial stewardship assessment">
+					description = <"Assessment of antimicrobial therapy for optimization and stewardship purposes.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Assessment date">
+					description = <"Date and time of the stewardship assessment.">
+				>
+				["at0003"] = <
+					text = <"Overall appropriateness">
+					description = <"Overall assessment of antimicrobial therapy appropriateness.">
+				>
+				["at0004"] = <
+					text = <"Appropriate">
+					description = <"Therapy is appropriate as prescribed.">
+				>
+				["at0005"] = <
+					text = <"Suboptimal but acceptable">
+					description = <"Therapy is suboptimal but clinically acceptable.">
+				>
+				["at0006"] = <
+					text = <"Inappropriate">
+					description = <"Therapy is inappropriate and requires modification.">
+				>
+				["at0007"] = <
+					text = <"Unable to assess">
+					description = <"Unable to assess appropriateness due to insufficient information.">
+				>
+				["at0008"] = <
+					text = <"Therapy assessment">
+					description = <"Detailed assessment of individual antimicrobial therapy.">
+				>
+				["at0009"] = <
+					text = <"Antimicrobial details">
+					description = <"Details of the antimicrobial being assessed.">
+				>
+				["at0010"] = <
+					text = <"Indication assessment">
+					description = <"Assessment of the indication for antimicrobial therapy.">
+				>
+				["at0011"] = <
+					text = <"Appropriate indication">
+					description = <"Clear and appropriate indication for therapy.">
+				>
+				["at0012"] = <
+					text = <"Questionable indication">
+					description = <"Indication is questionable or unclear.">
+				>
+				["at0013"] = <
+					text = <"No clear indication">
+					description = <"No clear indication for antimicrobial therapy.">
+				>
+				["at0014"] = <
+					text = <"Contraindicated">
+					description = <"Antimicrobial therapy is contraindicated.">
+				>
+				["at0015"] = <
+					text = <"Drug selection assessment">
+					description = <"Assessment of antimicrobial drug selection.">
+				>
+				["at0016"] = <
+					text = <"Optimal drug choice">
+					description = <"Optimal drug choice for the indication.">
+				>
+				["at0017"] = <
+					text = <"Acceptable alternative">
+					description = <"Acceptable alternative drug choice.">
+				>
+				["at0018"] = <
+					text = <"Suboptimal choice">
+					description = <"Suboptimal drug choice.">
+				>
+				["at0019"] = <
+					text = <"Poor choice">
+					description = <"Poor drug choice for the indication.">
+				>
+				["at0020"] = <
+					text = <"Dosing assessment">
+					description = <"Assessment of antimicrobial dosing regimen.">
+				>
+				["at0021"] = <
+					text = <"Appropriate dosing">
+					description = <"Dosing regimen is appropriate.">
+				>
+				["at0022"] = <
+					text = <"Minor adjustment needed">
+					description = <"Minor dosing adjustment is needed.">
+				>
+				["at0023"] = <
+					text = <"Significant adjustment needed">
+					description = <"Significant dosing adjustment is needed.">
+				>
+				["at0024"] = <
+					text = <"Inappropriate dosing">
+					description = <"Dosing regimen is inappropriate.">
+				>
+				["at0025"] = <
+					text = <"Duration assessment">
+					description = <"Assessment of therapy duration.">
+				>
+				["at0026"] = <
+					text = <"Appropriate duration">
+					description = <"Therapy duration is appropriate.">
+				>
+				["at0027"] = <
+					text = <"Too short">
+					description = <"Therapy duration is too short.">
+				>
+				["at0028"] = <
+					text = <"Too long">
+					description = <"Therapy duration is too long.">
+				>
+				["at0029"] = <
+					text = <"Indefinite inappropriately">
+					description = <"Therapy is inappropriately indefinite.">
+				>
+				["at0030"] = <
+					text = <"Route assessment">
+					description = <"Assessment of administration route.">
+				>
+				["at0031"] = <
+					text = <"Appropriate route">
+					description = <"Administration route is appropriate.">
+				>
+				["at0032"] = <
+					text = <"Switch to oral possible">
+					description = <"Switch from IV to oral route is possible.">
+				>
+				["at0033"] = <
+					text = <"Switch to IV needed">
+					description = <"Switch to intravenous route is needed.">
+				>
+				["at0034"] = <
+					text = <"Inappropriate route">
+					description = <"Administration route is inappropriate.">
+				>
+				["at0035"] = <
+					text = <"Guideline compliance">
+					description = <"Compliance with relevant antimicrobial guidelines.">
+				>
+				["at0036"] = <
+					text = <"Compliant with guidelines">
+					description = <"Therapy is compliant with relevant guidelines.">
+				>
+				["at0037"] = <
+					text = <"Minor deviation">
+					description = <"Minor deviation from guidelines.">
+				>
+				["at0038"] = <
+					text = <"Major deviation">
+					description = <"Major deviation from guidelines.">
+				>
+				["at0039"] = <
+					text = <"No relevant guidelines">
+					description = <"No relevant guidelines available.">
+				>
+				["at0040"] = <
+					text = <"Guidelines not followed">
+					description = <"Relevant guidelines are not followed.">
+				>
+				["at0041"] = <
+					text = <"Guideline reference">
+					description = <"Reference to specific guidelines used for assessment.">
+				>
+				["at0042"] = <
+					text = <"Optimization opportunities">
+					description = <"Opportunities for therapy optimization.">
+				>
+				["at0043"] = <
+					text = <"Intervention type">
+					description = <"Type of optimization intervention recommended.">
+				>
+				["at0044"] = <
+					text = <"De-escalation">
+					description = <"De-escalation to narrower spectrum antimicrobial.">
+				>
+				["at0045"] = <
+					text = <"Escalation">
+					description = <"Escalation to broader spectrum antimicrobial.">
+				>
+				["at0046"] = <
+					text = <"Drug substitution">
+					description = <"Substitution with different antimicrobial.">
+				>
+				["at0047"] = <
+					text = <"Dose optimization">
+					description = <"Optimization of dosing regimen.">
+				>
+				["at0048"] = <
+					text = <"Route optimization">
+					description = <"Optimization of administration route.">
+				>
+				["at0049"] = <
+					text = <"Duration adjustment">
+					description = <"Adjustment of therapy duration.">
+				>
+				["at0050"] = <
+					text = <"Discontinuation">
+					description = <"Discontinuation of antimicrobial therapy.">
+				>
+				["at0051"] = <
+					text = <"Combination therapy">
+					description = <"Addition of combination antimicrobial.">
+				>
+				["at0052"] = <
+					text = <"Therapeutic drug monitoring">
+					description = <"Implementation of therapeutic drug monitoring.">
+				>
+				["at0053"] = <
+					text = <"Priority level">
+					description = <"Priority level for implementing the intervention.">
+				>
+				["at0054"] = <
+					text = <"Urgent (within 4 hours)">
+					description = <"Urgent intervention required within 4 hours.">
+				>
+				["at0055"] = <
+					text = <"High (within 24 hours)">
+					description = <"High priority intervention within 24 hours.">
+				>
+				["at0056"] = <
+					text = <"Medium (within 72 hours)">
+					description = <"Medium priority intervention within 72 hours.">
+				>
+				["at0057"] = <
+					text = <"Low (routine)">
+					description = <"Low priority routine intervention.">
+				>
+				["at0058"] = <
+					text = <"Specific recommendation">
+					description = <"Specific recommendation for optimization.">
+				>
+				["at0059"] = <
+					text = <"Rationale">
+					description = <"Rationale for the optimization recommendation.">
+				>
+				["at0060"] = <
+					text = <"Risk assessment">
+					description = <"Assessment of therapy-related risks.">
+				>
+				["at0061"] = <
+					text = <"Resistance development risk">
+					description = <"Risk of antimicrobial resistance development.">
+				>
+				["at0062"] = <
+					text = <"Low risk">
+					description = <"Low risk.">
+				>
+				["at0063"] = <
+					text = <"Moderate risk">
+					description = <"Moderate risk.">
+				>
+				["at0064"] = <
+					text = <"High risk">
+					description = <"High risk.">
+				>
+				["at0065"] = <
+					text = <"Very high risk">
+					description = <"Very high risk.">
+				>
+				["at0066"] = <
+					text = <"Adverse effect risk">
+					description = <"Risk of adverse effects from antimicrobial therapy.">
+				>
+				["at0067"] = <
+					text = <"Low risk">
+					description = <"Low risk of adverse effects.">
+				>
+				["at0068"] = <
+					text = <"Moderate risk">
+					description = <"Moderate risk of adverse effects.">
+				>
+				["at0069"] = <
+					text = <"High risk">
+					description = <"High risk of adverse effects.">
+				>
+				["at0070"] = <
+					text = <"Very high risk">
+					description = <"Very high risk of adverse effects.">
+				>
+				["at0071"] = <
+					text = <"C. difficile risk">
+					description = <"Risk of Clostridioides difficile infection.">
+				>
+				["at0072"] = <
+					text = <"Low risk">
+					description = <"Low risk of C. difficile infection.">
+				>
+				["at0073"] = <
+					text = <"Moderate risk">
+					description = <"Moderate risk of C. difficile infection.">
+				>
+				["at0074"] = <
+					text = <"High risk">
+					description = <"High risk of C. difficile infection.">
+				>
+				["at0075"] = <
+					text = <"Very high risk">
+					description = <"Very high risk of C. difficile infection.">
+				>
+				["at0076"] = <
+					text = <"Microbiological data available">
+					description = <"Whether microbiological data is available to guide therapy.">
+				>
+				["at0077"] = <
+					text = <"Culture directed therapy">
+					description = <"Whether therapy is directed by culture results.">
+				>
+				["at0078"] = <
+					text = <"Therapy type">
+					description = <"Type of antimicrobial therapy.">
+				>
+				["at0079"] = <
+					text = <"Empirical therapy">
+					description = <"Empirical antimicrobial therapy.">
+				>
+				["at0080"] = <
+					text = <"Targeted therapy">
+					description = <"Targeted antimicrobial therapy.">
+				>
+				["at0081"] = <
+					text = <"Prophylactic therapy">
+					description = <"Prophylactic antimicrobial therapy.">
+				>
+				["at0082"] = <
+					text = <"Preemptive therapy">
+					description = <"Preemptive antimicrobial therapy.">
+				>
+				["at0083"] = <
+					text = <"Follow-up required">
+					description = <"Whether follow-up assessment is required.">
+				>
+				["at0084"] = <
+					text = <"Follow-up date">
+					description = <"Date for follow-up assessment.">
+				>
+				["at0085"] = <
+					text = <"Assessor">
+					description = <"Person who performed the stewardship assessment.">
+				>
+				["at0086"] = <
+					text = <"Assessor role">
+					description = <"Professional role of the assessor.">
+				>
+				["at0087"] = <
+					text = <"Infectious disease physician">
+					description = <"Infectious disease specialist physician.">
+				>
+				["at0088"] = <
+					text = <"Clinical pharmacist">
+					description = <"Clinical pharmacist specializing in antimicrobials.">
+				>
+				["at0089"] = <
+					text = <"Microbiologist">
+					description = <"Clinical microbiologist.">
+				>
+				["at0090"] = <
+					text = <"AMS team member">
+					description = <"Member of antimicrobial stewardship team.">
+				>
+				["at0091"] = <
+					text = <"Other">
+					description = <"Other healthcare professional.">
+				>
+				["at0092"] = <
+					text = <"Comments">
+					description = <"Additional comments about the stewardship assessment.">
+				>
+				["at0093"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0094"] = <
+					text = <"Assessment criteria">
+					description = <"Criteria used for the stewardship assessment.">
+				>
+				["at0095"] = <
+					text = <"Assessment tool">
+					description = <"Tool or framework used for assessment.">
+				>
+				["at0096"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+				>
+			>
+		>
+	>
