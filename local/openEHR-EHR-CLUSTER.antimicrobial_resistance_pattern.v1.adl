@@ -1,0 +1,480 @@
+archetype (adl_version=1.4; uid=35eaa2c3-a240-3114-8e86-f45c24a691a7)
+	openEHR-EHR-CLUSTER.antimicrobial_resistance_pattern.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2025-08-15">
+		["name"] = <"Microbiology Expert">
+		["organisation"] = <"openEHR Archetyping Team">
+		["email"] = <"archetyping@openehr.org">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record detailed antimicrobial resistance patterns with standardized interpretation according to EUCAST or CLSI guidelines.">
+			keywords = <"antimicrobial","resistance","susceptibility","MIC","EUCAST","CLSI","antibiogram","AST">
+			use = <"Use to record resistance testing results for individual antimicrobial agents as part of antimicrobial susceptibility testing (AST). Designed for use within laboratory test archetypes.">
+			misuse = <"Not to be used as standalone archetype. Must be used within laboratory test or microbiology report archetypes.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"67fc32769b54fda28c7ab833977d2f2d">
+		["build_uid"] = <"9459b13e-b497-3626-8991-829d625bd05f">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Antimicrobial resistance pattern
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] matches {    -- Antimicrobial agent
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- MIC value
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::119]>
+						list = <
+							["1"] = <
+								units = <"mg/l">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Zone diameter
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::122]>
+						list = <
+							["1"] = <
+								units = <"mm">
+								magnitude = <|>=0.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0004] matches {    -- Susceptibility result
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0005,    -- Susceptible (S)
+							at0006,    -- Susceptible increased exposure (I)
+							at0007,    -- Resistant (R)
+							at0008,    -- Not determined
+							at0009]    -- Not applicable
+						}
+					}
+				}
+			}
+			ELEMENT[at0010] occurrences matches {0..1} matches {    -- Interpretation criteria
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0011,    -- EUCAST
+							at0012,    -- CLSI
+							at0013,    -- Local criteria
+							at0014]    -- Other
+						}
+					}
+				}
+			}
+			ELEMENT[at0015] occurrences matches {0..1} matches {    -- Breakpoint version
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0016] occurrences matches {0..1} matches {    -- Testing method
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0017,    -- Broth microdilution
+							at0018,    -- Agar dilution
+							at0019,    -- Disk diffusion
+							at0020,    -- E-test
+							at0021,    -- Automated system
+							at0022,    -- Molecular method
+							at0023]    -- Other
+						}
+					}
+				}
+			}
+			ELEMENT[at0024] occurrences matches {0..1} matches {    -- MDRO classification
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0025,    -- Multidrug-resistant (MDR)
+							at0026,    -- Extensively drug-resistant (XDR)
+							at0027,    -- Pandrug-resistant (PDR)
+							at0028,    -- ESBL producer
+							at0029,    -- Carbapenemase producer
+							at0030,    -- MRSA
+							at0031,    -- VRE
+							at0032]    -- Not classified
+						}
+					}
+				}
+			}
+			CLUSTER[at0033] occurrences matches {0..*} matches {    -- Resistance mechanism
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0034] matches {    -- Mechanism type
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0035,    -- Beta-lactamase
+									at0036,    -- Efflux pump
+									at0037,    -- Target modification
+									at0038,    -- Impermeability
+									at0039,    -- Enzymatic inactivation
+									at0040]    -- Other mechanism
+								}
+							}
+						}
+					}
+					ELEMENT[at0041] occurrences matches {0..1} matches {    -- Specific mechanism
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0042] occurrences matches {0..1} matches {    -- Detection method
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0043,    -- Phenotypic
+									at0044,    -- Genotypic
+									at0045]    -- Combined
+								}
+							}
+						}
+					}
+				}
+			}
+			ELEMENT[at0046] occurrences matches {0..1} matches {    -- Clinical significance
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0047,    -- High clinical significance
+							at0048,    -- Moderate clinical significance
+							at0049,    -- Low clinical significance
+							at0050]    -- Unknown significance
+						}
+					}
+				}
+			}
+			ELEMENT[at0051] occurrences matches {0..1} matches {    -- Epidemiological significance
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0052,    -- Alert organism
+							at0053,    -- Outbreak strain
+							at0054,    -- Endemic strain
+							at0055]    -- Sporadic occurrence
+						}
+					}
+				}
+			}
+			ELEMENT[at0056] occurrences matches {0..1} matches {    -- Quality control
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0057,    -- Within acceptable range
+							at0058,    -- Outside acceptable range
+							at0059]    -- Not performed
+						}
+					}
+				}
+			}
+			ELEMENT[at0060] occurrences matches {0..1} matches {    -- Test date
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0061] occurrences matches {0..1} matches {    -- Comments
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0062] occurrences matches {0..*} matches {    -- Additional details
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Antimicrobial resistance pattern">
+					description = <"Detailed antimicrobial resistance testing results with standardized interpretation.">
+				>
+				["at0001"] = <
+					text = <"Antimicrobial agent">
+					description = <"Name of the antimicrobial agent tested.">
+				>
+				["at0002"] = <
+					text = <"MIC value">
+					description = <"Minimum Inhibitory Concentration value.">
+				>
+				["at0003"] = <
+					text = <"Zone diameter">
+					description = <"Zone diameter for disk diffusion testing.">
+				>
+				["at0004"] = <
+					text = <"Susceptibility result">
+					description = <"Interpreted susceptibility result.">
+				>
+				["at0005"] = <
+					text = <"Susceptible (S)">
+					description = <"Organism is susceptible to standard dosing.">
+				>
+				["at0006"] = <
+					text = <"Susceptible increased exposure (I)">
+					description = <"Organism is susceptible with increased exposure.">
+				>
+				["at0007"] = <
+					text = <"Resistant (R)">
+					description = <"Organism is resistant to the antimicrobial.">
+				>
+				["at0008"] = <
+					text = <"Not determined">
+					description = <"Susceptibility could not be determined.">
+				>
+				["at0009"] = <
+					text = <"Not applicable">
+					description = <"Testing not applicable for this organism-drug combination.">
+				>
+				["at0010"] = <
+					text = <"Interpretation criteria">
+					description = <"Criteria used for susceptibility interpretation.">
+				>
+				["at0011"] = <
+					text = <"EUCAST">
+					description = <"European Committee on Antimicrobial Susceptibility Testing.">
+				>
+				["at0012"] = <
+					text = <"CLSI">
+					description = <"Clinical and Laboratory Standards Institute.">
+				>
+				["at0013"] = <
+					text = <"Local criteria">
+					description = <"Local laboratory criteria.">
+				>
+				["at0014"] = <
+					text = <"Other">
+					description = <"Other interpretation criteria.">
+				>
+				["at0015"] = <
+					text = <"Breakpoint version">
+					description = <"Version of breakpoint criteria used.">
+				>
+				["at0016"] = <
+					text = <"Testing method">
+					description = <"Method used for susceptibility testing.">
+				>
+				["at0017"] = <
+					text = <"Broth microdilution">
+					description = <"Broth microdilution method.">
+				>
+				["at0018"] = <
+					text = <"Agar dilution">
+					description = <"Agar dilution method.">
+				>
+				["at0019"] = <
+					text = <"Disk diffusion">
+					description = <"Disk diffusion (Kirby-Bauer) method.">
+				>
+				["at0020"] = <
+					text = <"E-test">
+					description = <"E-test gradient method.">
+				>
+				["at0021"] = <
+					text = <"Automated system">
+					description = <"Automated susceptibility testing system.">
+				>
+				["at0022"] = <
+					text = <"Molecular method">
+					description = <"Molecular-based resistance detection.">
+				>
+				["at0023"] = <
+					text = <"Other">
+					description = <"Other testing method.">
+				>
+				["at0024"] = <
+					text = <"MDRO classification">
+					description = <"Classification as multidrug-resistant organism.">
+				>
+				["at0025"] = <
+					text = <"Multidrug-resistant (MDR)">
+					description = <"Multidrug-resistant organism.">
+				>
+				["at0026"] = <
+					text = <"Extensively drug-resistant (XDR)">
+					description = <"Extensively drug-resistant organism.">
+				>
+				["at0027"] = <
+					text = <"Pandrug-resistant (PDR)">
+					description = <"Pandrug-resistant organism.">
+				>
+				["at0028"] = <
+					text = <"ESBL producer">
+					description = <"Extended-spectrum beta-lactamase producer.">
+				>
+				["at0029"] = <
+					text = <"Carbapenemase producer">
+					description = <"Carbapenemase-producing organism.">
+				>
+				["at0030"] = <
+					text = <"MRSA">
+					description = <"Methicillin-resistant Staphylococcus aureus.">
+				>
+				["at0031"] = <
+					text = <"VRE">
+					description = <"Vancomycin-resistant Enterococci.">
+				>
+				["at0032"] = <
+					text = <"Not classified">
+					description = <"Not classified as MDRO.">
+				>
+				["at0033"] = <
+					text = <"Resistance mechanism">
+					description = <"Mechanism of antimicrobial resistance.">
+				>
+				["at0034"] = <
+					text = <"Mechanism type">
+					description = <"Type of resistance mechanism.">
+				>
+				["at0035"] = <
+					text = <"Beta-lactamase">
+					description = <"Beta-lactamase mediated resistance.">
+				>
+				["at0036"] = <
+					text = <"Efflux pump">
+					description = <"Efflux pump mediated resistance.">
+				>
+				["at0037"] = <
+					text = <"Target modification">
+					description = <"Target site modification.">
+				>
+				["at0038"] = <
+					text = <"Impermeability">
+					description = <"Decreased permeability.">
+				>
+				["at0039"] = <
+					text = <"Enzymatic inactivation">
+					description = <"Enzymatic inactivation of antimicrobial.">
+				>
+				["at0040"] = <
+					text = <"Other mechanism">
+					description = <"Other resistance mechanism.">
+				>
+				["at0041"] = <
+					text = <"Specific mechanism">
+					description = <"Specific resistance mechanism identified.">
+				>
+				["at0042"] = <
+					text = <"Detection method">
+					description = <"Method used to detect resistance mechanism.">
+				>
+				["at0043"] = <
+					text = <"Phenotypic">
+					description = <"Phenotypic detection method.">
+				>
+				["at0044"] = <
+					text = <"Genotypic">
+					description = <"Genotypic detection method.">
+				>
+				["at0045"] = <
+					text = <"Combined">
+					description = <"Combined phenotypic and genotypic methods.">
+				>
+				["at0046"] = <
+					text = <"Clinical significance">
+					description = <"Clinical significance of the resistance pattern.">
+				>
+				["at0047"] = <
+					text = <"High clinical significance">
+					description = <"High clinical significance requiring immediate action.">
+				>
+				["at0048"] = <
+					text = <"Moderate clinical significance">
+					description = <"Moderate clinical significance.">
+				>
+				["at0049"] = <
+					text = <"Low clinical significance">
+					description = <"Low clinical significance.">
+				>
+				["at0050"] = <
+					text = <"Unknown significance">
+					description = <"Clinical significance unknown.">
+				>
+				["at0051"] = <
+					text = <"Epidemiological significance">
+					description = <"Epidemiological significance for infection control.">
+				>
+				["at0052"] = <
+					text = <"Alert organism">
+					description = <"Organism requiring immediate alert.">
+				>
+				["at0053"] = <
+					text = <"Outbreak strain">
+					description = <"Strain associated with outbreak.">
+				>
+				["at0054"] = <
+					text = <"Endemic strain">
+					description = <"Endemic strain in facility.">
+				>
+				["at0055"] = <
+					text = <"Sporadic occurrence">
+					description = <"Sporadic occurrence.">
+				>
+				["at0056"] = <
+					text = <"Quality control">
+					description = <"Quality control result for the test.">
+				>
+				["at0057"] = <
+					text = <"Within acceptable range">
+					description = <"Quality control within acceptable range.">
+				>
+				["at0058"] = <
+					text = <"Outside acceptable range">
+					description = <"Quality control outside acceptable range.">
+				>
+				["at0059"] = <
+					text = <"Not performed">
+					description = <"Quality control not performed.">
+				>
+				["at0060"] = <
+					text = <"Test date">
+					description = <"Date and time when resistance testing was performed.">
+				>
+				["at0061"] = <
+					text = <"Comments">
+					description = <"Additional comments about the resistance pattern.">
+				>
+				["at0062"] = <
+					text = <"Additional details">
+					description = <"Additional structured details about antimicrobial resistance.">
+				>
+			>
+		>
+	>
