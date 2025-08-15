@@ -1,0 +1,496 @@
+archetype (adl_version=1.4; uid=7c5a8f2e-3b4d-4e6f-9a1b-2c3d4e5f6789)
+	openEHR-EHR-OBSERVATION.infection_surveillance.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2025-08-15">
+		["name"] = <"Infection Control Expert">
+		["organisation"] = <"openEHR Archetyping Team">
+		["email"] = <"archetyping@openehr.org">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record structured surveillance data for healthcare-associated infections (HAI) according to CDC/NHSN and ECDC standards.">
+			keywords = <"infection","surveillance","HAI","nosocomial","CDC","NHSN","ECDC","MDRO">
+			use = <"Use to record nosocomial infection surveillance data including infection classification, risk factors, onset timing, and epidemiological data for infection control purposes.">
+			misuse = <"Not to be used for community-acquired infections or routine clinical infection documentation.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"f3d96cbd3f6b494410021bfda370b5a5">
+		["build_uid"] = <"1206af7d-0334-3f45-bbe9-6ff9fb64c8c1">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Healthcare-associated infection surveillance
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Infection classification
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0005,    -- Healthcare-associated infection (HAI)
+													at0006,    -- Community-acquired infection (CAI)
+													at0007,    -- Healthcare-associated, community-onset
+													at0008]    -- Indeterminate
+												}
+											}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Infection type (CDC/NHSN)
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0010,    -- Central line-associated bloodstream infection (CLABSI)
+													at0011,    -- Catheter-associated urinary tract infection (CAUTI)
+													at0012,    -- Ventilator-associated pneumonia (VAP)
+													at0013,    -- Surgical site infection (SSI)
+													at0014,    -- Healthcare-associated pneumonia (HAP)
+													at0015,    -- Clostridioides difficile infection (CDI)
+													at0016,    -- Other healthcare-associated infection
+													at0017]    -- Multidrug-resistant organism (MDRO) infection
+												}
+											}
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {    -- Infection site
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0019,    -- Bloodstream
+													at0020,    -- Urinary tract
+													at0021,    -- Respiratory tract
+													at0022,    -- Surgical site
+													at0023,    -- Gastrointestinal
+													at0024,    -- Skin and soft tissue
+													at0025,    -- Central nervous system
+													at0026]    -- Other
+												}
+											}
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {    -- Onset date
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Days from admission to onset
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::128]>
+												list = <
+													["1"] = <
+														units = <"d">
+														magnitude = <|>=0.0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0029] occurrences matches {0..1} matches {    -- Severity score
+										value matches {
+											1|[local::at0030],
+											2|[local::at0031],
+											3|[local::at0032],
+											4|[local::at0033]
+										}
+									}
+									ELEMENT[at0034] occurrences matches {0..1} matches {    -- MDRO status
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									CLUSTER[at0035] occurrences matches {0..*} matches {    -- Risk factors
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0036] occurrences matches {0..1} matches {    -- Risk factor
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0037,    -- Central venous catheter
+															at0038,    -- Urinary catheter
+															at0039,    -- Mechanical ventilation
+															at0040,    -- Immunosuppression
+															at0041,    -- Recent surgery
+															at0042,    -- ICU stay
+															at0043,    -- Antibiotic exposure
+															at0044]    -- Other invasive device
+														}
+													}
+												}
+											}
+											ELEMENT[at0045] occurrences matches {0..1} matches {    -- Duration (days)
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::128]>
+														list = <
+															["1"] = <
+																units = <"d">
+																magnitude = <|>=0.0|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0046] occurrences matches {0..1} matches {    -- Outbreak information
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0047] occurrences matches {0..1} matches {    -- Outbreak associated
+												value matches {
+													DV_BOOLEAN matches {*}
+												}
+											}
+											ELEMENT[at0048] occurrences matches {0..1} matches {    -- Outbreak ID
+												value matches {
+													DV_IDENTIFIER matches {*}
+												}
+											}
+											ELEMENT[at0049] occurrences matches {0..1} matches {    -- Case classification
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0050,    -- Confirmed case
+															at0051,    -- Probable case
+															at0052]    -- Possible case
+														}
+													}
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0053] occurrences matches {0..*} matches {    -- Causative organism
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.specimen\.v1|openEHR-EHR-CLUSTER\.laboratory_test_analyte\.v1/}
+									}
+									ELEMENT[at0054] occurrences matches {0..1} matches {    -- Surveillance method
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0055,    -- Active surveillance
+													at0056,    -- Passive surveillance
+													at0057]    -- Targeted surveillance
+												}
+											}
+										}
+									}
+									ELEMENT[at0058] occurrences matches {0..1} matches {    -- Report to authorities
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0059] occurrences matches {0..1} matches {    -- Comments
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0060] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0061] occurrences matches {0..1} matches {    -- Surveillance criteria
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0062] occurrences matches {0..1} matches {    -- Data collector
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0063] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Healthcare-associated infection surveillance">
+					description = <"Structured surveillance data collection for healthcare-associated infections.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Infection classification">
+					description = <"Classification of infection as healthcare-associated or community-acquired.">
+				>
+				["at0005"] = <
+					text = <"Healthcare-associated infection (HAI)">
+					description = <"Infection that develops during or after healthcare delivery.">
+				>
+				["at0006"] = <
+					text = <"Community-acquired infection (CAI)">
+					description = <"Infection present at admission or developing within 48 hours.">
+				>
+				["at0007"] = <
+					text = <"Healthcare-associated, community-onset">
+					description = <"HAI that manifests after discharge.">
+				>
+				["at0008"] = <
+					text = <"Indeterminate">
+					description = <"Unable to determine if healthcare-associated or community-acquired.">
+				>
+				["at0009"] = <
+					text = <"Infection type (CDC/NHSN)">
+					description = <"CDC/NHSN standardized infection type classification.">
+				>
+				["at0010"] = <
+					text = <"Central line-associated bloodstream infection (CLABSI)">
+					description = <"Bloodstream infection associated with central venous catheter.">
+				>
+				["at0011"] = <
+					text = <"Catheter-associated urinary tract infection (CAUTI)">
+					description = <"Urinary tract infection associated with urinary catheter.">
+				>
+				["at0012"] = <
+					text = <"Ventilator-associated pneumonia (VAP)">
+					description = <"Pneumonia in mechanically ventilated patients.">
+				>
+				["at0013"] = <
+					text = <"Surgical site infection (SSI)">
+					description = <"Infection occurring after surgical procedure.">
+				>
+				["at0014"] = <
+					text = <"Healthcare-associated pneumonia (HAP)">
+					description = <"Pneumonia developing during healthcare stay.">
+				>
+				["at0015"] = <
+					text = <"Clostridioides difficile infection (CDI)">
+					description = <"Healthcare-associated C. difficile infection.">
+				>
+				["at0016"] = <
+					text = <"Other healthcare-associated infection">
+					description = <"Other types of healthcare-associated infections.">
+				>
+				["at0017"] = <
+					text = <"Multidrug-resistant organism (MDRO) infection">
+					description = <"Infection caused by multidrug-resistant organism.">
+				>
+				["at0018"] = <
+					text = <"Infection site">
+					description = <"Primary anatomical site of infection.">
+				>
+				["at0019"] = <
+					text = <"Bloodstream">
+					description = <"Bloodstream infection.">
+				>
+				["at0020"] = <
+					text = <"Urinary tract">
+					description = <"Urinary tract infection.">
+				>
+				["at0021"] = <
+					text = <"Respiratory tract">
+					description = <"Respiratory tract infection.">
+				>
+				["at0022"] = <
+					text = <"Surgical site">
+					description = <"Surgical site infection.">
+				>
+				["at0023"] = <
+					text = <"Gastrointestinal">
+					description = <"Gastrointestinal infection.">
+				>
+				["at0024"] = <
+					text = <"Skin and soft tissue">
+					description = <"Skin and soft tissue infection.">
+				>
+				["at0025"] = <
+					text = <"Central nervous system">
+					description = <"Central nervous system infection.">
+				>
+				["at0026"] = <
+					text = <"Other">
+					description = <"Other infection site.">
+				>
+				["at0027"] = <
+					text = <"Onset date">
+					description = <"Date and time of infection onset.">
+				>
+				["at0028"] = <
+					text = <"Days from admission to onset">
+					description = <"Number of days from hospital admission to infection onset.">
+				>
+				["at0029"] = <
+					text = <"Severity score">
+					description = <"Clinical severity assessment of the infection.">
+				>
+				["at0030"] = <
+					text = <"Mild">
+					description = <"Mild infection severity.">
+				>
+				["at0031"] = <
+					text = <"Moderate">
+					description = <"Moderate infection severity.">
+				>
+				["at0032"] = <
+					text = <"Severe">
+					description = <"Severe infection severity.">
+				>
+				["at0033"] = <
+					text = <"Life-threatening">
+					description = <"Life-threatening infection severity.">
+				>
+				["at0034"] = <
+					text = <"MDRO status">
+					description = <"Whether the infection involves a multidrug-resistant organism.">
+				>
+				["at0035"] = <
+					text = <"Risk factors">
+					description = <"Risk factors associated with the infection.">
+				>
+				["at0036"] = <
+					text = <"Risk factor">
+					description = <"Specific risk factor for healthcare-associated infection.">
+				>
+				["at0037"] = <
+					text = <"Central venous catheter">
+					description = <"Central venous catheter as risk factor.">
+				>
+				["at0038"] = <
+					text = <"Urinary catheter">
+					description = <"Urinary catheter as risk factor.">
+				>
+				["at0039"] = <
+					text = <"Mechanical ventilation">
+					description = <"Mechanical ventilation as risk factor.">
+				>
+				["at0040"] = <
+					text = <"Immunosuppression">
+					description = <"Immunosuppression as risk factor.">
+				>
+				["at0041"] = <
+					text = <"Recent surgery">
+					description = <"Recent surgical procedure as risk factor.">
+				>
+				["at0042"] = <
+					text = <"ICU stay">
+					description = <"Intensive care unit stay as risk factor.">
+				>
+				["at0043"] = <
+					text = <"Antibiotic exposure">
+					description = <"Previous antibiotic exposure as risk factor.">
+				>
+				["at0044"] = <
+					text = <"Other invasive device">
+					description = <"Other invasive device as risk factor.">
+				>
+				["at0045"] = <
+					text = <"Duration (days)">
+					description = <"Duration of exposure to risk factor in days.">
+				>
+				["at0046"] = <
+					text = <"Outbreak information">
+					description = <"Information related to outbreak association.">
+				>
+				["at0047"] = <
+					text = <"Outbreak associated">
+					description = <"Whether this infection is associated with an outbreak.">
+				>
+				["at0048"] = <
+					text = <"Outbreak ID">
+					description = <"Unique identifier for the outbreak.">
+				>
+				["at0049"] = <
+					text = <"Case classification">
+					description = <"Epidemiological case classification.">
+				>
+				["at0050"] = <
+					text = <"Confirmed case">
+					description = <"Confirmed outbreak case.">
+				>
+				["at0051"] = <
+					text = <"Probable case">
+					description = <"Probable outbreak case.">
+				>
+				["at0052"] = <
+					text = <"Possible case">
+					description = <"Possible outbreak case.">
+				>
+				["at0053"] = <
+					text = <"Causative organism">
+					description = <"Microorganism(s) causing the infection.">
+				>
+				["at0054"] = <
+					text = <"Surveillance method">
+					description = <"Method used for infection surveillance.">
+				>
+				["at0055"] = <
+					text = <"Active surveillance">
+					description = <"Active case finding surveillance.">
+				>
+				["at0056"] = <
+					text = <"Passive surveillance">
+					description = <"Passive surveillance based on routine reporting.">
+				>
+				["at0057"] = <
+					text = <"Targeted surveillance">
+					description = <"Targeted surveillance for specific conditions.">
+				>
+				["at0058"] = <
+					text = <"Report to authorities">
+					description = <"Whether the infection requires reporting to health authorities.">
+				>
+				["at0059"] = <
+					text = <"Comments">
+					description = <"Additional narrative about the infection surveillance.">
+				>
+				["at0060"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0061"] = <
+					text = <"Surveillance criteria">
+					description = <"Criteria or guidelines used for surveillance.">
+				>
+				["at0062"] = <
+					text = <"Data collector">
+					description = <"Person responsible for collecting surveillance data.">
+				>
+				["at0063"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+				>
+			>
+		>
+	>
