@@ -1,0 +1,749 @@
+archetype (adl_version=1.4; uid=af8d1e5f-6e7f-7f9b-cd4e-5f6a7b8c9012)
+	openEHR-EHR-ACTION.infection_control_measure.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2025-08-15">
+		["name"] = <"Infection Control Expert">
+		["organisation"] = <"openEHR Archetyping Team">
+		["email"] = <"archetyping@openehr.org">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record infection control measures and interventions performed to prevent or control the spread of infectious diseases.">
+			keywords = <"infection control","isolation","precautions","screening","decontamination","prevention","outbreak">
+			use = <"Use to record infection control actions including isolation precautions, screening procedures, decontamination measures, and other preventive interventions. Suitable for hospital infection control programs and outbreak management.">
+			misuse = <"Not to be used for recording treatment of infections - use ACTION.medication or ACTION.procedure for therapeutic interventions.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"e40c04eb4ce8e4825b564ea4a1b925da">
+		["build_uid"] = <"cd440226-71a6-39ea-9d44-b02aad4372ba">
+	>
+
+definition
+	ACTION[at0000] matches {    -- Infection control measure
+		ism_transition matches {
+			ISM_TRANSITION[at0001] matches {    -- Planned
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[openehr::526]
+						}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::at0001]    -- Planned
+						}
+					}
+				}
+			}
+			ISM_TRANSITION[at0002] matches {    -- Scheduled
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[openehr::529]
+						}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::at0002]    -- Scheduled
+						}
+					}
+				}
+			}
+			ISM_TRANSITION[at0003] matches {    -- Started
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[openehr::245]
+						}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::at0003]    -- Started
+						}
+					}
+				}
+			}
+			ISM_TRANSITION[at0004] matches {    -- Completed
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[openehr::532]
+						}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::at0004]    -- Completed
+						}
+					}
+				}
+			}
+			ISM_TRANSITION[at0005] matches {    -- Suspended
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[openehr::530]
+						}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::at0005]    -- Suspended
+						}
+					}
+				}
+			}
+			ISM_TRANSITION[at0006] matches {    -- Cancelled
+				current_state matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[openehr::531]
+						}
+					}
+				}
+				careflow_step matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::at0006]    -- Cancelled
+						}
+					}
+				}
+			}
+		}
+		description matches {
+			ITEM_TREE[at0007] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0008] matches {    -- Measure type
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0009,    -- Isolation precautions
+									at0010,    -- Screening procedure
+									at0011,    -- Decontamination
+									at0012,    -- Contact tracing
+									at0013,    -- Quarantine
+									at0014,    -- Environmental cleaning
+									at0015,    -- Personal protective equipment
+									at0016,    -- Hand hygiene education
+									at0017,    -- Outbreak investigation
+									at0018]    -- Other infection control measure
+								}
+							}
+						}
+					}
+					CLUSTER[at0019] occurrences matches {0..1} matches {    -- Isolation details
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0020] occurrences matches {0..1} matches {    -- Isolation type
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0021,    -- Contact precautions
+											at0022,    -- Droplet precautions
+											at0023,    -- Airborne precautions
+											at0024,    -- Protective isolation
+											at0025,    -- Cohort isolation
+											at0026]    -- Combined precautions
+										}
+									}
+								}
+							}
+							ELEMENT[at0027] occurrences matches {0..1} matches {    -- Room type
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0028,    -- Single room
+											at0029,    -- Negative pressure room
+											at0030,    -- Positive pressure room
+											at0031,    -- Cohort room
+											at0032]    -- Standard room with precautions
+										}
+									}
+								}
+							}
+							ELEMENT[at0033] occurrences matches {0..1} matches {    -- Isolation start date
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0034] occurrences matches {0..1} matches {    -- Planned isolation end date
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0035] occurrences matches {0..1} matches {    -- Isolation indication
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0036] occurrences matches {0..1} matches {    -- PPE requirements
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0037] occurrences matches {0..1} matches {    -- Screening details
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0038] occurrences matches {0..1} matches {    -- Screening type
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0039,    -- MDRO screening
+											at0040,    -- Contact screening
+											at0041,    -- Admission screening
+											at0042,    -- Periodic screening
+											at0043]    -- Outbreak screening
+										}
+									}
+								}
+							}
+							ELEMENT[at0044] occurrences matches {0..1} matches {    -- Target organism
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0045] occurrences matches {0..*} matches {    -- Sample sites
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0046,    -- Nasal
+											at0047,    -- Throat
+											at0048,    -- Rectal
+											at0049,    -- Wound
+											at0050,    -- Urine
+											at0051,    -- Blood
+											at0052]    -- Other site
+										}
+									}
+								}
+							}
+							ELEMENT[at0053] occurrences matches {0..1} matches {    -- Screening frequency
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0054,    -- Single screening
+											at0055,    -- Weekly
+											at0056,    -- Twice weekly
+											at0057,    -- Daily
+											at0058]    -- Other frequency
+										}
+									}
+								}
+							}
+						}
+					}
+					CLUSTER[at0059] occurrences matches {0..1} matches {    -- Decontamination details
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0060] occurrences matches {0..1} matches {    -- Decontamination method
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0061,    -- Alcohol-based disinfection
+											at0062,    -- Chlorine-based disinfection
+											at0063,    -- UV light treatment
+											at0064,    -- Heat sterilization
+											at0065,    -- Chemical sterilization
+											at0066]    -- Other method
+										}
+									}
+								}
+							}
+							ELEMENT[at0067] occurrences matches {0..1} matches {    -- Target area
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0068] occurrences matches {0..1} matches {    -- Decontamination agent
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0069] occurrences matches {0..1} matches {    -- Contact time
+								value matches {
+									DV_DURATION matches {*}
+								}
+							}
+						}
+					}
+					ELEMENT[at0070] occurrences matches {0..1} matches {    -- Indication
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0071] occurrences matches {0..1} matches {    -- Target organism/condition
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0072] occurrences matches {0..1} matches {    -- Compliance assessment
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0073,    -- Fully compliant
+									at0074,    -- Partially compliant
+									at0075,    -- Non-compliant
+									at0076]    -- Not assessed
+								}
+							}
+						}
+					}
+					ELEMENT[at0077] occurrences matches {0..1} matches {    -- Effectiveness assessment
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0078,    -- Effective
+									at0079,    -- Partially effective
+									at0080,    -- Ineffective
+									at0081]    -- Too early to assess
+								}
+							}
+						}
+					}
+					ELEMENT[at0082] occurrences matches {0..1} matches {    -- Follow-up required
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0083] occurrences matches {0..1} matches {    -- Next review date
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0084] occurrences matches {0..1} matches {    -- Comments
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0085] occurrences matches {0..*} matches {    -- Additional details
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0086] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0087] occurrences matches {0..1} matches {    -- Guidelines/Protocol
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0088] occurrences matches {0..1} matches {    -- Responsible person
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0089] occurrences matches {0..1} matches {    -- Department/Unit
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0090] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Infection control measure">
+					description = <"Infection control measure or intervention performed to prevent or control infectious disease transmission.">
+				>
+				["at0001"] = <
+					text = <"Planned">
+					description = <"Infection control measure is planned.">
+				>
+				["at0002"] = <
+					text = <"Scheduled">
+					description = <"Infection control measure is scheduled.">
+				>
+				["at0003"] = <
+					text = <"Started">
+					description = <"Infection control measure has been started.">
+				>
+				["at0004"] = <
+					text = <"Completed">
+					description = <"Infection control measure has been completed.">
+				>
+				["at0005"] = <
+					text = <"Suspended">
+					description = <"Infection control measure has been suspended.">
+				>
+				["at0006"] = <
+					text = <"Cancelled">
+					description = <"Infection control measure has been cancelled.">
+				>
+				["at0007"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0008"] = <
+					text = <"Measure type">
+					description = <"Type of infection control measure performed.">
+				>
+				["at0009"] = <
+					text = <"Isolation precautions">
+					description = <"Implementation of isolation precautions.">
+				>
+				["at0010"] = <
+					text = <"Screening procedure">
+					description = <"Screening for infectious organisms.">
+				>
+				["at0011"] = <
+					text = <"Decontamination">
+					description = <"Decontamination of environment or equipment.">
+				>
+				["at0012"] = <
+					text = <"Contact tracing">
+					description = <"Contact tracing for infectious disease.">
+				>
+				["at0013"] = <
+					text = <"Quarantine">
+					description = <"Quarantine measures.">
+				>
+				["at0014"] = <
+					text = <"Environmental cleaning">
+					description = <"Enhanced environmental cleaning.">
+				>
+				["at0015"] = <
+					text = <"Personal protective equipment">
+					description = <"Personal protective equipment measures.">
+				>
+				["at0016"] = <
+					text = <"Hand hygiene education">
+					description = <"Hand hygiene education and monitoring.">
+				>
+				["at0017"] = <
+					text = <"Outbreak investigation">
+					description = <"Outbreak investigation activities.">
+				>
+				["at0018"] = <
+					text = <"Other infection control measure">
+					description = <"Other type of infection control measure.">
+				>
+				["at0019"] = <
+					text = <"Isolation details">
+					description = <"Detailed information about isolation precautions.">
+				>
+				["at0020"] = <
+					text = <"Isolation type">
+					description = <"Type of isolation precautions implemented.">
+				>
+				["at0021"] = <
+					text = <"Contact precautions">
+					description = <"Contact precautions for organisms spread by direct contact.">
+				>
+				["at0022"] = <
+					text = <"Droplet precautions">
+					description = <"Droplet precautions for respiratory droplet transmission.">
+				>
+				["at0023"] = <
+					text = <"Airborne precautions">
+					description = <"Airborne precautions for airborne transmission.">
+				>
+				["at0024"] = <
+					text = <"Protective isolation">
+					description = <"Protective isolation for immunocompromised patients.">
+				>
+				["at0025"] = <
+					text = <"Cohort isolation">
+					description = <"Cohort isolation for patients with same organism.">
+				>
+				["at0026"] = <
+					text = <"Combined precautions">
+					description = <"Combination of multiple precaution types.">
+				>
+				["at0027"] = <
+					text = <"Room type">
+					description = <"Type of room used for isolation.">
+				>
+				["at0028"] = <
+					text = <"Single room">
+					description = <"Single patient room.">
+				>
+				["at0029"] = <
+					text = <"Negative pressure room">
+					description = <"Negative pressure isolation room.">
+				>
+				["at0030"] = <
+					text = <"Positive pressure room">
+					description = <"Positive pressure isolation room.">
+				>
+				["at0031"] = <
+					text = <"Cohort room">
+					description = <"Room for cohorted patients.">
+				>
+				["at0032"] = <
+					text = <"Standard room with precautions">
+					description = <"Standard room with additional precautions.">
+				>
+				["at0033"] = <
+					text = <"Isolation start date">
+					description = <"Date and time isolation was started.">
+				>
+				["at0034"] = <
+					text = <"Planned isolation end date">
+					description = <"Planned date for ending isolation.">
+				>
+				["at0035"] = <
+					text = <"Isolation indication">
+					description = <"Clinical indication for isolation.">
+				>
+				["at0036"] = <
+					text = <"PPE requirements">
+					description = <"Personal protective equipment requirements.">
+				>
+				["at0037"] = <
+					text = <"Screening details">
+					description = <"Details about screening procedures.">
+				>
+				["at0038"] = <
+					text = <"Screening type">
+					description = <"Type of screening performed.">
+				>
+				["at0039"] = <
+					text = <"MDRO screening">
+					description = <"Screening for multidrug-resistant organisms.">
+				>
+				["at0040"] = <
+					text = <"Contact screening">
+					description = <"Screening of patient contacts.">
+				>
+				["at0041"] = <
+					text = <"Admission screening">
+					description = <"Screening on hospital admission.">
+				>
+				["at0042"] = <
+					text = <"Periodic screening">
+					description = <"Periodic screening during hospitalization.">
+				>
+				["at0043"] = <
+					text = <"Outbreak screening">
+					description = <"Screening during outbreak investigation.">
+				>
+				["at0044"] = <
+					text = <"Target organism">
+					description = <"Organism being screened for.">
+				>
+				["at0045"] = <
+					text = <"Sample sites">
+					description = <"Anatomical sites sampled for screening.">
+				>
+				["at0046"] = <
+					text = <"Nasal">
+					description = <"Nasal sampling.">
+				>
+				["at0047"] = <
+					text = <"Throat">
+					description = <"Throat sampling.">
+				>
+				["at0048"] = <
+					text = <"Rectal">
+					description = <"Rectal sampling.">
+				>
+				["at0049"] = <
+					text = <"Wound">
+					description = <"Wound sampling.">
+				>
+				["at0050"] = <
+					text = <"Urine">
+					description = <"Urine sampling.">
+				>
+				["at0051"] = <
+					text = <"Blood">
+					description = <"Blood sampling.">
+				>
+				["at0052"] = <
+					text = <"Other site">
+					description = <"Other sampling site.">
+				>
+				["at0053"] = <
+					text = <"Screening frequency">
+					description = <"Frequency of screening.">
+				>
+				["at0054"] = <
+					text = <"Single screening">
+					description = <"Single screening only.">
+				>
+				["at0055"] = <
+					text = <"Weekly">
+					description = <"Weekly screening.">
+				>
+				["at0056"] = <
+					text = <"Twice weekly">
+					description = <"Twice weekly screening.">
+				>
+				["at0057"] = <
+					text = <"Daily">
+					description = <"Daily screening.">
+				>
+				["at0058"] = <
+					text = <"Other frequency">
+					description = <"Other screening frequency.">
+				>
+				["at0059"] = <
+					text = <"Decontamination details">
+					description = <"Details about decontamination procedures.">
+				>
+				["at0060"] = <
+					text = <"Decontamination method">
+					description = <"Method used for decontamination.">
+				>
+				["at0061"] = <
+					text = <"Alcohol-based disinfection">
+					description = <"Alcohol-based disinfection.">
+				>
+				["at0062"] = <
+					text = <"Chlorine-based disinfection">
+					description = <"Chlorine-based disinfection.">
+				>
+				["at0063"] = <
+					text = <"UV light treatment">
+					description = <"Ultraviolet light treatment.">
+				>
+				["at0064"] = <
+					text = <"Heat sterilization">
+					description = <"Heat sterilization.">
+				>
+				["at0065"] = <
+					text = <"Chemical sterilization">
+					description = <"Chemical sterilization.">
+				>
+				["at0066"] = <
+					text = <"Other method">
+					description = <"Other decontamination method.">
+				>
+				["at0067"] = <
+					text = <"Target area">
+					description = <"Area or equipment being decontaminated.">
+				>
+				["at0068"] = <
+					text = <"Decontamination agent">
+					description = <"Chemical agent used for decontamination.">
+				>
+				["at0069"] = <
+					text = <"Contact time">
+					description = <"Contact time for decontamination agent.">
+				>
+				["at0070"] = <
+					text = <"Indication">
+					description = <"Clinical indication for the infection control measure.">
+				>
+				["at0071"] = <
+					text = <"Target organism/condition">
+					description = <"Target organism or condition for the measure.">
+				>
+				["at0072"] = <
+					text = <"Compliance assessment">
+					description = <"Assessment of compliance with infection control measures.">
+				>
+				["at0073"] = <
+					text = <"Fully compliant">
+					description = <"Fully compliant with measures.">
+				>
+				["at0074"] = <
+					text = <"Partially compliant">
+					description = <"Partially compliant with measures.">
+				>
+				["at0075"] = <
+					text = <"Non-compliant">
+					description = <"Non-compliant with measures.">
+				>
+				["at0076"] = <
+					text = <"Not assessed">
+					description = <"Compliance not assessed.">
+				>
+				["at0077"] = <
+					text = <"Effectiveness assessment">
+					description = <"Assessment of measure effectiveness.">
+				>
+				["at0078"] = <
+					text = <"Effective">
+					description = <"Measure was effective.">
+				>
+				["at0079"] = <
+					text = <"Partially effective">
+					description = <"Measure was partially effective.">
+				>
+				["at0080"] = <
+					text = <"Ineffective">
+					description = <"Measure was ineffective.">
+				>
+				["at0081"] = <
+					text = <"Too early to assess">
+					description = <"Too early to assess effectiveness.">
+				>
+				["at0082"] = <
+					text = <"Follow-up required">
+					description = <"Whether follow-up is required.">
+				>
+				["at0083"] = <
+					text = <"Next review date">
+					description = <"Date for next review of the measure.">
+				>
+				["at0084"] = <
+					text = <"Comments">
+					description = <"Additional comments about the infection control measure.">
+				>
+				["at0085"] = <
+					text = <"Additional details">
+					description = <"Additional structured details about the infection control measure.">
+				>
+				["at0086"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0087"] = <
+					text = <"Guidelines/Protocol">
+					description = <"Guidelines or protocol followed for the measure.">
+				>
+				["at0088"] = <
+					text = <"Responsible person">
+					description = <"Person responsible for implementing the measure.">
+				>
+				["at0089"] = <
+					text = <"Department/Unit">
+					description = <"Department or unit where measure was implemented.">
+				>
+				["at0090"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local content or to align with other reference models/formalisms.">
+				>
+			>
+		>
+	>
