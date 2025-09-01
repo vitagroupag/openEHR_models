@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"c9bfd0b2f6faef1b5e231dfc837afbb2">
+		["MD5-CAM-1.0.1"] = <"dd5a8103e194b96cd52c6a488f39a270">
 		["build_uid"] = <"57512d3d-83f3-3421-b23e-38c096b7973e">
 	>
 
@@ -94,6 +94,9 @@ definition
 								list = <
 									["1"] = <
 										units = <"mg">
+									>
+									["2"] = <
+										units = <"kg">
 									>
 								>
 							>
