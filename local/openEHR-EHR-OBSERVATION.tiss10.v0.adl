@@ -1,0 +1,441 @@
+archetype (adl_version=1.4; uid=d7c79674-0d11-42a9-9185-717746fed18d)
+	openEHR-EHR-OBSERVATION.tiss10.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2025-07-18">
+		["name"] = <"Rony Ventura">
+		["organisation"] = <"UKSH">
+		["email"] = <"rony.ventura@uksh.de">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"den Pflegeaufwand auf Intensivstationen quantifizieren">
+			copyright = <"© openEHR Foundation">
+			use = <"Wird verwendet, um den Pflegeaufwand auf Intensivstationen zu quantifizieren.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"quantify the nursing workload in intensive care units">
+			use = <"used to quantify the nursing workload in intensive care units">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"https://klassifikationen.bfarm.de/ops/kode-suche/htmlops2024/zusatz-06-anh-aufwandspunkte-intensivmedizin-erwachsene.htm
+https://www.hl7.eu/scores/TISS-10.htm">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"4D1E954FFA98921072706847862233BD">
+		["build_uid"] = <"bca9edfb-ad1d-4cab-ba49-3fd35e32e849">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- TISS10
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Mechanical ventilation
+										value matches {
+											0|[local::at0014],
+											5|[local::at0015]
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Infusion of multiple catecholamines (>1)
+										value matches {
+											0|[local::at0016],
+											4|[local::at0017]
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Fluid replacement in large quantities (>5 l/24 h)
+										value matches {
+											0|[local::at0018],
+											4|[local::at0019]
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Peripheral arterial catheter
+										value matches {
+											0|[local::at0020],
+											5|[local::at0021]
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Left atrial catheter / pulmonary catheter
+										value matches {
+											0|[local::at0022],
+											8|[local::at0023]
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Hemofiltration / Dialysis
+										value matches {
+											0|[local::at0024],
+											3|[local::at0025]
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Intracranial pressure measurement
+										value matches {
+											0|[local::at0026],
+											4|[local::at0027]
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Treatment of metabolic acidosis / alkalosis
+										value matches {
+											0|[local::at0028],
+											4|[local::at0029]
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Special interventions in the ICU
+										value matches {
+											0|[local::at0030],
+											5|[local::at0031]
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Actions outside the ward
+										value matches {
+											0|[local::at0032],
+											5|[local::at0033]
+										}
+									}
+									ELEMENT[at0034] occurrences matches {0..1} matches {    -- Score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..47|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0035] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"TISS10">
+					description = <"assigns points based on specific therapeutic interventions performed on a patient, with higher scores indicating a greater nursing workload.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Mechanical ventilation">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Infusion of multiple catecholamines (>1)">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Fluid replacement in large quantities (>5 l/24 h)">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Peripheral arterial catheter">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Left atrial catheter / pulmonary catheter">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Hemofiltration / Dialysis">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Intracranial pressure measurement">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Treatment of metabolic acidosis / alkalosis">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Special interventions in the ICU">
+					description = <"">
+					comment = <"e.g. tracheotomy, cardioversion">
+				>
+				["at0013"] = <
+					text = <"Actions outside the ward">
+					description = <"">
+					comment = <"diagnosis / surgery">
+				>
+				["at0014"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Yes">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Score">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"TISS10">
+					description = <"Vergibt Punkte basierend auf spezifischen therapeutischen Maßnahmen, die an einem Patienten durchgeführt wurden, wobei höhere Punktzahlen auf eine größere Pflegebelastung hinweisen.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Apparative Beatmung">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Infusion multipler Katecholamine (>1)">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Flüssigkeitsersatz in hohen Mengen (>5 l/24 Std.)">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Peripherer arterieller Katheter">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Linksvorhof-Katheter / Pulmonalis-Katheter">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Hämofiltration / Dialyse">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Intrakranielle Druckmessung">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Behandlung einer metabolischen Azidose / Alkalose">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Spezielle Interventionen auf der ITS">
+					description = <"">
+					comment = <"z.B. Tracheotomie, Kardioversion">
+				>
+				["at0013"] = <
+					text = <"Aktionen außerhalb der Station">
+					description = <"">
+					comment = <"Diagnostik / Operation">
+				>
+				["at0014"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Nein">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Ja">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Score">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Item tree (en)">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>
