@@ -26,6 +26,7 @@ description
 		["de"] = <
 			language = <[ISO_639-1::de]>
 			purpose = <"den Pflegeaufwand auf Intensivstationen quantifizieren">
+			keywords = <"CORE-10-TISS", ...>
 			copyright = <"© openEHR Foundation">
 			use = <"Wird verwendet, um den Pflegeaufwand auf Intensivstationen zu quantifizieren.">
 		>
@@ -39,11 +40,13 @@ description
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"openEHR Foundation">
 		["references"] = <"https://klassifikationen.bfarm.de/ops/kode-suche/htmlops2024/zusatz-06-anh-aufwandspunkte-intensivmedizin-erwachsene.htm
+https://www.dkgev.de/fileadmin/default/BfArM_-_OPS_Version_2025.pdf
+https://www.bda.de/docman/alle-dokumente-fuer-suchindex/oeffentlich/publikationen/154-ops-code-8-980-qintensivmedizinische-komplexbehandlungq-stellungnahme-inhalte-kodiervorschriften-pdf/file.html
 https://www.hl7.eu/scores/TISS-10.htm">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"4D1E954FFA98921072706847862233BD">
+		["MD5-CAM-1.0.1"] = <"5202911c5e5b43049be6b92fe0c82a55">
 		["build_uid"] = <"bca9edfb-ad1d-4cab-ba49-3fd35e32e849">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -292,7 +295,9 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"TISS10">
-					description = <"Vergibt Punkte basierend auf spezifischen therapeutischen Maßnahmen, die an einem Patienten durchgeführt wurden, wobei höhere Punktzahlen auf eine größere Pflegebelastung hinweisen.">
+					description = <"Vergibt Punkte basierend auf spezifischen therapeutischen Maßnahmen, die an einem Patienten durchgeführt wurden, wobei höhere Punktzahlen auf eine größere Pflegebelastung hinweisen.
+Teil von OPS \"Intensivmedizinische Komplexbehandlung (Basisprozedur)\" bei
+Erwachsenen (SAPS, TISS) (Kodes 8-980, 8-98f) und im Kindesalter (Kode 8-98d).">
 				>
 				["at0001"] = <
 					text = <"History">
