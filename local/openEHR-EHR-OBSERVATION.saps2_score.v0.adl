@@ -1,0 +1,795 @@
+archetype (adl_version=1.4; uid=7c6d7b13-7dc4-4366-9792-8646f46fa57b)
+	openEHR-EHR-OBSERVATION.saps2_score.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2025-06-11">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Bewertet den Schweregrad der Erkrankung bei Patienten ab 18 Jahren. Es hilft, das Risiko der Krankenhaussterblichkeit auf Grundlage physiologischer Daten vorherzusagen, die während der ersten 24 Stunden nach Aufnahme auf die Intensivstation erhoben wurden.">
+			keywords = <"Schweregrad der Erkrankung, Intensivmedizinisches Bewertungssystem, Sterblichkeitsprognose", ...>
+			copyright = <"© HiGHmed">
+			misuse = <"Nicht zur Steuerung der individuellen Behandlung vorgesehen.">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"assess the severity of disease for patients aged 18 and older. It helps predict the risk of hospital mortality based on physiological data collected during the first 24 hours of ICU admission">
+			keywords = <"Severity of illness,ICU scoring system,Mortality prediction", ...>
+			copyright = <"© HiGHmed">
+			misuse = <"Not intended to guide individual treatment.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"HiGHmed">
+		["original_namespace"] = <"org.highmed">
+		["original_publisher"] = <"HiGHmed">
+		["custodian_namespace"] = <"org.highmed">
+		["MD5-CAM-1.0.1"] = <"F27A9780F19F3D3AD5467C05B4753222">
+		["build_uid"] = <"7d0d050e-7a1b-491e-9a5d-93760f24051f">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- saps2_score
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] matches {    -- Age (years)
+										value matches {
+											0|[local::at0005],
+											7|[local::at0006],
+											12|[local::at0072],
+											15|[local::at0007],
+											16|[local::at0008],
+											18|[local::at0009]
+										}
+									}
+									ELEMENT[at0032] matches {    -- Type of admission
+										value matches {
+											0|[local::at0069],
+											6|[local::at0070],
+											8|[local::at0071]
+										}
+									}
+									ELEMENT[at0010] matches {    -- Heart rate (bpm)
+										value matches {
+											11|[local::at0015],
+											2|[local::at0016],
+											0|[local::at0017],
+											4|[local::at0018],
+											7|[local::at0019]
+										}
+									}
+									ELEMENT[at0011] matches {    -- Systolic blood pressure (mmHg)
+										value matches {
+											13|[local::at0020],
+											5|[local::at0021],
+											0|[local::at0022],
+											2|[local::at0023]
+										}
+									}
+									ELEMENT[at0012] matches {    -- Temperature (C or F)
+										value matches {
+											0|[local::at0073],
+											3|[local::at0074]
+										}
+									}
+									ELEMENT[at0013] matches {    -- Glasgow coma score
+										value matches {
+											26|[local::at0038],
+											13|[local::at0037],
+											7|[local::at0036],
+											5|[local::at0035],
+											0|[local::at0034]
+										}
+									}
+									ELEMENT[at0014] matches {    -- PaO₂ (mmHg)/FiO₂, (%) if on mechanical ventilation or CPAP
+										value matches {
+											0|[local::at0042],
+											11|[local::at0039],
+											9|[local::at0040],
+											6|[local::at0041]
+										}
+									}
+									ELEMENT[at0025] matches {    -- Urine output (L/24h)
+										value matches {
+											11|[local::at0046],
+											4|[local::at0047],
+											0|[local::at0048]
+										}
+									}
+									ELEMENT[at0024] matches {    -- Serum Urea (g/L) or BUN (mg/dL)
+										value matches {
+											0|[local::at0043],
+											6|[local::at0044],
+											10|[local::at0045]
+										}
+									}
+									ELEMENT[at0026] matches {    -- Sodium (mEq/L)
+										value matches {
+											5|[local::at0049],
+											0|[local::at0050],
+											1|[local::at0051]
+										}
+									}
+									ELEMENT[at0027] matches {    -- Potassium (mEq/L)
+										value matches {
+											3|[local::at0053],
+											0|[local::at0054]
+										}
+									}
+									ELEMENT[at0028] matches {    -- Bicarbonate (mEq/L)
+										value matches {
+											6|[local::at0056],
+											3|[local::at0057],
+											0|[local::at0058]
+										}
+									}
+									ELEMENT[at0029] matches {    -- Bilirubin (mg/dL)
+										value matches {
+											0|[local::at0059],
+											4|[local::at0060],
+											9|[local::at0061]
+										}
+									}
+									ELEMENT[at0030] matches {    -- White blood cells/mm³
+										value matches {
+											12|[local::at0062],
+											0|[local::at0063],
+											3|[local::at0064]
+										}
+									}
+									ELEMENT[at0031] matches {    -- Chronic diseases
+										value matches {
+											0|[local::at0065],
+											9|[local::at0066],
+											10|[local::at0067],
+											17|[local::at0068]
+										}
+									}
+									ELEMENT[at0033] occurrences matches {0..1} matches {    -- Total score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..163|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0083] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"saps2_score">
+					description = <"Simplified Acute Physiology Score II">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Age (years)">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Below 40">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"40 – 59">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"70 – 74">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"75 – 79">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"80 and above">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Heart rate (bpm)">
+					description = <"If patient had both cardiac arrest (11 points) and extreme tachycardia (7 points), assign 11 points.">
+				>
+				["at0011"] = <
+					text = <"Systolic blood pressure (mmHg)">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Temperature (C or F)">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Glasgow coma score">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"PaO₂ (mmHg)/FiO₂, (%) if on mechanical ventilation or CPAP">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Below 40">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"40 – 69">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"70 – 119">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"120 – 159">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"160 and above">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Below 70">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"70 – 99">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"100 – 199">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"200 and above">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Serum Urea (g/L) or BUN (mg/dL)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Urine output (L/24h)">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Sodium (mEq/L)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Potassium (mEq/L)">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Bicarbonate (mEq/L)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Bilirubin (mg/dL)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"White blood cells/mm³">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Chronic diseases">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Type of admission">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Total score">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"14 – 15">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"11 – 13">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"9 – 10">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"6 – 8">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Below 6">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Below 100">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"100 – 199">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"200 and above">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"N/A">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"SU: below 0.6 OR BUN: below 28">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"SU: 0.6 – 1.79 OR BUN: 28 – 83">
+					description = <"">
+				>
+				["at0045"] = <
+					text = <"SU: 1.8 and above OR BUN: 84 and above">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Below 0.5">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"0.5 – 0.99">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"1 and above">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Below 125">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"125 – 144">
+					description = <"">
+				>
+				["at0051"] = <
+					text = <"145 and above">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"below 3 OR 5 and above">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"3 – 4.9">
+					description = <"">
+				>
+				["at0056"] = <
+					text = <"Below 15">
+					description = <"">
+				>
+				["at0057"] = <
+					text = <"15 – 19">
+					description = <"">
+				>
+				["at0058"] = <
+					text = <"20 and above">
+					description = <"">
+				>
+				["at0059"] = <
+					text = <"Below 4">
+					description = <"">
+				>
+				["at0060"] = <
+					text = <"4 – 5.9">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"6 and above">
+					description = <"">
+				>
+				["at0062"] = <
+					text = <"Less than 1,000">
+					description = <"">
+				>
+				["at0063"] = <
+					text = <"1,000 – 19,000">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"20,000 and above">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"None">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Metastatic cancer">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"Hematologic malignancy">
+					description = <"">
+				>
+				["at0068"] = <
+					text = <"AIDS">
+					description = <"">
+				>
+				["at0069"] = <
+					text = <"Scheduled surgical">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"Medical">
+					description = <"">
+				>
+				["at0071"] = <
+					text = <"Unscheduled surgical">
+					description = <"">
+				>
+				["at0072"] = <
+					text = <"60 – 69">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"below 39°C OR below 102.2°F">
+					description = <"">
+				>
+				["at0074"] = <
+					text = <"39°C and above OR 102.2°F and above">
+					description = <"">
+				>
+				["at0083"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+			>
+		>
+		["de"] = <
+			items = <
+				["at0000"] = <
+					text = <"saps2_score">
+					description = <"Simplified Acute Physiology Score II">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Beliebiges Ereignis">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Alter (Jahre)">
+					description = <"Das Alter in Jahren am Tag der Scoreberechnung wird täglich fortgeschrieben.">
+				>
+				["at0005"] = <
+					text = <"unter 40">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"40 – 59">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"70 – 74">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"75 – 79">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"80 und höher">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Herzfrequenz (bpm)">
+					description = <"Es ist der Puls des zu dokumentierenden 24-Stundenintervalls zu verwenden, der die höchste  Punktzahl für die Scoreberechnung ergibt.">
+				>
+				["at0011"] = <
+					text = <"Systolischer Blutdruck (mmHg)">
+					description = <"Es ist der Blutdruckwert des zu dokumentierenden 24-Stundenintervalls zu verwenden, der die höchste Punktzahl für die Scoreberechnung ergibt.">
+				>
+				["at0012"] = <
+					text = <"Körperkerntemperatur (C oder F)">
+					description = <"Es ist die höchste Temperatur des zu dokumentierenden 24-Stundenintervalls für die Scoreberechnung zu  verwenden.">
+				>
+				["at0013"] = <
+					text = <"Glasgow coma score">
+					description = <"Lowest value in 24 hours; if patient is sedated, record estimated GCS before sedation.">
+				>
+				["at0014"] = <
+					text = <"PaO₂ (mmHg)/FiO₂, (%) bei maschineller Beatmung oder CPAP">
+					description = <"Die Werte sind nur zur Berechnung heranzuziehen, wenn der Patient entsprechend den Kodierrichtlinien beatmet ist. Der PaO₂ wird arteriell oder kapillär bestimmt und nicht anhand der Pulsoxymetrie kalkuliert. Die FiO₂ ist dem Beatmungsgerät zu entnehmen.">
+				>
+				["at0015"] = <
+					text = <"unter 40">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"40 – 69">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"70 – 119">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"120 – 159">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"160 und höher">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"unter 70">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"70 – 99">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"100 – 199">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"200 und höher">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Harnstoff im Serum (g/L) oder Plasma (mg/dL)">
+					description = <"Es ist der höchste Wert des zu dokumentierenden 24-Stundenintervalls für die Scoreberechnung zu verwenden.">
+				>
+				["at0025"] = <
+					text = <"Urinmenge (L/24h)">
+					description = <"Es ist die Urinmenge anzugeben, die in 24 Stunden gesammelt wurde.">
+				>
+				["at0026"] = <
+					text = <"Natrium im Serum (mEq/L)">
+					description = <"Es ist der Wert des zu dokumentierenden 24-Stundenintervalls zu verwenden, der die höchste Punktzahl ergibt (höchster oder niedrigster Natrium-Wert).">
+				>
+				["at0027"] = <
+					text = <"Kalium im Serum (mEq/L)">
+					description = <"Es ist der Wert des zu dokumentierenden 24-Stundenintervalls zu verwenden, der die höchste Punktzahl ergibt (höchster oder niedrigster Kalium-Wert).">
+				>
+				["at0028"] = <
+					text = <"Bicarbonat (mEq/L)">
+					description = <"Es ist der niedrigste Wert des zu dokumentierenden 24-Stundenintervalls für die Scoreberechnung zu verwenden.">
+				>
+				["at0029"] = <
+					text = <"Bilirubin (mg/dL)">
+					description = <"Es ist der höchste Wert des zu dokumentierenden 24-Stundenintervalls für die Scoreberechnung zu verwenden.">
+				>
+				["at0030"] = <
+					text = <"Leukozyten/mm³">
+					description = <"Bei mehrmaliger Bestimmung ist der Wert des zu dokumentierenden 24-Stundenintervalls zu verwenden, der die höchste Punktzahl ergibt (höchster oder  niedrigster Leukozyten-Wert).">
+				>
+				["at0031"] = <
+					text = <"Chronische Leiden">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Aufnahmestatus">
+					description = <"Eine geplante chirurgische Aufnahme liegt vor, wenn der Operationstermin mindestens 24 Stunden vorher geplant war und eine postoperative Aufnahme auf der ITS geplant war.
+Eine ungeplante chirurgische Aufnahme liegt
+vor, wenn der Operationstermin erst in den letzten 24 Stunden geplant war oder postoperativ eine ungeplante Aufnahme auf Intensivstation erforderlich ist.
+Eine medizinische Aufnahme liegt vor, wenn keine Operation innerhalb einer Woche vor ITS-Aufnahme erfolgte oder die Aufnahme aus nichtoperativen Gründen (z.B. Herzinfarkt) erfolgt.">
+				>
+				["at0033"] = <
+					text = <"Gesamtergebnis">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"14 – 15">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"11 – 13">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"9 – 10">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"6 – 8">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"unter 6">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"unter 100">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"100 – 199">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"200 und höher">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"N/A">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"SU: unter 0,6 ODER BUN: unter 28">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"SU: 0.6 – 1.79 ODER BUN: 28 – 83">
+					description = <"">
+				>
+				["at0045"] = <
+					text = <"SU: 1,8 und darüber ODER BUN: 84 und darüber">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Unter 0,5">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"0,5 – 0,99">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"1 und höher">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"unter 125">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"125 – 144">
+					description = <"">
+				>
+				["at0051"] = <
+					text = <"145 und höher">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"unter 3 ODER 5 und darüber">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"3 – 4,9">
+					description = <"">
+				>
+				["at0056"] = <
+					text = <"unter 15">
+					description = <"">
+				>
+				["at0057"] = <
+					text = <"15 – 19">
+					description = <"">
+				>
+				["at0058"] = <
+					text = <"20 und höher">
+					description = <"">
+				>
+				["at0059"] = <
+					text = <"unter 4">
+					description = <"">
+				>
+				["at0060"] = <
+					text = <"4 – 5,9">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"6 und höher">
+					description = <"">
+				>
+				["at0062"] = <
+					text = <"weniger als 1.000">
+					description = <"">
+				>
+				["at0063"] = <
+					text = <"1.000 – 19.000">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"20.000 und höher">
+					description = <"">
+				>
+				["at0065"] = <
+					text = <"Keine">
+					description = <"">
+				>
+				["at0066"] = <
+					text = <"Neoplasie mit Metastase">
+					description = <"">
+				>
+				["at0067"] = <
+					text = <"Hämatologische Neoplasie">
+					description = <"">
+				>
+				["at0068"] = <
+					text = <"AIDS">
+					description = <"">
+				>
+				["at0069"] = <
+					text = <"Geplant chirurgisch">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"Medizinisch">
+					description = <"">
+				>
+				["at0071"] = <
+					text = <"Nichtgeplant chirurgisch">
+					description = <"">
+				>
+				["at0072"] = <
+					text = <"60 – 69">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"unter 39 °C ODER unter 102,2 °F">
+					description = <"">
+				>
+				["at0074"] = <
+					text = <"39 °C und darüber ODER 102,2 °F und darüber">
+					description = <"">
+				>
+				["at0083"] = <
+					text = <"*Item tree (en)">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>
