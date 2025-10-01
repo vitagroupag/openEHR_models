@@ -8,18 +8,18 @@
     },
     "otherContributors" : [ ],
     "lifecycleState" : {
-      "codeString" : "unmanaged"
+      "codeString" : "in_development"
     },
     "ipAcknowledgements" : { },
     "references" : { },
     "conversionDetails" : { },
     "otherDetails" : {
       "licence" : "",
-      "custodian_organisation" : "",
-      "original_namespace" : "",
-      "original_publisher" : "",
-      "custodian_namespace" : "",
-      "sem_ver" : "0.0.1",
+      "custodian_organisation" : "vitagroup",
+      "original_namespace" : "ag.vitagroup.hip",
+      "original_publisher" : "vitagroup",
+      "custodian_namespace" : "ag.vitagroup.hip",
+      "sem_ver" : "1.0.0",
       "build_uid" : "",
       "MD5-CAM-1.0.1" : "d76740d98a7493a5c1b28d4854182e76",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
@@ -33,7 +33,7 @@
           },
           "codeString" : "de"
         },
-        "keywords" : [ ],
+        "keywords" : [ "CORE-10-TISS, OPS, DRG" ],
         "originalResourceUri" : { },
         "otherDetails" : { }
       },
@@ -322,7 +322,7 @@
     "valueSets" : { }
   },
   "adlVersion" : "1.4",
-  "buildUid" : "b057d0e0-45b9-3d97-ab87-3004b7f6d386",
+  "buildUid" : "21712ffa-be94-36c5-9de0-ffc62356f19c",
   "rmName" : "openehr",
   "rmRelease" : "1.1.0",
   "generated" : true,
