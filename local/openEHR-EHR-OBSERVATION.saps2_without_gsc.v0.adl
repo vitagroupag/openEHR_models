@@ -41,7 +41,7 @@ description
 		["original_namespace"] = <"org.highmed">
 		["original_publisher"] = <"HiGHmed">
 		["custodian_namespace"] = <"org.highmed">
-		["MD5-CAM-1.0.1"] = <"98914f89f398cbe78fae9d8820abf11f">
+		["MD5-CAM-1.0.1"] = <"7bb4c46d6d1d9171bae08c115fb72394">
 		["build_uid"] = <"7d0d050e-7a1b-491e-9a5d-93760f24051f">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -507,7 +507,7 @@ ontology
 					description = <"Es ist der Blutdruckwert des zu dokumentierenden 24-Stundenintervalls zu verwenden, der die höchste Punktzahl für die Scoreberechnung ergibt.">
 				>
 				["at0012"] = <
-					text = <"Körperkerntemperatur (C oder F)">
+					text = <"Körperkerntemperatur (°C)">
 					description = <"Es ist die höchste Temperatur des zu dokumentierenden 24-Stundenintervalls für die Scoreberechnung zu  verwenden.">
 				>
 				["at0014"] = <
