@@ -41,7 +41,7 @@ description
 		["original_namespace"] = <"org.highmed">
 		["original_publisher"] = <"HiGHmed">
 		["custodian_namespace"] = <"org.highmed">
-		["MD5-CAM-1.0.1"] = <"8be3b0ebc6629456267b8793255cb454">
+		["MD5-CAM-1.0.1"] = <"98914f89f398cbe78fae9d8820abf11f">
 		["build_uid"] = <"7d0d050e-7a1b-491e-9a5d-93760f24051f">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -93,15 +93,6 @@ definition
 										value matches {
 											0|[local::at0073],
 											3|[local::at0074]
-										}
-									}
-									ELEMENT[at0013] matches {    -- Glasgow coma score
-										value matches {
-											26|[local::at0038],
-											13|[local::at0037],
-											7|[local::at0036],
-											5|[local::at0035],
-											0|[local::at0034]
 										}
 									}
 									ELEMENT[at0014] matches {    -- PaO₂ (mmHg)/FiO₂, (%) if on mechanical ventilation or CPAP
@@ -243,10 +234,6 @@ ontology
 					text = <"Temperature (C or F)">
 					description = <"">
 				>
-				["at0013"] = <
-					text = <"Glasgow coma score">
-					description = <"">
-				>
 				["at0014"] = <
 					text = <"PaO₂ (mmHg)/FiO₂, (%) if on mechanical ventilation or CPAP">
 					description = <"">
@@ -325,26 +312,6 @@ ontology
 				>
 				["at0033"] = <
 					text = <"Total score">
-					description = <"">
-				>
-				["at0034"] = <
-					text = <"14 – 15">
-					description = <"">
-				>
-				["at0035"] = <
-					text = <"11 – 13">
-					description = <"">
-				>
-				["at0036"] = <
-					text = <"9 – 10">
-					description = <"">
-				>
-				["at0037"] = <
-					text = <"6 – 8">
-					description = <"">
-				>
-				["at0038"] = <
-					text = <"Below 6">
 					description = <"">
 				>
 				["at0039"] = <
@@ -543,10 +510,6 @@ ontology
 					text = <"Körperkerntemperatur (C oder F)">
 					description = <"Es ist die höchste Temperatur des zu dokumentierenden 24-Stundenintervalls für die Scoreberechnung zu  verwenden.">
 				>
-				["at0013"] = <
-					text = <"Glasgow coma score">
-					description = <"Lowest value in 24 hours; if patient is sedated, record estimated GCS before sedation.">
-				>
 				["at0014"] = <
 					text = <"PaO₂ (mmHg)/FiO₂, (%) bei maschineller Beatmung oder CPAP">
 					description = <"Die Werte sind nur zur Berechnung heranzuziehen, wenn der Patient entsprechend den Kodierrichtlinien beatmet ist. Der PaO₂ wird arteriell oder kapillär bestimmt und nicht anhand der Pulsoxymetrie kalkuliert. Die FiO₂ ist dem Beatmungsgerät zu entnehmen.">
@@ -628,26 +591,6 @@ Eine medizinische Aufnahme liegt vor, wenn keine Operation innerhalb einer Woche
 				>
 				["at0033"] = <
 					text = <"Gesamtergebnis">
-					description = <"">
-				>
-				["at0034"] = <
-					text = <"14 – 15">
-					description = <"">
-				>
-				["at0035"] = <
-					text = <"11 – 13">
-					description = <"">
-				>
-				["at0036"] = <
-					text = <"9 – 10">
-					description = <"">
-				>
-				["at0037"] = <
-					text = <"6 – 8">
-					description = <"">
-				>
-				["at0038"] = <
-					text = <"unter 6">
 					description = <"">
 				>
 				["at0039"] = <
