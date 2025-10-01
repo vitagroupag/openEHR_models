@@ -46,7 +46,7 @@ https://www.hl7.eu/scores/TISS-10.htm">
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"5202911c5e5b43049be6b92fe0c82a55">
+		["MD5-CAM-1.0.1"] = <"1633ac0a96865fd97f989e087be92a57">
 		["build_uid"] = <"bca9edfb-ad1d-4cab-ba49-3fd35e32e849">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -297,7 +297,7 @@ ontology
 					text = <"TISS10">
 					description = <"Vergibt Punkte basierend auf spezifischen therapeutischen Maßnahmen, die an einem Patienten durchgeführt wurden, wobei höhere Punktzahlen auf eine größere Pflegebelastung hinweisen.
 Teil von OPS \"Intensivmedizinische Komplexbehandlung (Basisprozedur)\" bei
-Erwachsenen (SAPS, TISS) (Kodes 8-980, 8-98f) und im Kindesalter (Kode 8-98d).">
+Erwachsenen (SAPS, TISS) (Kodes 8-980, 8-98f).">
 				>
 				["at0001"] = <
 					text = <"History">
