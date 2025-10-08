@@ -1,0 +1,106 @@
+archetype (adl_version=1.4; uid=74e3777d-fb9c-4d9b-b7b8-20c68e635cc8)
+	openEHR-EHR-OBSERVATION.drg_cumulative_ventilation_duration.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2025-10-08">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"3fc783894a0a816dabc4cb4edcee6196">
+		["build_uid"] = <"126a39e2-22a4-3139-8ff1-dd86f96617d4">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Cumulative Ventilation Duration (for German DRG)
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Cumulative Duration of Ventilation Period
+										value matches {
+											DV_DURATION matches {*}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Procedure Code
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Start of Ventilation Period
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- End of Ventilation Period
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Cumulative Ventilation Duration (for German DRG)">
+					description = <"drg_cumulative_ventilation_duration">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Cumulative Duration of Ventilation Period">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Procedure Code">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Start of Ventilation Period">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"End of Ventilation Period">
+					description = <"">
+				>
+			>
+		>
+	>
