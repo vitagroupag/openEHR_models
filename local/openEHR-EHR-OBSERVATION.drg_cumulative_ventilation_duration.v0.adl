@@ -27,7 +27,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"19096580dfb53523fbd74e76cea3009f">
+		["MD5-CAM-1.0.1"] = <"5a56ad152724a9487c569f1b0a24b1de">
 		["build_uid"] = <"126a39e2-22a4-3139-8ff1-dd86f96617d4">
 		["references"] = <"https://www.g-drg.de/media/files/ag-drg-2025/deutsche-kodierrichtlinien-2025-endversion-a4-pdf
 https://www.gkv-datenaustausch.de/media/dokumente/leistungserbringer_1/krankenhaeuser/gesamtdokument/_301_Gesamtdokument.pdf
@@ -48,7 +48,7 @@ definition
 											DV_DURATION matches {*}
 										}
 									}
-									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Procedure Code
+									ELEMENT[at0005] occurrences matches {0..*} matches {    -- Procedure Code
 										value matches {
 											DV_TEXT matches {*}
 										}
