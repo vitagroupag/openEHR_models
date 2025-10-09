@@ -27,7 +27,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"5a56ad152724a9487c569f1b0a24b1de">
+		["MD5-CAM-1.0.1"] = <"5fc1f17d66b039647353e58111c948c4">
 		["build_uid"] = <"126a39e2-22a4-3139-8ff1-dd86f96617d4">
 		["references"] = <"https://www.g-drg.de/media/files/ag-drg-2025/deutsche-kodierrichtlinien-2025-endversion-a4-pdf
 https://www.gkv-datenaustausch.de/media/dokumente/leistungserbringer_1/krankenhaeuser/gesamtdokument/_301_Gesamtdokument.pdf
@@ -94,11 +94,11 @@ ontology
 				>
 				["at0004"] = <
 					text = <"Cumulative Duration of Ventilation Period">
-					description = <"">
+					description = <"Cumulative duration of ventilation period in minutes or hours.">
 				>
 				["at0005"] = <
 					text = <"Procedure Code">
-					description = <"">
+					description = <"According to the DKR 2025-1001 at least one  OPS code for mechanical ventilation or tracheostoma.">
 				>
 				["at0007"] = <
 					text = <"Start of Ventilation Period">
