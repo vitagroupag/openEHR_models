@@ -10,8 +10,11 @@ language
 description
 	original_author = <
 		["date"] = <"2025-10-08">
+		["name"] = <"Annika Merkt">
+		["organisation"] = <"vitagroup AG">
+		["email"] = <"annika.merkt@vitagroup.ag">
 	>
-	lifecycle_state = <"unmanaged">
+	lifecycle_state = <"in_development">
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -23,15 +26,16 @@ description
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"openEHR Foundation">
-		["original_namespace"] = <"org.openehr">
-		["original_publisher"] = <"openEHR Foundation">
-		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"aee9fb3dfe7e1850bd1ffaa4589dc2e9">
-		["build_uid"] = <"126a39e2-22a4-3139-8ff1-dd86f96617d4">
+		["custodian_organisation"] = <"vitagroup AG">
 		["references"] = <"https://www.g-drg.de/media/files/ag-drg-2025/deutsche-kodierrichtlinien-2025-endversion-a4-pdf
 https://www.gkv-datenaustausch.de/media/dokumente/leistungserbringer_1/krankenhaeuser/gesamtdokument/_301_Gesamtdokument.pdf
 https://www.medcontroller.de/katalog/3-04-07-beatmungsdauer/ ">
+		["original_namespace"] = <"ag.vitagroup">
+		["original_publisher"] = <"vitagroup AG">
+		["custodian_namespace"] = <"ag.vitagroup">
+		["MD5-CAM-1.0.1"] = <"67f26661777050e9ecd850df878d5e88">
+		["build_uid"] = <"126a39e2-22a4-3139-8ff1-dd86f96617d4">
+		["revision"] = <"1.0.0">
 	>
 
 definition
