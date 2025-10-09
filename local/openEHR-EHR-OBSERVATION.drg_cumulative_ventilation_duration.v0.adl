@@ -15,6 +15,10 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
+			purpose = <"To document the duration of ventilation in minutes or hours, that a patient has been mechanically ventilated during a ventilation episode according to the german medical coding guidelines (DKR).">
+			keywords = <"DRG, DKR, Beatmung, Ventilation, Beatmungsstunden, DKR 1001", ...>
+			use = <"Only to be used to describe the duration of ventilation (DKR 1001) in the context of the german medical coding guidelines (DKR) for the German DRG billing system.">
+			misuse = <"Not to be used for detailed medical documentation of ventilation.">
 		>
 	>
 	other_details = <
@@ -23,8 +27,11 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"b627bcb01a741f8cd19502c7d53e9e8a">
+		["MD5-CAM-1.0.1"] = <"19096580dfb53523fbd74e76cea3009f">
 		["build_uid"] = <"126a39e2-22a4-3139-8ff1-dd86f96617d4">
+		["references"] = <"https://www.g-drg.de/media/files/ag-drg-2025/deutsche-kodierrichtlinien-2025-endversion-a4-pdf
+https://www.gkv-datenaustausch.de/media/dokumente/leistungserbringer_1/krankenhaeuser/gesamtdokument/_301_Gesamtdokument.pdf
+https://www.medcontroller.de/katalog/3-04-07-beatmungsdauer/ ">
 	>
 
 definition
@@ -71,7 +78,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Cumulative Ventilation Duration (for German DRG)">
-					description = <"Cumulative time in hours/minutes, that a patient has been mechanically ventilated during a ventilation episode according to the german medical coding guidelines (DKR) for the German DRG system.">
+					description = <"Cumulative time in hours/minutes, that a patient has been mechanically ventilated during a ventilation episode according to the german medical coding guidelines (DKR) for the German DRG billing system.">
 				>
 				["at0001"] = <
 					text = <"History">
