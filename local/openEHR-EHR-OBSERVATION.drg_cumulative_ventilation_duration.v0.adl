@@ -27,7 +27,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"5fc1f17d66b039647353e58111c948c4">
+		["MD5-CAM-1.0.1"] = <"aee9fb3dfe7e1850bd1ffaa4589dc2e9">
 		["build_uid"] = <"126a39e2-22a4-3139-8ff1-dd86f96617d4">
 		["references"] = <"https://www.g-drg.de/media/files/ag-drg-2025/deutsche-kodierrichtlinien-2025-endversion-a4-pdf
 https://www.gkv-datenaustausch.de/media/dokumente/leistungserbringer_1/krankenhaeuser/gesamtdokument/_301_Gesamtdokument.pdf
@@ -102,11 +102,11 @@ ontology
 				>
 				["at0007"] = <
 					text = <"Start of Ventilation Period">
-					description = <"">
+					description = <"Start of billed/coded ventilation period.">
 				>
 				["at0008"] = <
 					text = <"End of Ventilation Period">
-					description = <"">
+					description = <"End of billed/coded ventilation period.">
 				>
 			>
 		>
