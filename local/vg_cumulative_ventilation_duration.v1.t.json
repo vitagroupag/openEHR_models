@@ -8,7 +8,7 @@
     },
     "otherContributors" : [ ],
     "lifecycleState" : {
-      "codeString" : "unmanaged"
+      "codeString" : "in_development"
     },
     "ipAcknowledgements" : { },
     "references" : { },
@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "0.1.0",
+      "sem_ver" : "1.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "42b9290e76de3afd850a81159750f146",
+      "MD5-CAM-1.0.1" : "245b69377bb0d1918e3a255838c8216a",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -105,7 +105,10 @@
           },
           "codeString" : "en"
         },
-        "keywords" : [ ],
+        "purpose" : "To document the duration of ventilation in minutes or hours, that a patient has been mechanically ventilated during a ventilation episode according to the german medical coding guidelines (DKR).",
+        "keywords" : [ "DRG, DKR, Beatmung, Ventilation, Beatmungsstunden, DKR 1001" ],
+        "use" : "Only to be used to describe the duration of ventilation (DKR 1001) in the context of the german medical coding guidelines (DKR) for the German DRG billing system.",
+        "misuse" : "Not to be used for detailed medical documentation of ventilation.",
         "originalResourceUri" : { },
         "otherDetails" : { }
       },
@@ -299,7 +302,7 @@
     "valueSets" : { }
   },
   "adlVersion" : "1.4",
-  "buildUid" : "b057d0e0-45b9-3d97-ab87-3004b7f6d386",
+  "buildUid" : "21712ffa-be94-36c5-9de0-ffc62356f19c",
   "rmName" : "openehr",
   "rmRelease" : "1.1.0",
   "generated" : true,
@@ -318,7 +321,23 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "aee9fb3dfe7e1850bd1ffaa4589dc2e9"
       },
-      "details" : { }
+      "details" : {
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To document the duration of ventilation in minutes or hours, that a patient has been mechanically ventilated during a ventilation episode according to the german medical coding guidelines (DKR).",
+          "keywords" : [ "DRG, DKR, Beatmung, Ventilation, Beatmungsstunden, DKR 1001" ],
+          "use" : "Only to be used to describe the duration of ventilation (DKR 1001) in the context of the german medical coding guidelines (DKR) for the German DRG billing system.",
+          "misuse" : "Not to be used for detailed medical documentation of ventilation.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.drg_cumulative_ventilation_duration.v0",
     "differential" : true,
