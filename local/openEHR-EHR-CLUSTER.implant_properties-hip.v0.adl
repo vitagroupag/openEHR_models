@@ -25,7 +25,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"86a688cf2c666d0810af3db8bce71f7a">
+		["MD5-CAM-1.0.1"] = <"56bc6237430e1acbfa4a70008aa9e05d">
 		["build_uid"] = <"44f4d84f-288f-3fca-8f4a-ffbbe6f53e0c">
 	>
 
@@ -87,6 +87,19 @@ definition
 							3|[local::at0.8],
 							4|[local::at0.9],
 							5|[local::at0.10]
+						}
+					}
+					ELEMENT[at0.11] occurrences matches {0..1} matches {    -- Länge in cm
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"cm">
+										magnitude = <|0.0..100.0|>
+									>
+								>
+							>
 						}
 					}
 				}
@@ -192,6 +205,10 @@ ontology
 				>
 				["at0017"] = <
 					text = <"Zementierung">
+					description = <"">
+				>
+				["at0.11"] = <
+					text = <"Länge in cm">
 					description = <"">
 				>
 			>
