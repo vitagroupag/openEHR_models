@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "0.1.0",
+      "sem_ver" : "0.1.1",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "985c64abe0dd7d82f14970257f8e2397",
+      "MD5-CAM-1.0.1" : "ed268d5594f38207369d3bc49b595156",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -258,7 +258,7 @@
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
           "text" : "blutdruckmessung",
-          "description" : "Ein Dokument zur Übermittlung von Informationen an andere, meist als Antwort auf eine Anfrage."
+          "description" : "Messung eines Blutdrucks als Teil der klinischen Dokumentation"
         }
       },
       "ko" : {
