@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "5.1.0",
+      "sem_ver" : "6.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "b0eaacb6293e500eb3574ebe3a46e66d",
+      "MD5-CAM-1.0.1" : "a1d4fb656278b1581aaefdbed39c2d9d",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60"
     },
     "details" : {
@@ -537,7 +537,14 @@
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000",
       "termDefinitions" : {
-        "en" : { },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Vital Signs",
+            "description" : "A generic section header which should be renamed in a template to suit a specific clinical context."
+          }
+        },
         "ru" : { },
         "es-ar" : { },
         "sl" : { },
@@ -1033,8 +1040,8 @@
                                   "upper" : 1000.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : false,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_INTEGER",
@@ -1044,8 +1051,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -1104,8 +1111,8 @@
                                   "upper" : 1000.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : false,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_INTEGER",
@@ -1115,8 +1122,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -1170,8 +1177,8 @@
                                   "upper" : 1000.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : false,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_STRING",
@@ -1183,8 +1190,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -1238,8 +1245,8 @@
                                   "upper" : 1000.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : false,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_STRING",
@@ -1251,8 +1258,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -1396,8 +1403,8 @@
                                   "upper" : 90.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_STRING",
@@ -1409,8 +1416,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -1468,8 +1475,8 @@
                         "upper" : "PT24H",
                         "lowerIncluded" : true,
                         "upperIncluded" : true,
-                        "upperUnbounded" : false,
-                        "lowerUnbounded" : false
+                        "lowerUnbounded" : false,
+                        "upperUnbounded" : false
                       } ]
                     } ]
                   } ],
@@ -1532,8 +1539,8 @@
                                   "upper" : 1000.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : false,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_STRING",
@@ -1545,8 +1552,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -1600,8 +1607,8 @@
                                   "upper" : 1000.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : false,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_STRING",
@@ -1613,8 +1620,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -1668,8 +1675,8 @@
                                   "upper" : 1000.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : false,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_STRING",
@@ -1681,8 +1688,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -1736,8 +1743,8 @@
                                   "upper" : 1000.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : false,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_STRING",
@@ -1749,8 +1756,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -1896,8 +1903,8 @@
                                   "upper" : 90.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_STRING",
@@ -1909,8 +1916,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -2784,8 +2791,8 @@
                                   "upper" : 1000.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : false,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_INTEGER",
@@ -2795,8 +2802,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -3074,8 +3081,8 @@
                                   "upper" : 1000.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : false,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               }, {
                                 "@type" : "C_STRING",
@@ -3087,8 +3094,8 @@
                                   "upper" : 0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -3845,7 +3852,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Ad hoc heading (2)",
+            "text" : "Body Measures",
             "description" : "A generic section header which should be renamed in a template to suit a specific clinical context."
           }
         },
@@ -5195,8 +5202,8 @@
                                   "upper" : 1000.0,
                                   "lowerIncluded" : true,
                                   "upperIncluded" : true,
-                                  "upperUnbounded" : false,
-                                  "lowerUnbounded" : false
+                                  "lowerUnbounded" : false,
+                                  "upperUnbounded" : false
                                 } ]
                               } ]
                             } ]
@@ -6334,7 +6341,99 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "79d7069f262324eb2d7b4aae4bf8124d"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fi" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fi"
+          },
+          "purpose" : "Vyötärön ympärysmitan mittaaminen.",
+          "keywords" : [ "antropometria, mittaus, arviointi, ympärysmitta, vyötärö, ympärysmitta, vatsa" ],
+          "use" : "Käytä vyötärön ympärysmitan mittaamiseen.\r\n\r\nEi ole selkeää sopimusta siitä, mistä vyötärön ympärysmitta olisi mitattava. Tapauksissa, joissa tämä on tärkeää tuloksien tulkinnan kannalta, tämä olisi dokumentoitava \"Menetelmä\" -elementissä.\r\n\r\nKäytä tallentamaan muutoksia toistuvista mittauksista. Tämä voidaan tällä hetkellä mallintaa rajoittamalla \"mikä tahansa tapahtuma\" mallin mukaiseksi aikaväliksi, johon liittyy tarvittaessa matemaattinen funktio.\r\n\r\nTätä arkkityyppiä voidaan käyttää myös vyötärön ympärysmittauksen arvioinnin tallentamiseen kliinisessä skenaariossa, jossa ei ole mahdollista mitata tarkkaa vyötärön ympärysmittaa - esimerkiksi mitattaessa yhteistyökyvytöntä lasta. Tätä ei mallinneta nimenomaisesti arkkityypissä, koska openEHR-referenssimalli sallii arvio-attribuutin mille tahansa Quantity-tietotyypille. Sovelluksen käyttöliittymä voi antaa lääkäreille mahdollisuuden valita asianmukaisesti merkitty valintaruutu \"vyötärön ympärysmitta\" -kentän viereen osoittaakseen, että tallennettu vyötärön ympärysmitta on likiarvio eikä todellinen.",
+          "misuse" : "Ei käytetä tallentamaan nopeutta, jolla vyötärön ympärysmitta kasvaa tai laskee. Käytä tätä tarkoitusta varten growth velocity -arkkityyppiä.\r\n\r\nEi saa käyttää toisen ruumiinosan ympärysmitan tallentamiseen. Käytä OBSERVATION.body_segmentiä näissä olosuhteissa, paitsi jos on olemassa tarkempia arkkityyppejä, kuten OBSERVATION.hip_circumference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera måttet på midjans omkrets.",
+          "keywords" : [ "antropometri", "mätningar", "uppskattningar", "omkretts", "midja", "omfång", "buk" ],
+          "use" : "Används för att registrera midjemåttet.\r\n\r\nDet finns ingen enighet om exakt var midjemåttet ska mätas. I fall där detta är viktigt för tolkningen av resultatet, ska detta dokumenteras i elementet 'metod'.\r\n\r\nDenna arketyp kan också användas för att registrera en uppskattning av midjemåttet i ett kliniskt scenario där det inte är möjligt att tillförlitligt mäta midjemåttet - till exempel, vid mätning av ett barn som inte samarbetar. Detta är inte uttalat modellerat i arketypen, eftersom referensmodellen för openEHR tillåter attributet uppskattning för varje angiven kvantitativ datatyp. Vid implementering, till exempel, i en applikations användargränssnitt kan klinikerna tillåtas att markera en passande benämnd kryssruta bredvid datafältet för 'midjemått' för att indikera att registreringen midjemått är en uppskattning och inte ett faktiskt värde.",
+          "misuse" : "Används inte för att registrera hur hastigheten på midjemåttet ökar eller minskar. Använd istället en arketyp för tillväxthastighet för detta ändamål.\r\n\r\nAnvänds inte för att registrera midjemåttet på någon annan kroppsdel. Använd istället OBSERVATION.body_segment i dessa sammanhang, förutom då mer specifika arketyper finns som till exempel OBSERVATION.hip_circumference.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere målingen av midjeomkrets.",
+          "keywords" : [ "antropometri", "måling", "estimering", "omkrets", "livvidde", "mageomfang", "midjemål", "bukomkrets", "somatometri" ],
+          "use" : "Bruk for å registrere målingen midjeomkrets.\r\n\r\nDet finnes en rekke ulike metoder for måling av midjeomkrets. I tilfeller der det er viktig for tolkningen av resultatet bør metoden dokumenteres i dataelementet \"Metode\".\r\n\r\nBrukes til å registrere endring ved gjentatte målinger. Dette kan modelleres ved å begrense \"Uspesifisert hendelse\" i en templat til et intervall med en tilhørende matematisk funksjon for \"økning\".\r\n\r\nDenne arketypen kan også brukes for å registrere et anslag av midjeomkrets i et klinisk scenario der det ikke er mulig å få til en nøyaktig måling, f.eks. ved måling av et barn som ikke samarbeider. Dette er ikke modellert eksplisitt inn i arketypen, siden openEHR referansemodellen tillater attributten \"Approksimering\" for datatypen \"Quantity\". Ved implementasjon kan f.eks. et brukergrensesnitt tillate klinikerne å velge en avkrysningsboks ved siden av elementet \"Midjeomkrets\" for å indikere at omkretsen er en approksimering heller enn en faktisk måling.",
+          "misuse" : "Brukes ikke til å registrere hastigheten midjeomkretsen øker eller avtar, bruk en egen arketype for veksthastighet for dette formålet.\r\n\r\nBrukes ikke til å registrere omkretsen av andre kroppsdeler. Bruk OBSERVATION.body_segment i disse tilfellene med unntak av hvor det finnes mer spesifikke arketyper som for eksempel OBSERVATION.hip_circumference.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para gravar a circunferência da cintura de um indivíduo.\r\n",
+          "keywords" : [ "antropometria", "medição", "estimativa", "circunferência", "cintura", "circunferência da cintura", "abdominal" ],
+          "use" : "Use para gravar a circunferência da cintura de um indivíduo.\r\n\r\nNão há acordo claro onde exatamente a medida da circunferência da cintura deve ser feita. Em casos onde isso é importante para a interpretação dos resultados, deve estar documentado no elemento \"Método\".\r\n\r\nUsar para registar a mudança a partir de medições repetidas. Isto pode ser atualmente modelado restringindo o \"qualquer evento\" para um intervalo em um modelo com função matemática associada, conforme o caso.\r\n\r\nEste arquétipo também pode ser usado para gravar uma medição aproximada da circunferência da cintura, em um cenário clínico em que não é possível medir uma circunferência da cintura acurada - por exemplo, a medição de uma criança não colaborativa. Isto não é modelado explicitamente no arquétipo, já que o modelo de referência openEHR permite o atributo de aproximação para qualquer de tipo de dados quantitativo. Na implementação, por exemplo, uma interface de usuário da aplicação pode permitir aos clínicos selecionar numa caixa de verificação, apropriadamente marcada ao lado do campo de dados de circunferência da cintura para indicar que a circunferência da cintura gravada é uma aproximação, não uma medida exata. \r\n",
+          "misuse" : "Não deve ser usado para gravar a velocidade na qual a circunferência da cintura aumenta ou diminui. Use o arquétipo de velocaidade de crescimento para este propósito.\r\n\r\nNão deve ser usado para gravar a circunferência de outra parte do corpo. Usar OBSERVATION.body_segment nestas circunstâncias, exceto quando existem arquétipos mais específicos tais como OBSERVATION.hip_circumference.\r\n",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record the measurement of the circumference of the waist.",
+          "keywords" : [ "anthropometry", "measurement", "estimation", "circumference", "waist", "girth", "abdominal" ],
+          "use" : "Use to record the measurement of the circumference of the waist. \r\n\r\nThere is no clear agreement on exactly where the waist circumference should be measured. In cases where this is important to the interpretation of the results, this should be documented in the 'Method' element.\r\n\r\nUse to record change from repeated measurements. This can currently be modeled by constraining the 'any event' to an interval in a template with an associated mathematical function, as appropriate.\r\n\r\nThis archetype can also be used for recording an approximation of the waist circumference measurement in a clinical scenario where it is not possible to measure an accurate waist circumference - for example, measuring an uncooperative child. This is not modelled explicitly in the archetype as the openEHR Reference model allows the attribute of Approximation for any Quantity data type. At implementation, for example, an application user interface could allow clinicians to select an appropriately labelled check box adjacent to the 'Waist circumference' data field to indicate that the recorded waist circumference is an approximation, rather than actual.",
+          "misuse" : "Not to be used to record the speed of which the waist circumference is growing or decreasing. Use a growth velocity archetype for this purpose.\r\n\r\nNot to be used to record the circumference of another body part. Use OBSERVATION.body_segment in these circumstances except where more specific archetypes exist such as OBSERVATION.hip_circumference.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.waist_circumference.v1",
     "differential" : true,
