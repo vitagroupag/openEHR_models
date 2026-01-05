@@ -25,7 +25,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"92a61e68bdb560304c5fbba75d478cfa">
+		["MD5-CAM-1.0.1"] = <"86a688cf2c666d0810af3db8bce71f7a">
 		["build_uid"] = <"44f4d84f-288f-3fca-8f4a-ffbbe6f53e0c">
 	>
 
@@ -63,6 +63,11 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
+			ELEMENT[at0017] occurrences matches {0..1} matches {    -- Zementierung
+				value matches {
+					DV_BOOLEAN matches {*}
+				}
+			}
 			ELEMENT[at0.1] occurrences matches {0..1} matches {    -- Material der Gleitflächen
 				value matches {
 					DV_TEXT matches {*}
@@ -75,18 +80,6 @@ definition
 			}
 			CLUSTER[at0.4] occurrences matches {0..1} matches {    -- Länge des Prothesenhalses
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0.3] occurrences matches {0..1} matches {    -- Quantitative Größe
-						value matches {
-							C_DV_QUANTITY <
-								property = <[openehr::122]>
-								list = <
-									["1"] = <
-										units = <"mm">
-									>
-								>
-							>
-						}
-					}
 					ELEMENT[at0.5] occurrences matches {0..1} matches {    -- Größe nach Kategorie
 						value matches {
 							1|[local::at0.6],
@@ -115,10 +108,6 @@ ontology
 				>
 				["at0.2"] = <
 					text = <"Form des Inlays">
-					description = <"">
-				>
-				["at0.3"] = <
-					text = <"Quantitative Größe">
 					description = <"">
 				>
 				["at0.4"] = <
@@ -199,6 +188,10 @@ ontology
 				>
 				["at0016"] = <
 					text = <"Eignung für MRT">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Zementierung">
 					description = <"">
 				>
 			>
