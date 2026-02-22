@@ -19,10 +19,10 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "0.1.0",
+      "sem_ver" : "0.1.1",
       "PARENT:MD5-CAM-1.0.1" : "8d9f7ce41c27b8f30464c99e80e2fbb2",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "6639132b0f54becbd4fb140801fddea0"
+      "MD5-CAM-1.0.1" : "54a51fcfdd5d9b982201d6ff4839d789"
     },
     "details" : {
       "de" : {
@@ -122,7 +122,7 @@
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
           "text" : "vg_progessnote.0.0.1",
-          "description" : "Ein Dokument, das zur Repräsentation gesundheitsbezogener Ereignisse dient, die im Rahmen der Pflege und/oder des Gesundheitszustands des Patienten aufgetreten sind, der Befunde, Gutachten und Plänen, die zum Zeitpunkt der Aufzeichnung aktuell sind."
+          "description" : "Zur Dokumentation von Krankenverläufen."
         }
       },
       "nb" : {
@@ -156,7 +156,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "6F24243771B944641D47850B1487D23A"
+        "PARENT:MD5-CAM-1.0.1" : "c4f5cf0dfcc194bcf3316d77cd56cdeb"
       },
       "details" : {
         "de" : {
