@@ -22,7 +22,7 @@
       "sem_ver" : "0.1.1",
       "PARENT:MD5-CAM-1.0.1" : "8d9f7ce41c27b8f30464c99e80e2fbb2",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "54a51fcfdd5d9b982201d6ff4839d789"
+      "MD5-CAM-1.0.1" : "c18ff230f87c6dfe7d930c61cba0fb28"
     },
     "details" : {
       "de" : {
@@ -121,7 +121,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "vg_progessnote.0.0.1",
+          "text" : "vg_progressnote.0.0.1",
           "description" : "Zur Dokumentation von Krankenverläufen."
         }
       },
